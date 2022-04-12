@@ -45,11 +45,16 @@ CREATE TABLE beeruserfav (
 CREATE TABLE brewerys (
 	brewery_id int IDENTITY(1,1) NOT NULL,
 	name varchar(25) NOT NULL,
-	hours varchar(100),
-	contact_info varchar(100),
+	hours varchar(1000),
+	phone_number varchar(50),
+	website varchar(320),
 	address varchar(100),
-	history varchar(250),
-	image varchar(500),
+	longitude decimal NOT NULL,
+	latitude decimal NOT NULL,
+	history varchar(1500),
+	image varchar(2000),
+	GF_food bit NOT NULL,
+	GF_beer bit NOT NULL,
 	activitylevel bit NOT NULL,
 	CONSTRAINT PK_brewery PRIMARY KEY (brewery_id)
 );
@@ -90,3 +95,4 @@ INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg4
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
 
 GO
+
