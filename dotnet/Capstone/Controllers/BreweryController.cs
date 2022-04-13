@@ -8,7 +8,7 @@ namespace Capstone.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class BreweryController : Controller
+    public class BreweryController : ControllerBase
     {
         private readonly IBreweryDao BreweryDao;
         public BreweryController(IBreweryDao breweryDao)
@@ -16,8 +16,8 @@ namespace Capstone.Controllers
             BreweryDao = breweryDao;
         }
 
-        [HttpGet ("{id}")]
-        public Brewery GetBrewery(int breweryId)
+        [HttpGet("{breweryId}")]
+        public Brewery GetBreweryById(int breweryId)
         {
             return BreweryDao.GetBreweryById(breweryId);
         }
@@ -26,7 +26,7 @@ namespace Capstone.Controllers
         {
             return BreweryDao.GetAllBreweries();
         }
-        [HttpGet ("/breweries/{id}")]
+        [HttpGet ("/breweries/{brewerId}")]
         public List<Brewery> GetBreweries(int brewerId)
         {
             return BreweryDao.GetBreweriesByBrewerId(brewerId);
@@ -36,15 +36,10 @@ namespace Capstone.Controllers
         {
             return BreweryDao.UpdateBrewery(brewery);
         }
-        [HttpPut ("deactivate")]
+        [HttpPut ("toggleactivation")]
         public Brewery DeactivateBrewery(Brewery brewery)
         {
-            return BreweryDao.UpdateBrewery(brewery);
-        }
-        [HttpPut("reactivate")]
-        public Brewery ReactivateBrewery(Brewery brewery)
-        {
-            return BreweryDao.UpdateBrewery(brewery);
+            return BreweryDao.ToggleActivation(brewery);
         }
     }
 }
