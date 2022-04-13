@@ -38,22 +38,24 @@ CREATE TABLE brewerys (
 	image varchar(2000),
 	GF_food bit NOT NULL,
 	GF_beer bit NOT NULL,
-	activitylevel bit NOT NULL,
+	is_open bit NOT NULL,
 	CONSTRAINT PK_brewery PRIMARY KEY (brewery_id)
 );
 
 CREATE TABLE beers (
 	beer_id int IDENTITY(1,1) NOT NULL,
 	name varchar(100) NOT NULL,
-	description varchar (250) NOT NULL,
+	description varchar (1500) NOT NULL,
 	image varchar(500) NOT NULL,
-	abv decimal NOT NULL,
-	category int NOT NULL,
+	is_avaliable bit NOT NULL,
+	abv decimal (18,2) NOT NULL,
+	category varchar(25) NOT NULL,
 	GF bit NOT NULL,
 	brewery_id int NOT NULL,
 	CONSTRAINT FK2_beers FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
 	CONSTRAINT PK_beer PRIMARY KEY (beer_id)
 );
+
 
 CREATE TABLE userbrewery (
 	user_id int NOT NULL,
@@ -100,7 +102,7 @@ INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','Yh
 
 
 --populate breweries
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES ('BrewDog Pittsburgh', 'Monday: 4:00PM - 10:00PM,
 Tuesday: 4:00PM - 10:00PM,
 Wednesday: 4:00PM - 10:00PM,
@@ -117,7 +119,7 @@ Sunday: 12:00PM - 9:00PM',
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Gg6sx36gtcEjO9RwoLR1QtlXjEvIM4H-JTp2h03BTrU7ZHDlkHz3zVUYl643vlgI-O0&usqp=CAU', 1, 1, 1);
 
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES ('Fat Heads Saloon', 
 'Monday: closed,
 Tuesday: closed,
@@ -135,7 +137,7 @@ Sunday: 11:00AM - 10:00PM',
 'https://i0.wp.com/thefullpint.com/wp-content/uploads/2016/12/Fatheads-Logo.jpg', 1, 1, 1);
 
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'Necromancer Brewing',
 'Monday: closed,
@@ -154,7 +156,7 @@ Sunday: 12:00AM - 4:00PM',
 'https://pittsburghbreweries.com/wp-content/uploads/2021/06/necromancer-full-black-1024x408.png',
 1, 0, 1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'Voodoo Brewing Co.',
 'Monday: closed,
@@ -173,7 +175,7 @@ Sunday: 12:00AM - 4:00PM',
 'https://media-exp1.licdn.com/dms/image/C560BAQG0nVUDeSsBKg/company-logo_200_200/0/1598475876636?e=2147483647&v=beta&t=N6tcu95Xb8TA4t0zAm8h24y1sXFutd9ejb8BlR1luP0',
 1, 0, 1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'East End Brewing Company',
 'Monday: closed,
@@ -194,7 +196,7 @@ The brewery was originally located in a 4,000-square-foot (370 m2) brewery in th
 'https://i0.wp.com/farmtotablepa.com/wp-content/uploads/2015/05/East-End-Brewing-Co..jpeg?fit=750%2C750&ssl=1',
 1, 0, 1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'Trace Brewing',
 'Monday: 8:00am - 10:00pm,
@@ -215,7 +217,7 @@ Sunday: 8:00am - 8:00pm',
 1, 1, 1);
 
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'The Church Brew Works',
 'Monday: 4:00pm - 10:15pm,
@@ -234,7 +236,7 @@ Sunday: 12:30pm - 9:00pm',
 'https://churchbrew.com/wp-content/themes/yeast/img/logo.png',
 0, 1, 1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'Hitchhiker Brewing',
 'Monday: closed,
@@ -253,7 +255,7 @@ Sunday: Closed Easter Sunday',
 'https://hitchhiker.beer/wp-content/uploads/hbbc-social-share-image.png',
 1, 0, 1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
 VALUES(
 'Two Frays Brewery',
 'Monday: closed,
@@ -272,7 +274,7 @@ Sunday: 1:00pm - 8:00pm',
 'https://pittsburghbreweries.com/wp-content/uploads/2021/06/Asset-8-1-810x1024.png',
 0, 0, 1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Spring Hill Brewing', 
 'Monday: closed,
 Tuesday: closed,
@@ -288,9 +290,9 @@ Sunday: 2:00PM - 6:00PM',
 40.4666285,
 '...was started by Greg, who began brewing out of his kitchen in Bloomfield over 10 years ago.   After refining his recipes and finding the perfect location in Pittsburghs North Side, he decided to expand his brewing efforts to a full-time operation. Spring Hill Brewing opened July 2018, operating out of a former social club  that was founded in roughly 1900.  The Workingmens Beneficial Union (or WBU for short) was a community space for German immigrants and once housed a ballroom and a six-lane bowling alley.   It closed in 1999 and suffered a lot of damage while shuttered.   A three-year (and counting!) renovation has brought it back to life, and we are proud to be serving our fresh farmhouse ales out of the new taproom.',
 'https://images.squarespace-cdn.com/content/v1/5b1fdbc4cc8fed7c56157c72/1606946846693-XXGG6O6Z7ZAH8VBDKO52/MEAD2.jpg?format=1500w',
-0,0,0);
+0,0,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Eleventh Hour Brewing', 
 'Monday: closed,
 Tuesday: closed,
@@ -306,9 +308,9 @@ Sunday: 1:00PM - 7:00PM',
 40.467035,
 ' opened in September of 2017 in the Lawrenceville neighborhood of Pittsburgh. Located in an old gas grill/gas light showroom, they operate a 20bbl brewhouse producing a wide variety of beer. From lagers to IPA’s, stouts, and sours, there is something for everyone. Owners Keana and Matt McMahon also work hard to integrate the community as well as many local charity events.',
 'https://images.squarespace-cdn.com/content/v1/581b7f8f5016e11e7853bdb8/1621882414394-09CSLC50LHDWXFGVDMK0/DSC_0748.jpg?format=1500w',
-0,1,0);
+0,1,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Allegheny City Brewing', 
 'Monday: 4:00PM - 9:00PM,
 Tuesday: closed,
@@ -330,9 +332,9 @@ We are proud to be located in the North Side of Pittsburgh - formerly the City o
 We are proud to be a part of the neighborhood, and the Pittsburgh craft brewing community. Our goal to every one of our patrons is to provide great beer, a relaxing environment, and great service.
 Cheers!',
 'https://images.squarespace-cdn.com/content/v1/581b7f8f5016e11e7853bdb8/1621882414394-09CSLC50LHDWXFGVDMK0/DSC_0748.jpg?format=1500w',
-0,1,0);
+0,1,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Grist House Craft Brewery', 
 'Monday: closed,
 Tuesday: closed,
@@ -348,9 +350,9 @@ Sunday: 1:00PM - 8:00PM',
 40.4788179,
 'Grist House was started by Erie natives Kyle Mientkiewicz and Brian Eaton, childhood friends and now brothers-in-law. They pursued that now-familiar path of obsessed homebrewers-turned-professionals, and the brewing operation is now co-led up by another of their childhood friends, Sean Biby.',
 'Brewery Did Not Supply Image',
-0,1,0);
+0,1,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Strange Roots Experimental Ales', 
 'Monday: closed,
 Tuesday: closed,
@@ -366,9 +368,9 @@ Sunday: closed',
 40.4787114,
 'Strange Roots Experimental Ales is the evolution of Draai Laag Brewing Company, which was dedicated solely to spontaneously fermented sour and wild beer. The name change reflects the brewery’s diversification and creative expansion into a wider range of beer styles, while remaining committed to locally foraged and sourced ingredients and unique brews created from scratch. Their focus on terroir yields unique vintages in many of their beers, tied to a specific time, place, and the passionate people who bring their mission to life.',
 'http://www.strangerootsbeer.com/wp-content/themes/strangeroots/assets/images/logo.png',
-1,1,0);
+1,1,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('412 Brewery', 
 'Monday: closed,
 Tuesday: closed,
@@ -384,9 +386,9 @@ Sunday: 1:00PM - 7:00PM',
 40.4519513,
 'We are a growing Burgh brewery located in McKees Rocks with a newly-opened taproom in the North Side. In 2016, our founder, Sam Mure, decided to start a brewery with his buddies after success in the restaurant industry. For two years, he and his team distributed the brew to local joints before making the jump to open a taproom. In 2019, in the space of an old laundromat at 847 Western Ave, the dream of having a place of their own came true.',
 'https://images.squarespace-cdn.com/content/v1/581b7f8f5016e11e7853bdb8/1621882414394-09CSLC50LHDWXFGVDMK0/DSC_0748.jpg?format=1500w',
-0,1,0);
+0,1,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Hop Farm Brewing Company', 
 'Monday: 3:00PM - 10:00PM,
 Tuesday: closed,
@@ -402,9 +404,9 @@ Sunday: 1:00PM - 7:00PM',
 40.4846495,
 ' Hop Farm Brewing Company is a woman-owned, family-run brewery in the Lawrenceville neighborhood of Pittsburgh, Pa. At Hop Farm, we are dedicated to the responsible use of our natural resources, from production to packaging and everywhere in between. We grow our own hops organically and add some of them to every batch we brew. We are proud Pittsburghers who look to highlight and work with other local businesses for materials, ingredients and services wherever possible. Hop Farm opened its doors in 2013 as a growler shop, which quickly grew into a brewpub. We self-distribute our product in Allegheny County and look forward to adding cans back to our lineup.',
 'https://www.hopfarmbrewingco.com/wp-content/uploads/2021/12/Home-Hop-Farm-Logo.png',
-1,1,0);
+1,1,1);
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Southern Tier Brewery Pittsburgh', 
 'Monday: 11:00AM - 10:00PM,
 Tuesday: 11:00AM - 10:00PM,
@@ -420,10 +422,10 @@ Sunday: 11:00AM - 12:00AM',
 40.4463787,
 'The company was founded in 2001 by Phineas DeMink and Allen "Skip" Yahn. They purchased old equipment from the Old Saddleback Brewing Co. in Pittsfield, Massachusetts. By 2003, the brewery had expanded to multiple varieties of small batch ales distributed locally. By 2005, the company had expanded its distribution to cover the majority of New York State and Pennsylvania. In 2009, a new 20,000-sq-ft building was built to accommodate the companys expansion nationally and internationally.',
 'https://dynl.mktgcdn.com/p/gP-w4szVsSQvBSXZKAcZInB7mcn7X2iq1phF7JecR6Q/224x126.png',
-1,1,0);
+1,1,1);
 
 
-INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, activitylevel)
+INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
 VALUES ('Dancing Gnome Beer', 
 'Monday: closed,
 Tuesday: 4:00PM - 10:00PM,
@@ -439,6 +441,434 @@ Sunday: 11:00AM - 6:00PM',
 40.4938628,
 'Dancing Gnome opened in 2016 to foster the growth of our energetic community in Pittsburgh, PA by focusing on hop-forward styles and helping to carve out a new definition of American Ale. Pittsburgh is an industrial city that was built by community; driven by camaraderie, earnest work, and ebullient play.',
 'https://craftpeak-cooler-images.imgix.net/dancing-gnome-brewery/Logo-Full-Frame-01_2x.png?auto=compress%2Cformat&ixlib=php-1.2.1',
-1,1,0);
+1,1,1);
 GO
 
+
+
+
+--Populate Beers
+
+--Spring Hill Brewing
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF,  brewery_id)
+VALUES ('Sunrise',
+'Fluffy and light ale. Brewed with lots of wheat and rye. Spiced with coriander, chamomile, and a smidgen of caraway. Saison + wit yeasts. Notes of rye bread, clove, and ripe yellow fruits',
+'No image provided',
+1,
+3.2,
+'dark',
+0,
+10);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES ('Afternoon',
+'mild farmhouse ale. After Work Beer with a straight forward noble and new world hop profile. Saison + monastery yeasts. Notes of lightly dried fruits, bright and spicy citrus, freshly baked bread',
+'No image provided',
+1,
+4.5,
+'mild',
+0,
+10);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Setting Sun',
+'Hoppy red ale. Hopped assertively with cascade, centennial, and bravo. Monastery + English yeasts. smooth hop bitterness rounded out with refreshing citrusy and floral aromas',
+'No image provided',
+1,
+5,
+'mild',
+0,
+10);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Dusk',
+'Belgian nut brown ale. Made from a sticky mash of oats and toasted barley. Saison + monastery yeasts. Extra malt texture, notes of slow roasted fruits and spice, everything nice',
+'No image provided',
+1,
+4,
+'mild',
+0,
+10);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Moonrise',
+'Farmhouse porter. Roasted and cherrywood smoked malts. Notes of campfire brownies, roasted ripe plums, delicate fruit and smoke',
+'No image provided',
+1,
+4.2,
+'dark',
+0,
+10);
+
+--Eleventh Hour Brewing
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Pinwheel',
+'A bright and crisp Pale Ale that calls back to the beers that got us started loving craft. With Azacca, Sultana and Citra filling out the hop bill, we get orange rind, fresh pine needles and sweet pineapple with a fruit cup flavor intro. The malt base is present, giving a slight hint of light caramel along with a balancing bitterness to finish it out. The perfect beer to crush at an outdoor picnic, on the side of a pool or when youre hovering over that backyard grill.',
+'https://untappd.akamaized.net/photos/2022_04_10/71e8759068a2c24a6eddb743ac99fe00_640x640.jpg',
+1,
+5.3,
+'light',
+0,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Burning Phoenix (Jalapeno)',
+'The most polarizing beer we produce starts with a simple American Pale Ale hopped with Cascade. It is then aged on over 150 lbs of jalapenos in the fermenter giving it a nose like fresh cut jalapenos, a spicy burn as it goes down and an even finish as the heat hits a plateau. You will either love it or hate it.',
+'https://untappd.akamaized.net/photos/2022_04_01/e0fb573155e82dbcf18a16d0af83de63_640x640.jpg',
+1,
+6.2,
+'light',
+0,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Lockdown Reserve',
+'A HUGE Imperial Stout aged in Widow Jane Applewood Rye barrels. We brewed this beer before the lockdown and stashed it away in barrels right after. A two year stay in our barrel room, and its ready to come out and play. As much as we want to forget the lockdowns, this seems like a great way to make something out of a bad situation. No adjuncts, just a dreamy chocolate, marshmallow, vanilla, oak & rye behemoth that sticks to your glass and warms you to the core',
+'https://untappd.akamaized.net/photos/2022_04_10/a84d21ef175350ab0936b4030bdaaf5b_640x640.jpg',
+1,
+12.5,
+'dark',
+0,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Makeshift Dynamite',
+'Trouble in a glass, this beer explodes with aromatics of ripe strawberries, raspberries, pineapple, and guava. Double dry-hopped with delicate French Barbe Rouge and pungent Mosaic, the aroma and flavor are spread generously over the ever soft Golden Promise and Flaked oat landscape. Finishing with a smooth tropical flavor and gently disappearing bitterness you will definitely not see the 8% coming at you.',
+'https://untappd.akamaized.net/photos/2022_04_10/719435304a578894d65dc6e626ea4676_640x640.jpg',
+1,
+8,
+'light',
+0,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Dream Cannon: No 12 Mega Berry Sorbet',
+'We decided to stuff this one as full of berries as possible. We started with a soft base of German pilsner and malted wheat, then added a massive dose of raspberry, blackberry, blueberry, strawberry, cranberry and marionberry for a bursting juice flavor, complimentary tartness and a sweet finish from the lactose. This one keeps you on your toes!',
+'https://untappd.akamaized.net/photos/2022_04_10/a1b482648c5d6b11b10a1becf7d17b4f_640x640.jpg',
+1,
+4.4,
+'sour',
+1,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Black Is Beautiful - 2022 - BA',
+'The final entry in our Black is Beautiful is a bigger and bolder version with almost 2 years of aging in 4 Roses Barrels.  We then partnered with our friends over at Kelvin Coffee Labs (using their Las Luces blend) and a pile of Belgian chocolate.  The resulting beer has deep rich notes of coffee, rich chocolate, mild vanilla, and charred marshmallow.',
+'https://untappd.akamaized.net/photos/2022_04_09/22ab274b51c1d7bf6ed279d62120420d_640x640.jpg',
+1,
+12,
+'dark',
+0,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('FOSSL',
+'For our version of the Steinbock,we tore the heads off a couple of our leftover barrels and installed sanitary fittings to allow for the transfer of the wort into and out of these makeshift kettles. We stoked a fire using additional deconstructed bourbon barrels and heated the rocks on the flames. With the stones reaching temperatures upwards of 500 degrees, they were added to the wort, caramelizing what they touched and adding a smoky layer. Once the boil was complete, we fermented the wort and then transferred it to neutral Pennsylvania white oak barrels where it lagered for 4 months in our cellar.',
+'https://untappd.akamaized.net/photos/2022_04_10/1718a1772068efa08a1cb57b3ef63ef4_640x640.jpg',
+1,
+7,
+'mild',
+0,
+11);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Doppelbock',
+'A perfect companion on a cold winter night, we bring you our Doppelbock. A big bodied beer with notes of caramel and toffee, hints of raisin with mild bitterness and a crisp sweet finish. This one warms you up with every sip. Cheers',
+'https://untappd.akamaized.net/photos/2022_04_10/c9e5365095f8bfb40775b4f369276383_640x640.jpg',
+1,
+8,
+'mild',
+0,
+11);
+
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Maibock',
+'The Maibock is a seasonal tradition representing the smooth transition from cooler weather to the warmer spring months. This pale bock still has the higher alcohol content as the winter bocks, but a lighter coloring and flavor profile. A slightly sweet, caramel and toffee taste permeates this delightful lager. A crisp clean finish and a fading aftertaste brings you back for more and reminds you that Spring is here and summer is just around the corner.',
+'https://untappd.akamaized.net/photos/2022_04_09/0e105e8341754ac4268966dad626af4c_640x640.jpg',
+1,
+7.1,
+'mild',
+0,
+11);
+
+--Allegheny City Brewing
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Oceanic',
+'Hazy IPA with Citra, Galaxy and Motueka hops',
+'https://untappd.akamaized.net/photos/2022_04_03/d5dcfdc64bd6d7804c3edb0fcfd8d92d_640x640.jpg',
+1,
+6.6,
+'mild',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Nova Gose',
+'Ale brewed with coriander and sea salt added to the boil with orange zest added during secondary fermentation.',
+'https://untappd.akamaized.net/photo/2022_03_16/9e5064babdb01b5a160acff3a5e7e8be_c_1138485335_640x640.jpg',
+1,
+4.9,
+'sour',
+1,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Deutschtown Brown',
+'this easy drinking brown ale, with a nutty finish, is named after the Historic Deutschtown neighborhood.',
+'https://untappd.akamaized.net/photos/2022_04_04/14a6e081a73e59adb0293b3452533f7e_640x640.jpg',
+1,
+6.1,
+'dark',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Beer Named Woo',
+'The grain bill consists largely of golden promise, with carapils, white wheat, and oats to round it out. Water mineral adjustments to improve its softness, and some lactose for a creamy mouthfeel. A special yeast strain from our friends at Inland Island helps bring the whole recipe together. And, a double dry hopping of Mosaic and Vic Secret provide aroma and flavor of ripe tangerine and pineapple.',
+'https://untappd.akamaized.net/photos/2022_04_10/924b950827e3305720ae3dd429789678_640x640.jpg',
+1,
+6.7,
+'light',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Morning Dew IPA',
+'Floral aroma - soft with tropical and citrus notes.',
+'https://untappd.akamaized.net/photos/2018_09_15/3c9882ec65c1c4b4998cf6dabc52adeb_640x640.jpg',
+1,
+6.3,
+'light',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Graham Cracker Porter',
+'This bready porter has a sweet cinnamon nose and finish uses real graham crackers and cinnamon sticks',
+'https://untappd.akamaized.net/photos/2022_02_28/5311eeab9d0b6a47c34befe0b3c651b7_640x640.jpg',
+1,
+6,
+'dark',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Northside Buzz',
+'IPA infused with coffee from La Prima Espresso',
+'https://untappd.akamaized.net/photos/2021_05_26/14dc3c71e0cc5b70a30c0f2b2268a56d_640x640.jpg',
+1,
+6.2,
+'mild',
+0,
+12);
+
+INSERT INTO beers (name, description, image,is_avaliable, abv, category, GF, brewery_id)
+VALUES('Most Dope',
+'Award-winning NEIPA, featuring Galaxy and Strata hops.',
+'https://untappd.akamaized.net/photos/2022_03_17/6cd59a04533683c31a3f03e8560f3469_640x640.jpg',
+1,
+6.3,
+'light',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('GF DIPA',
+'West coast style DIPA.',
+'https://untappd.akamaized.net/photos/2020_03_25/4138063b902e79e349c6affe40463b18_640x640.jpg',
+1,
+8.2,
+'light',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Going To the Sun',
+'Golden ale with honey malt',
+'https://untappd.akamaized.net/photos/2020_05_22/da1e49a9a9536948c7ef0b5401e9ac60_640x640.jpg',
+1,
+4.7,
+'mild',
+0,
+12);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('1795 Stout',
+'Thick and malty with notes of chocolate. Named after the year the first American-owned brewery opened at the Fort in downtown Pittsburgh.',
+'https://untappd.akamaized.net/photo/2017_12_22/c7acdea8ebf46064f12a5f076b0abf22_320x320.jpeg',
+1,
+7.8,
+'dark',
+0,
+12);
+
+--Grist House Craft Brewery
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Clean Line',
+'With big aroma and inviting bitterness, this West Coast IPA may rock the boat. Brewed with Ekuanot, Mosaic, and Simcoe, Canoe Rocker boasts delightful notes of tropical fruit and citrus.',
+'https://untappd.akamaized.net/photos/2022_04_12/421a756c91daf41166166004a7da470e_640x640.jpg',
+1,
+7.3,
+'light',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Double Vice',
+'Brewed with Indian Mysore Coffee from Allegheny Coffee and Tea Exchange, this delicious porter opens with a full aroma of coffee and dark chocolate, then washes over you with hints of coconut and vanilla.',
+'https://untappd.akamaized.net/photos/2022_04_09/5d068a94a7a335f4a0a40e0144c06972_640x640.jpg',
+1,
+6.6,
+'dark',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Gots ta Gose',
+'This gose includes one of the most delicious fruits in the world, Guava! Added during fermentation it dominates the nose and flavor. This beer finishes with a tongue lingering deliciousness that could only be provided by pink salt mined deep in the Himalayan mountains. Sometimes you just Gots Ta GOSE!',
+'https://untappd.akamaized.net/photos/2022_04_10/b01d8680597cf0ca1d387d73198752c6_640x640.jpg',
+1,
+4.5,
+'sour',
+1,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('London Crawling',
+'Refreshing, yet flavorful, with notes of caramel, chocolate, and dark fruit, this low-gravity, malt-focused British session ale is readily suited to drinking in quantity. Brewed with English Maris Otter, caramel, and specialty malts, as well as English hops and yeast, this beer is British in its bones.',
+'https://untappd.akamaized.net/photos/2022_04_09/7839f919e5a7d3a3e0a26899048a644b_640x640.jpg',
+1,
+3.7,
+'dark',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Many Faced Shaman',
+'Tart and full of incredible flavor, this entry in the Shaman Series makes your whole mouth tingle in anticipation of the next sip. Guava, Mango, Blackberry and more blend in perfectly with juice from lemons and limes and Berry Berry Tea from Allegheny Coffee & Tea Exchange.',
+'https://untappd.akamaized.net/photos/2022_04_10/e8425ccb4a15c7144a90c175a1c95682_640x640.jpg',
+1,
+5,
+'sour',
+1,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Phantom Drifter',
+'his beer is scary good. Milk sugar adds tantalizing sweetness to the dark roasted character of the malt while chocolate, vanilla, and hazelnut star in this devilishly delicious stout.',
+'https://untappd.akamaized.net/photos/2022_03_26/5e8bb440efba00c2d174a1aab65896b3_640x640.jpg',
+1,
+4.9,
+'dark',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Creek Crusher',
+'This lager-like ale is light, flavorful, and highly drinkable. Brewed with American barley and flaked maize to create a light, malty body with some residual sweetness and delicately hopped with NZ Motueka for a touch of citrus zest on the nose and palate. A true American classic!',
+'https://untappd.akamaized.net/photos/2022_04_10/c814d14ed52ae667c3f48ef482ca4339_640x640.jpg',
+1,
+4.8,
+'dark',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('French Toast Revolution',
+'French Toast Revolution is here to bring breakfast to the beer game! Brewed with blueberry, a hint of raspberry, lactose and the prefect amount of maple syrup and brown sugar to give the impression of French toast, our first Breakfast Sour is sure to make you wish a beer was part of a "balanced breakfast".',
+'https://untappd.akamaized.net/photos/2022_04_10/f600dddef59e8597f46a3ee54b60aac5_640x640.jpg',
+1,
+7,
+'sour',
+1,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Gristly Bear Brown',
+'This ale’s chestnut hue is punctuated with a fluffy white head. Nutty, malty, full bodied, and silky smooth with hints of caramel and coffee.',
+'https://untappd.akamaized.net/photos/2022_04_02/56ae2db75b160336f003ebf3d9162d69_640x640.jpg',
+1,
+5.3,
+'mild',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Mad House 2',
+'Our funky fresh collaboration with Mad Mex returns! In Vol 1 we explored South African hops and for this round we chose the unique flavors of New Zealand, featuring Nelson Sauvin, Riwaka, and Rakau hops. As we do more volumes we will choose different varieties from regions around the world to showcase each regions unique flavors. Opening with a distinct citrus aroma, this silky brew delights with notes of passionfruit and white grape. The soft, pillowy finish leaves your taste buds wanting more!',
+'https://untappd.akamaized.net/photos/2022_04_12/13916ed4ff0049699ef16508082999a2_640x640.jpg',
+1,
+6.4,
+'light',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Maximum Power',
+'This brand new IPA takes hop flavor to the MAX! Brewed with Galaxy and Citra LupoMAX hops, a concentrated Lupulin hop pellet with much less hop vegetal matter for a cleaner, bright hop flavor.',
+'https://untappd.akamaized.net/photos/2022_04_13/7ef449866fe21ee231421dc0fff5eee5_640x640.jpg',
+1,
+6.8,
+'light',
+0,
+13);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Queens Wit',
+'Brewed in celebration of Pink Boots collaboration Brew Day, this refreshing wit beer is as sessionable as they come! Brewed with orange peel, this zesty Belgian Witbier will have you coming back for more. The Pink Boots Society strives to assist, inspire, and encourage women and/or non-binary individuals in the fermented/alcoholic beverage profession through education.',
+'https://untappd.akamaized.net/photos/2022_04_13/d5b51fd81c2964d1d027271796b9a77f_640x640.jpg',
+1,
+4.8,
+'light',
+1,
+13);
+
+--Strange Roots Experimental Ales
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Agent Orange',
+'Mixed-Culture Wild Ale w/ Persimmons and Apricots. The core beer is a heftier version of their base saison, fermented with organisms the brewers harvested locally, with a secondary fermentation with fresh, whole apricots, followed by the persimmons. Brewed with malted barley and raw oats.',
+'https://untappd.akamaized.net/photos/2021_06_05/f85fc22e5b9c5d3b6e22449302c76d64_640x640.jpg',
+1,
+9,
+'light',
+0,
+14);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Biere de Coupage',
+'Old sour blended with young dry hopped ale. Fruity and tart with a slight apple flavor finish.',
+'https://untappd.akamaized.net/photos/2021_09_11/e00ea393ecafebd0b92267f66d207b1e_640x640.jpg',
+1,
+6.7,
+'light',
+0,
+14);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Black Briar',
+'Sour with a wonderful black berry taste',
+'https://untappd.akamaized.net/photos/2022_02_27/86042564e6c2c9b36d23cf0ad01e188c_640x640.jpg',
+1,
+8,
+'sour',
+1,
+14);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('Foraged Dandelion',
+'Entirely delicious. Some wild fermentation tang with a nice sweet base from dandelion.',
+'https://untappd.akamaized.net/photos/2021_08_08/43e20336648e5b3914041259bcee042b_640x640.jpg',
+1,
+5.4,
+'light',
+0,
+14);
+
+SELECT *
+FROM beers
