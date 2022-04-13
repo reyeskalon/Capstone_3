@@ -17,7 +17,7 @@ GO
 --create tables
 CREATE TABLE users (
 	user_id int IDENTITY(1,1) NOT NULL,
-	username varchar(50) NOT NULL,
+	username varchar(100) NOT NULL,
 	password_hash varchar(200) NOT NULL,
 	salt varchar(200) NOT NULL,
 	user_role varchar(50) NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE users (
 
 CREATE TABLE beers (
 	beer_id int IDENTITY(1,1) NOT NULL,
-	name varchar(50) NOT NULL,
+	name varchar(100) NOT NULL,
 	description varchar (250) NOT NULL,
 	image varchar(500) NOT NULL,
 	abv decimal NOT NULL,
@@ -44,13 +44,13 @@ CREATE TABLE beeruserfav (
 
 CREATE TABLE brewerys (
 	brewery_id int IDENTITY(1,1) NOT NULL,
-	name varchar(25) NOT NULL,
+	name varchar(100) NOT NULL,
 	hours varchar(1000),
 	phone_number varchar(50),
 	website varchar(320),
 	address varchar(100),
-	longitude decimal NOT NULL,
-	latitude decimal NOT NULL,
+	longitude decimal(18,10) NOT NULL,
+	latitude decimal(18,10) NOT NULL,
 	history varchar(1500),
 	image varchar(2000),
 	GF_food bit NOT NULL,
