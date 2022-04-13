@@ -3,41 +3,257 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Capstone.Models;
+using System.Data.SqlClient;
 
 namespace Capstone.DAO
 {
     public class BeerSqlDao : IBeerDao
     {
+        private readonly string connectionString;
+
+        public BeerSqlDao(string dbConnectionString)
+        {
+            connectionString = dbConnectionString;
+        }
+
         public Beer GetBeerById(int beerId)
         {
-            Beer beer = new Beer();
-            return beer;
+            Beer returnBeer = null;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM beers WHERE beer_id = @beer_id", conn);
+                    cmd.Parameters.AddWithValue("@beer_id", beerId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        returnBeer = GetBeerFromReader(reader);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnBeer;
         }
         public Beer UpdateBeer(Beer beer)
         {
+    
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("UPDATE beers SET name = @name, description = @description, image = @image, abv = @abv, category = @category, GF = @GF, brewery_id = @brewery_id is_avaliable = @is_avaliable WHERE beer_id = @beer_id; ", conn);
+                    cmd.Parameters.AddWithValue("@name", beer.Name);
+                    cmd.Parameters.AddWithValue("@description", beer.Description);
+                    cmd.Parameters.AddWithValue("@image", beer.ImgURL);
+                    cmd.Parameters.AddWithValue("@abv", beer.ABV);
+                    cmd.Parameters.AddWithValue("@category", beer.BeerType);
+                    cmd.Parameters.AddWithValue("@GF", beer.IsGlutenFree);
+                    cmd.Parameters.AddWithValue("@brewery_id", beer.BreweryId);
+                    cmd.Parameters.AddWithValue("@is_avaliable", beer.BreweryId);
+                    cmd.Parameters.AddWithValue("@beer_id", beer.BeerId);
+
+
+                    cmd.ExecuteNonQuery();
+
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
             return beer;
         }
-        public Beer RemoveBeer(Beer beer)
+        public Beer ToggleIsAvaliable(Beer beer)
         {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    if (beer.IsAvaliable == false)
+                    {
+                        SqlCommand cmd = new SqlCommand("UPDATE beers SET is_avaliable = 0 WHERE beer_id = @beer_id; ", conn);
+                        cmd.Parameters.AddWithValue("@is_avaliable", beer.BreweryId);
+                        cmd.Parameters.AddWithValue("@beer_id", beer.BeerId);
+                        cmd.ExecuteNonQuery();
+                    }
+                    if (beer.IsAvaliable == true)
+                    {
+                        SqlCommand cmd = new SqlCommand("UPDATE beers SET is_avaliable = 1 WHERE beer_id = @beer_id; ", conn);
+                        cmd.Parameters.AddWithValue("@beer_id", beer.BeerId);
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
             return beer;
         }
         public Beer AddBeer(Beer beer)
         {
-            return beer;
+            int newBeerId;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id) " +
+                        "OUTPUT INSERTED.beer_id " +
+                        "VALUES(@name, @description, @image, @is_avaliable, @abv, @category, @GF, @brewery_id);", conn);
+                    cmd.Parameters.AddWithValue("@name", beer.Name);
+                    cmd.Parameters.AddWithValue("@description", beer.Description); 
+                    cmd.Parameters.AddWithValue("@image", beer.ImgURL);
+                    cmd.Parameters.AddWithValue("@is_avaliable", beer.IsAvaliable);
+                    cmd.Parameters.AddWithValue("@abv", beer.ABV);
+                    cmd.Parameters.AddWithValue("@category", beer.BeerType);
+                    cmd.Parameters.AddWithValue("@GF", beer.IsGlutenFree);
+                    cmd.Parameters.AddWithValue("@brewery_id", beer.BreweryId);
+
+                    newBeerId = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return GetBeerById(newBeerId);
         }
         public List<Beer> GetBeersByBrewery(int breweryId)
         {
-            List<Beer> beers = new List<Beer>();
-            return beers;
+            List<Beer> returnBeers = new List<Beer>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM beers WHERE brewery_id = @brewery_id", conn);
+                    cmd.Parameters.AddWithValue("@brewery_id", breweryId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Beer beer = GetBeerFromReader(reader);
+                        returnBeers.Add(beer);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnBeers;
         }
         public List<Beer> GetFavoriteBeers(int userId)
         {
-            List<Beer> beers = new List<Beer>();
-            return beers;
+            List<Beer> returnBeers = new List<Beer>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * " +
+                                                    "FROM beers " +
+                                                    "JOIN beeruserfav " +
+                                                    "ON beers.beer_id = beeruserfav.beer_id " +
+                                                    "WHERE user_id = @user_id; ", conn);
+                    cmd.Parameters.AddWithValue("@user_id", userId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Beer beer = GetBeerFromReader(reader);
+                        returnBeers.Add(beer);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnBeers;
         }
-        public Review AddReview(Beer beer)
+        public List<Review> GetReviewsForBeer(int beerId)
         {
-            Review review = new Review();
+            List<Review> reviews = new List<Review>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT reviews.review_id, rating, review_body " +
+                                                    "FROM reviews " +
+                                                    "JOIN reviewbeer " +
+                                                    "ON reviews.review_id = reviewbeer.review_id " +
+                                                    "WHERE beer_id = @beer_id; ", conn);
+                    cmd.Parameters.AddWithValue("@beer_id", beerId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Review review = GetReviewFromReader(reader);
+                        reviews.Add(review);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return reviews;
+        }
+        public Beer GetBeerFromReader(SqlDataReader reader)
+        {
+            Beer beer = new Beer()
+            {
+                BeerId = Convert.ToInt32(reader["beer_id"]),
+                Name = Convert.ToString(reader["name"]),
+                Description = Convert.ToString(reader["description"]),
+                ImgURL = Convert.ToString(reader["image"]),
+                ABV = Convert.ToDouble(reader["abv"]),
+                BeerType = Convert.ToString(reader["category"]),
+                IsGlutenFree = Convert.ToBoolean(reader["GF"]),
+                BreweryId = Convert.ToInt32(reader["brewery_id"]),
+            };
+
+            return beer;
+        }
+        public Review GetReviewFromReader(SqlDataReader reader)
+        {
+            Review review = new Review()
+            {
+                ReviewId = Convert.ToInt32(reader["review_id"]),
+                Rating = Convert.ToInt32(reader["rating"]),
+                ReviewText = Convert.ToString(reader["review_body"])
+            };
+
             return review;
         }
     }
