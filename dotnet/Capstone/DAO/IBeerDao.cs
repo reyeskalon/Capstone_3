@@ -10,10 +10,10 @@ namespace Capstone.DAO
     {
         Beer GetBeerById(int beerId);
         Beer UpdateBeer(Beer beer);
-        Beer RemoveBeer(Beer beer);
+        Beer ToggleIsAvaliable(Beer beer);
         Beer AddBeer(Beer beer);
         List<Beer> GetBeersByBrewery(int breweryId);
         List<Beer> GetFavoriteBeers(int userId);
-        Review AddReview(Beer beer);
+        List<Review> GetReviewsForBeer(int beerId);
     }
 }

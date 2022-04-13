@@ -15,17 +15,17 @@ namespace Capstone.Controllers
         {
             BeerDao = beerDao;
         }
-        [HttpGet ("{id}")]
+        [HttpGet ("{beerId}")]
         public Beer GetBeerById(int beerId)
         {
             return BeerDao.GetBeerById(beerId);
         }
-        [HttpGet ("/beers/{id}")]
+        [HttpGet ("/beers/{breweryId}")]
         public List<Beer> GetBeersByBrewery(int breweryId)
         {
             return BeerDao.GetBeersByBrewery(breweryId);
         }
-        [HttpGet ("/favoritebeers/{id}")]
+        [HttpGet ("/favoritebeers/{userId}")]
         public List<Beer> GetFavoriteBeers(int userId)
         {
             return BeerDao.GetFavoriteBeers(userId);
@@ -40,15 +40,16 @@ namespace Capstone.Controllers
         {
             return BeerDao.UpdateBeer(beer);
         }
-        [HttpPut ("remove")]
-        public  Beer RemoveBeer(Beer beer)
+        [HttpPut ("toggleavaliable")]
+        public  Beer ToggleBeer(Beer beer)
         {
-            return BeerDao.RemoveBeer(beer);
+            return BeerDao.ToggleIsAvaliable(beer);
         }
-        [HttpPost ("addreview")]
-        public Review AddReview(Beer beer)
+        [HttpGet ("/reviews/{beerId}")]
+        public List<Review> GetReviewByBeerId(int beerId)
         {
-            return BeerDao.AddReview(beer);
+            return BeerDao.GetReviewsForBeer(beerId);
         }
+
     }
 }
