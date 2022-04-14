@@ -44,4 +44,9 @@ export default {
     border-radius: 3px;
     background-color: #24c744;
 }
+
+.image-7 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
 </style>
