@@ -1,8 +1,7 @@
 <template>
     <div>
-        <brewery v-for="brewery in AllBreweries" v-bind:key="brewery.id"/>
+        <brewery v-for="brewery in AllBreweries" v-bind:key="brewery.id" v-bind:b="brewery"/>
         <edit-brewery />
-        <button @click="LogBreweries"></button>
     </div>
 </template>
 
@@ -20,13 +19,11 @@ export default {
   },
   computed: {
       AllBreweries() {
-          return this.$store.breweries
+          return this.$store.state.breweries
       }
   },
   methods: {
-      LogBreweries(){
-          console.log(this.$store.breweries)
-      }
+
   },
       created() {
       BreweryService.GetBreweries().then(response => {
