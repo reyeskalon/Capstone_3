@@ -7,11 +7,3 @@
     <router-view />
   </div>
 </template>
-<style scoped>
-  #app{
-    background-color: #24c744;
-  }
-  #nav{
-    background-color: #24c744;;
-  }
-</style>
