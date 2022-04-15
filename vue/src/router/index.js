@@ -6,6 +6,8 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
 import AdminPage from '../views/AdminPage.vue'
+import BrewerPage from '../views/BrewerPage.vue'
+import BeerLoverPage from '../views/BeerLoverPage.vue'
 
 Vue.use(Router)
 
@@ -58,6 +60,22 @@ const router = new Router({
       path: "/admin",
       name: "admin",
       component: AdminPage,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/brewer",
+      name: "brewer",
+      component: BrewerPage,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: "/beerlover",
+      name: "beerlover",
+      component: BeerLoverPage,
       meta: {
         requiresAuth: false
       }
