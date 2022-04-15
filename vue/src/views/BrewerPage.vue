@@ -9,26 +9,19 @@
 import Brewery from '../components/Brewery.vue';
 import EditBrewery from '../components/EditBrewery.vue';
 import BreweryService from '../services/BreweryService';
-
 export default {
-  components: { EditBrewery, Brewery },
-    data() {
-        return {
-
+  components: { Brewery, EditBrewery },
+  computed: {
+        AllBreweries() {
+            return this.$store.state.breweries;
         }
     },
     created() {
-        BreweryService.GetBreweries().then(response => {
+    BreweryService.GetBreweriesByBrewer(this.$store.state.user.userId).then(response => {
             this.$store.commit("SET_BREWERIES", response.data);
         });
-    },
-    computed: {
-        AllBreweries() {
-            return this.$store.state.breweries
-        }
-    },
-}   
-
+    }
+}
 </script>
 
 <style scoped>
