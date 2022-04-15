@@ -7,6 +7,7 @@
         public string PasswordHash { get; set; }
         public string Salt { get; set; }
         public string Role { get; set; }
+        public bool RequestBrewer { get; set; }
     }
 
     /// <summary>
@@ -17,6 +18,7 @@
         public int UserId { get; set; }
         public string Username { get; set; }
         public string Role { get; set; }
+        public bool RequestBrewer { get; set; }
     }
 
     /// <summary>
@@ -26,6 +28,7 @@
     {
         public ReturnUser User { get; set; }
         public string Token { get; set; }
+        public bool RequestBrewer { get; set; }
     }
 
     /// <summary>
@@ -35,6 +38,7 @@
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        public bool RequestBrewer { get; set; }
     }
 
     /// <summary>
@@ -46,5 +50,6 @@
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Role { get; set; }
+        public bool RequestBrewer { get; set; }
     }
 }
