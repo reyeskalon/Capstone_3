@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using Capstone.Models;
 using Capstone.Security;
@@ -25,7 +26,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT user_id, username, password_hash, salt, user_role FROM users WHERE username = @username", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT user_id, username, password_hash, salt, user_role, request_brewer FROM users WHERE username = @username", conn);
                     cmd.Parameters.AddWithValue("@username", username);
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -42,8 +43,35 @@ namespace Capstone.DAO
 
             return returnUser;
         }
+        public List<ReturnUser> GetUsers()
+        {
+            List<ReturnUser> returnUsers = new List<ReturnUser>();
 
-        public User AddUser(string username, string password, string role)
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT user_id, username, user_role, request_brewer FROM users", conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        ReturnUser user = GetReturnUserFromReader(reader);
+                        returnUsers.Add(user);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnUsers;
+        }
+
+        public User AddUser(string username, string password, string role, bool requestBrewer)
         {
             IPasswordHasher passwordHasher = new PasswordHasher();
             PasswordHash hash = passwordHasher.ComputeHash(password);
@@ -54,11 +82,12 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("INSERT INTO users (username, password_hash, salt, user_role) VALUES (@username, @password_hash, @salt, @user_role)", conn);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES (@username, @password_hash, @salt, @user_role, @request_brewer)", conn);
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password_hash", hash.Password);
                     cmd.Parameters.AddWithValue("@salt", hash.Salt);
                     cmd.Parameters.AddWithValue("@user_role", role);
+                    cmd.Parameters.AddWithValue("@request_brewer", requestBrewer);
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -79,6 +108,19 @@ namespace Capstone.DAO
                 PasswordHash = Convert.ToString(reader["password_hash"]),
                 Salt = Convert.ToString(reader["salt"]),
                 Role = Convert.ToString(reader["user_role"]),
+                RequestBrewer = Convert.ToBoolean(reader["request_brewer"])
+            };
+
+            return u;
+        }
+        private ReturnUser GetReturnUserFromReader(SqlDataReader reader)
+        {
+            ReturnUser u = new ReturnUser()
+            {
+                UserId = Convert.ToInt32(reader["user_id"]),
+                Username = Convert.ToString(reader["username"]),
+                Role = Convert.ToString(reader["user_role"]),
+                RequestBrewer = Convert.ToBoolean(reader["request_brewer"])
             };
 
             return u;
