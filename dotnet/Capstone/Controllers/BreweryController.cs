@@ -25,7 +25,7 @@ namespace Capstone.Controllers
         public List<Brewery> GetAllBreweries()
         {
             return BreweryDao.GetAllBreweries();
-        }
+        } 
         [HttpGet ("/breweries/{brewerId}")]
         public List<Brewery> GetBreweries(int brewerId)
         {

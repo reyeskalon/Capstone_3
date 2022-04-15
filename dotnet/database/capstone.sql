@@ -331,7 +331,7 @@ Looking to return to our native Pittsburgh, we all relocated back in 2013. On Se
 We are proud to be located in the North Side of Pittsburgh - formerly the City of Allegheny - hence our name. We are proud history of the area, and hope that our tap room pays homage properly.
 We are proud to be a part of the neighborhood, and the Pittsburgh craft brewing community. Our goal to every one of our patrons is to provide great beer, a relaxing environment, and great service.
 Cheers!',
-'https://images.squarespace-cdn.com/content/v1/581b7f8f5016e11e7853bdb8/1621882414394-09CSLC50LHDWXFGVDMK0/DSC_0748.jpg?format=1500w',
+'https://static.wixstatic.com/media/732d47_ee077b5c752540918f1ff73cb4232fd1~mv2.jpg/v1/fill/w_363,h_149,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/732d47_ee077b5c752540918f1ff73cb4232fd1~mv2.jpg',
 0,1,1);
 
 INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
@@ -349,7 +349,7 @@ Sunday: 1:00PM - 8:00PM',
 -79.9720203,
 40.4788179,
 'Grist House was started by Erie natives Kyle Mientkiewicz and Brian Eaton, childhood friends and now brothers-in-law. They pursued that now-familiar path of obsessed homebrewers-turned-professionals, and the brewing operation is now co-led up by another of their childhood friends, Sean Biby.',
-'Brewery Did Not Supply Image',
+'https://gristhouse.com/wp-content/uploads/elementor/thumbs/Icons-20-1-pki9mo1jg8qovr3z1uinfuuatq6kbla1h78kie8lik.png',
 0,1,1);
 
 INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
@@ -385,7 +385,7 @@ Sunday: 1:00PM - 7:00PM',
 -80.0159598,
 40.4519513,
 'We are a growing Burgh brewery located in McKees Rocks with a newly-opened taproom in the North Side. In 2016, our founder, Sam Mure, decided to start a brewery with his buddies after success in the restaurant industry. For two years, he and his team distributed the brew to local joints before making the jump to open a taproom. In 2019, in the space of an old laundromat at 847 Western Ave, the dream of having a place of their own came true.',
-'https://images.squarespace-cdn.com/content/v1/581b7f8f5016e11e7853bdb8/1621882414394-09CSLC50LHDWXFGVDMK0/DSC_0748.jpg?format=1500w',
+'http://nebula.wsimg.com/3be68c3dbbf0bb8fea35948ac5b364aa?AccessKeyId=B51CE73634C1019D38B2&disposition=0&alloworigin=1',
 0,1,1);
 
 INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
@@ -475,7 +475,7 @@ Sunday: 11:00AM - 10:00PM',
 -79.964500,
 40.428780,
 'Hofbräuhaus was built on the love of beer. What started as a demand for better brew has turned into a 400-year tradition of pure flavor. We’ve taken four natural ingredients barley, yeast, hops and water from Munich, Germany to across the world in what has become a true bier revolution. You can carry on the tradition by bringing another Hofbräuhaus location to beer lovers everywhere.',
-'No Image',
+'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Hb_muenchen_4c_pos_hoch.svg/1200px-Hb_muenchen_4c_pos_hoch.svg.png',
 0,0,1);
 GO
 
