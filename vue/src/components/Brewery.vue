@@ -1,13 +1,16 @@
 <template id="temp">
     <div id="brewery-card">
         <img :src="b.imgURL" alt="" id="brewery-img" :href="b.websiteURL"/>
-        <p id="name">{{b.name}}</p>
-        <p id="number">{{b.phoneNumber}}</p>
+        <div id ="namenum">
+            <p id="name">{{b.name}}</p>
+            <p id="number">{{b.phoneNumber}}</p>
+        </div>
+        <p id="hours">{{b.hoursOfOperation}}</p>
         <div id="gluten-free">
             <p v-if="hasGlutenFreeBeer == true"><img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img"></p>
             <p v-if="hasGlutenFreeFood == true"><img src="..\assets\pngs\gfFood-removebg-preview.png" alt="" id="gf-food"></p>
         </div>
-        <p id="hours">{{b.hoursOfOperation}}</p>
+        
     </div>
 </template>
 
@@ -43,8 +46,9 @@ export default {
     background: #7875AC;
     border: black 1px solid;
     flex-direction: row;
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    column-gap: 20px;
+    align-content: space-between;
 }
 #brewery-img {
     height: 50px;
@@ -63,6 +67,10 @@ export default {
     font-size: 9px;
     align-items: flex-end;
 }
-
+#namenum{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+}
 
 </style>
