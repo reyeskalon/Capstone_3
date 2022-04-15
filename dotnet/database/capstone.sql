@@ -100,7 +100,7 @@ CREATE TABLE beeruserfav (
 --populate default data
 INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user', 0);
 INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 0);
-
+INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES ('test','eKcFbIc7zUEceEIQ5cUNsbKPh6Y=', 'ZIbSPIEFUBg=','brewer', 0);
 
 --populate breweries
 INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
