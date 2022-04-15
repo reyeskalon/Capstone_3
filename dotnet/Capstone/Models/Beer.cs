@@ -14,5 +14,7 @@ namespace Capstone.Models
         public double ABV { get; set; }
         public string BeerType { get; set; }
         public bool IsGlutenFree { get; set; }
+        public int BreweryId { get; set; }
+        public bool IsAvaliable { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace Capstone.Models
 {
     public class Review
     {
+        public int ReviewId { get; set; }
         public double Rating { get; set; }
         public string ReviewText { get; set; }
     }

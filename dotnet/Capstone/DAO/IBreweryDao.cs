@@ -12,7 +12,6 @@ namespace Capstone.DAO
         List<Brewery> GetBreweriesByBrewerId(int brewerId);
         List<Brewery> GetAllBreweries();
         Brewery UpdateBrewery(Brewery brewery);
-        Brewery DeactivateBrewery(Brewery brewery);
-        Brewery ReactivateBrewery(Brewery brewery);
+        Brewery ToggleActivation(Brewery brewery);
     }
 }
