@@ -20,7 +20,8 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    breweries: [1,2,3,4] || []
+    breweries: [1,2,3,4] || [],
+    users: [] || []
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -41,6 +42,9 @@ export default new Vuex.Store({
     },
     SET_BREWERIES(state, data) {
       state.breweries = data;
+    },
+    SET_USERS(state, data){
+      state.users = data
     }
   }
 })

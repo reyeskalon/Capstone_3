@@ -98,6 +98,60 @@ namespace Capstone.DAO
 
             return GetUser(username);
         }
+        public ReturnUser ApproveBrewer(string username)
+        {
+            ReturnUser user = null;
+            
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("BEGIN TRANSACTION; " +
+                                                    "UPDATE users SET user_role = 'brewer' " +
+                                                    "WHERE username = @username " +
+                                                    "UPDATE users " +
+                                                    "SET request_brewer = 0 " +
+                                                    "WHERE username = @username " +
+                                                    "COMMIT; ", conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return user;
+        }
+        public ReturnUser DenyBrewer(string username)
+        {
+            ReturnUser user = null;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("UPDATE users " +
+                                                    "SET request_brewer = 0 " +
+                                                    "WHERE username = @username ", conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return user;
+        }
 
         private User GetUserFromReader(SqlDataReader reader)
         {
