@@ -5,10 +5,10 @@ export default {
 GetUsers(){
     return axios.get('/users');
 },
-ApproveBrewer(username){
-    return axios.put(`/approvebrewer/${username}`);
+ApproveBrewer(user){
+    return axios.put(`/approvebrewer/${user.username}`);
 },
-DenyBrewer(username){
-    return axios.put(`/denybrewey/${username}`);
+DenyBrewer(user){
+    return axios.put(`/denybrewer/${user.username}`);
 }
 }
