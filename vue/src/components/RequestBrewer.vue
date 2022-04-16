@@ -1,8 +1,8 @@
 <template>
     <div id="brewster">
-         <p id="username">{{user.username}}</p>
-        <button v-on:click="CallApproval(user.username)" id="approve">Approve</button>
-        <button id="deny">Deny</button>
+         <p id="username">{{user.username}} has requested Brewer privilege</p>
+        <button v-on:click="CallApproval(user); ReloadPage();" id="approve">Approve</button>
+        <button v-on:click="CallDenial(user); ReloadPage();" id="deny">Deny</button>
     </div>
 </template>
 
@@ -15,14 +15,20 @@ export default {
                 userId: null,
                 username: "",
                 role: "",
-                requestBrewer: true
+                requestBrewer: false
             }
         }
     },
     methods: {
-        CallApproval(username){
-            UserService.ApproveBrewer(username)
-        }
+        CallApproval(user){
+            UserService.ApproveBrewer(user)
+        },
+        CallDenial(user){
+            UserService.DenyBrewer(user)
+        },
+        ReloadPage() {
+            window.location.reload();
+    }
     },
     props: ['user']
     
@@ -39,6 +45,7 @@ export default {
         border-radius: 5px;
         padding: 5px;
         width: auto;
+        margin: 10px;
     }
     #approve{
         background-color: rgb(171, 240, 102);
@@ -50,6 +57,14 @@ export default {
     }
     #deny{
         background-color: rgb(206, 84, 84);
+        width:75px;
+        height: 25px;
+        align-self: center;
+        border-radius: 25px;
+        border-color: gray;
+    }
+    #submit{
+        background-color: rgb(128, 240, 230);
         width:75px;
         height: 25px;
         align-self: center;
