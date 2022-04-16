@@ -1,13 +1,16 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+    <features />
+    <featured-in />
   </div>
 </template>
 
 <script>
+import FeaturedIn from '../components/FeaturedIn.vue';
+import Features from '../components/Features.vue';
 
 export default {
+  components: { Features, FeaturedIn },
   name: "home",
 };
 </script>
