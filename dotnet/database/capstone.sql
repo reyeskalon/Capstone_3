@@ -148,7 +148,7 @@ Thursday: 4:00PM - 10:00PM,
 Friday: 4:00PM - 10:00PM,
 Saturday: 12:00AM - 10:00PM,
 Sunday: 12:00AM - 4:00PM', 
-'0',
+'4126349638',
 'https://necromancer.beer/',
 '2257 Babcock Blvd, Pittsburgh, PA 15237',
 40.5129919,
@@ -1695,22 +1695,166 @@ VALUES('THE SHAKES',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('FORTITUDE STOUT',
-'A classic, traditional American stout. Dark barley produces a thick, dark brew with a light tan head. $1.00 from all sales will go to the World Central Kitchen to feed refugees fleeing the Russian War.','https://untappd.akamaized.net/photos/2022_04_09/fbf8f9041e67692acf234f43c6bd5dc0_640x640.jpg',1,6.1,'dark',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('IRISH RED','A Classic March Ale with light malt sweetness perfect to celebrate in an erstwhile 120 year old Irish Church.','https://untappd.akamaized.net/photos/2022_04_09/dacfb5e5aa5eec5088f6e68da4a50485_640x640.jpg',1,5.9,'mild',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('PIOUS MONK DUNKEL','Gold Medal Winner of the Great American Beer Festival. It is a perfect example that dark beers are not always strong beers. The body is surprisingly mellow, and the alcohol content is a bit lower than most people might think. It has a wonderfully clean and roasty aroma. Hop bitterness levels are kept in line, but is has a noticeable hop flavor.','https://untappd.akamaized.net/photos/2022_04_10/752e8e3b04ee356060483552e9253ecb_640x640.jpg',1,5.5,'mild',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('SPICED COCOA SOUR','A medium, dark amber ale with cinnamon, vanilla, and nibs of chocolate added.','https://untappd.akamaized.net/photos/2022_04_09/6c5eafc6220b8e1f584824def6368e68_640x640.jpg',1,4.8,'mild',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('TART TABLE BEER','A lightly hopped session beer. Belgian yeast produces slight tastes of spiced bread with a hint of banana. It will finish with a pleasing sourness. ','https://untappd.akamaized.net/photos/2022_04_08/7ad964094acf1a7753019fc0ba894283_640x640.jpg',1,4.2,'light',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('THUNDERHOP IPA','Our flagship IPA! Light body and color create a canvas for the hops to shine. Australian Galaxy, American Palisade and German Mandarina Bavaria hops lend juicy and tropical notes to the beers aroma. A balanced bitterness and ABV make this a sure go-to for any hop head!','https://untappd.akamaized.net/photos/2022_04_09/c50f3aeb0f64cfe47ce096efe7135d91_640x640.jpg',1,6.5,'light',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('BOURBON AGED RAUCHBIER','Made with beechwood smoked malt and aged in bourbon barrels. Noble hops were used to balance the sweet breadiness of the lager, but the smoke and bourbon win the day.','https://untappd.akamaized.net/photos/2022_04_08/74177016859bb8bf3ed7ec597756ed94_640x640.jpg',1,7.5,'light',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('BLACKBERRY QUAD','Dark amber color with huge caramel and malt aroma. The unique flavor of blackberries complement the darker malts.','https://untappd.akamaized.net/photos/2022_04_13/0e95a8adc6b54458d1840fea321a428e_640x640.jpg',1,10.4,'mild',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('THUNDER HAZE •','this New England style ipa is loaded with lots of tropical and ripe fruit. Brewed with oats and wheat that give this brew a soft juicy mouthfeel with peach and citrus in the nose and pineapple and blueberry in the flavor. Enjoy!!','https://untappd.akamaized.net/photos/2022_04_10/e5715eadde9f5666d1201023ba3f12e4_640x640.jpg',1,6,'light',0,7);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('CASK CONDITIONED THUNDERHOP IPA ','Excellent room-temperature brewski, fragrant with pine and Galaxy hops. Oak is subtle, yet influential.','https://untappd.akamaized.net/photos/2022_04_01/825e547c9a259c6d820362d4177eb50a_640x640.jpg',1,6.5,'light',0,7);--Trace BrewingINSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('GRATEFUL GARDEN','Hazy pale ale with Citra and BRU-1 hops. Floral and tropical notes with a dry finish.','https://untappd.akamaized.net/photos/2022_04_13/272906f8d53eeeb00323a89d89dbccec_640x640.jpg',1,5.2,'light',0,6);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('SCIENCE RULES!','Double IPA brewed with Mosaic, Amarillo and Eureka hops. Notes of Blueberry and Honeydew Melon. Best consumed after a toast to medical science.','https://untappd.akamaized.net/photos/2022_04_13/5a1985aa6f3ddb4332d176bcacc3de17_640x640.jpg',1,8.2,'light',0,6);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('KELLERBIER','Unfiltered German pale lager brewed with Spalter Select and Tettnanger hops. Clean and crisp with floral and citrus notes.','https://untappd.akamaized.net/photos/2022_04_10/943a1871c924c6848da93f75c28384bc_640x640.jpg',1,5.2,'light',0,6);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('MOVING CASTLE IV','IPA with Triumph and Zappa hops. Moving Castle is a series of one-off experimental beers. This IPA features two American hops, and has notes of fresh citrus and spicy herbal hops.','https://untappd.akamaized.net/photos/2022_04_10/129255596ad8f33ab84aae99a64f031a_640x640.jpg',1,7,'light',0,6);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('SURE, YOU’RE RIGHT','IPA brewed with Citra and Idaho 7 hops. Notes of Pineapple, Overripe Stone Fruit and Spicy Honey. Dedicated to the best MC with no chain you ever heard.','https://untappd.akamaized.net/photos/2022_04_14/0b6a5197cd245e436638bdfafd63d092_640x640.jpg',1,7.2,'light',0,6);INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('FOEDER AGED COAL HILL','Dortmunder lager aged in an oak foeder for two months. Delicate floral and citrus undertones backed up by toasted marshmallow, caramel and oak.','https://untappd.akamaized.net/photos/2022_04_10/4b4acbdfae9c886cf91495f74d86f562_640x640.jpg',1,5.4,'light',0,6);
+'A classic, traditional American stout. Dark barley produces a thick, dark brew with a light tan head. $1.00 from all sales will go to the World Central Kitchen to feed refugees fleeing the Russian War.',
+'https://untappd.akamaized.net/photos/2022_04_09/fbf8f9041e67692acf234f43c6bd5dc0_640x640.jpg',
+1,
+6.1,
+'dark',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('IRISH RED',
+'A Classic March Ale with light malt sweetness perfect to celebrate in an erstwhile 120 year old Irish Church.',
+'https://untappd.akamaized.net/photos/2022_04_09/dacfb5e5aa5eec5088f6e68da4a50485_640x640.jpg',
+1,
+5.9,
+'mild',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('PIOUS MONK DUNKEL',
+'Gold Medal Winner of the Great American Beer Festival. It is a perfect example that dark beers are not always strong beers. The body is surprisingly mellow, and the alcohol content is a bit lower than most people might think. It has a wonderfully clean and roasty aroma. Hop bitterness levels are kept in line, but is has a noticeable hop flavor.',
+'https://untappd.akamaized.net/photos/2022_04_10/752e8e3b04ee356060483552e9253ecb_640x640.jpg',
+1,
+5.5,
+'mild',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('SPICED COCOA SOUR',
+'A medium, dark amber ale with cinnamon, vanilla, and nibs of chocolate added.',
+'https://untappd.akamaized.net/photos/2022_04_09/6c5eafc6220b8e1f584824def6368e68_640x640.jpg',
+1,
+4.8,
+'mild',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('TART TABLE BEER',
+'A lightly hopped session beer. Belgian yeast produces slight tastes of spiced bread with a hint of banana. It will finish with a pleasing sourness. ',
+'https://untappd.akamaized.net/photos/2022_04_08/7ad964094acf1a7753019fc0ba894283_640x640.jpg',
+1,
+4.2,
+'light',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('THUNDERHOP IPA',
+'Our flagship IPA! Light body and color create a canvas for the hops to shine. Australian Galaxy, American Palisade and German Mandarina Bavaria hops lend juicy and tropical notes to the beers aroma. A balanced bitterness and ABV make this a sure go-to for any hop head!',
+'https://untappd.akamaized.net/photos/2022_04_09/c50f3aeb0f64cfe47ce096efe7135d91_640x640.jpg',
+1,
+6.5,
+'light',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('BOURBON AGED RAUCHBIER',
+'Made with beechwood smoked malt and aged in bourbon barrels. Noble hops were used to balance the sweet breadiness of the lager, but the smoke and bourbon win the day.',
+'https://untappd.akamaized.net/photos/2022_04_08/74177016859bb8bf3ed7ec597756ed94_640x640.jpg',
+1,
+7.5,
+'light',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('BLACKBERRY QUAD',
+'Dark amber color with huge caramel and malt aroma. The unique flavor of blackberries complement the darker malts.',
+'https://untappd.akamaized.net/photos/2022_04_13/0e95a8adc6b54458d1840fea321a428e_640x640.jpg',
+1,
+10.4,
+'mild',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('THUNDER HAZE •',
+'this New England style ipa is loaded with lots of tropical and ripe fruit. Brewed with oats and wheat that give this brew a soft juicy mouthfeel with peach and citrus in the nose and pineapple and blueberry in the flavor. Enjoy!!',
+'https://untappd.akamaized.net/photos/2022_04_10/e5715eadde9f5666d1201023ba3f12e4_640x640.jpg',
+1,
+6,
+'light',
+0,
+7);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('CASK CONDITIONED THUNDERHOP IPA ',
+'Excellent room-temperature brewski, fragrant with pine and Galaxy hops. Oak is subtle, yet influential.',
+'https://untappd.akamaized.net/photos/2022_04_01/825e547c9a259c6d820362d4177eb50a_640x640.jpg',
+1,
+6.5,
+'light',
+0,
+7);
+
+--Trace Brewing
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('GRATEFUL GARDEN',
+'Hazy pale ale with Citra and BRU-1 hops. Floral and tropical notes with a dry finish.',
+'https://untappd.akamaized.net/photos/2022_04_13/272906f8d53eeeb00323a89d89dbccec_640x640.jpg',
+1,
+5.2,
+'light',
+0,
+6);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('SCIENCE RULES!',
+'Double IPA brewed with Mosaic, Amarillo and Eureka hops. Notes of Blueberry and Honeydew Melon. Best consumed after a toast to medical science.',
+'https://untappd.akamaized.net/photos/2022_04_13/5a1985aa6f3ddb4332d176bcacc3de17_640x640.jpg',
+1,
+8.2,
+'light',
+0,
+6);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('KELLERBIER',
+'Unfiltered German pale lager brewed with Spalter Select and Tettnanger hops. Clean and crisp with floral and citrus notes.',
+'https://untappd.akamaized.net/photos/2022_04_10/943a1871c924c6848da93f75c28384bc_640x640.jpg',
+1,
+5.2,
+'light',
+0,
+6);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('MOVING CASTLE IV',
+'IPA with Triumph and Zappa hops. Moving Castle is a series of one-off experimental beers. This IPA features two American hops, and has notes of fresh citrus and spicy herbal hops.',
+'https://untappd.akamaized.net/photos/2022_04_10/129255596ad8f33ab84aae99a64f031a_640x640.jpg',
+1,
+7,
+'light',
+0,
+6);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('SURE, YOU’RE RIGHT',
+'IPA brewed with Citra and Idaho 7 hops. Notes of Pineapple, Overripe Stone Fruit and Spicy Honey. Dedicated to the best MC with no chain you ever heard.',
+'https://untappd.akamaized.net/photos/2022_04_14/0b6a5197cd245e436638bdfafd63d092_640x640.jpg',
+1,
+7.2,
+'light',
+0,
+6);
+
+INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
+VALUES('FOEDER AGED COAL HILL',
+'Dortmunder lager aged in an oak foeder for two months. Delicate floral and citrus undertones backed up by toasted marshmallow, caramel and oak.',
+'https://untappd.akamaized.net/photos/2022_04_10/4b4acbdfae9c886cf91495f74d86f562_640x640.jpg',
+1,
+5.4,
+'light',
+0,
+6);
+
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('DOUBLE HEMISPHERE',
 'Double IPA with Nelson Sauvin, Motueka, Citra and Cashmere. Notes of fresh citrus, white wine, and tropical fruit. Featuring hops from both halves of the Earth.',
