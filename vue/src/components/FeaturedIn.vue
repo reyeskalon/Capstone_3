@@ -4,11 +4,11 @@
         <div class="container">
             <h2 class="heading-featured-in">As featured In</h2>
             <div class="logos">
-                <img src="./pngs/fast_company_logo.png" alt="fast_company_logo">
-                <img src="./pngs/tech_crunch_logo.png" alt="tech_crunch_logo">
-                <img src="./pngs/vice_logo.png" alt="vice_logo">
-                <img src="./pngs/wired_logo.png" alt="wired_logo">
-                <img src="./pngs/zd_net_logo.png" alt="zd_net_logo">
+                <img src="../assets/pngs/fast_company_logo.png" alt="fast_company_logo">
+                <img src="../assets/pngs/tech_crunch_logo.png" alt="tech_crunch_logo">
+                <img src="../assets/pngs/vice_logo.png" alt="vice_logo">
+                <img src="../assets/pngs/wired_logo.png" alt="wired_logo">
+                <img src="../assets/pngs/zd_net_logo.png" alt="zd_net_logo">
             </div>
         </div>
     </section>
