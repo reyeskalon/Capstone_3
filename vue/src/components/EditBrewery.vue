@@ -1,51 +1,52 @@
 <template>
-    <form action="">
-        <div>
-            <label for="brewery-name">Name: </label>
-            <input type="text" id="brewery-name" v-model="currentBrewery.Name">
+    <form action="" id="brewery-form">
+        <div class="flex-wrapper">
+            <label for="brewery-name" class="form-label">Name: </label>
+            <input type="text" id="brewery-name" v-model="currentBrewery.Name" class="form-input">
         </div>
-        <div>
-            <label for="">Hours: </label>
-            <input type="text" v-model="currentBrewery.Hours">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Hours: </label>
+            <input type="text" v-model="currentBrewery.Hours" class="form-input">
         </div>
-        <div>
-            <label for="">Phone Number: </label>
-            <input type="text" v-model="currentBrewery.PhoneNumber">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Phone Number: </label>
+            <input type="text" v-model="currentBrewery.PhoneNumber" class="form-input">
         </div>
-        <div>
-            <label for="">Website: </label>
-            <input type="text" v-model="currentBrewery.Website">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Website: </label>
+            <input type="text" v-model="currentBrewery.Website" class="form-input">
         </div>
-        <div>
-            <label for="">Address: </label>
-            <input type="text" v-model="currentBrewery.Address">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Address: </label>
+            <input type="text" v-model="currentBrewery.Address" class="form-input">
         </div>
-        <div>
-            <label for="">Longitude: </label>
-            <input type="text" v-model="currentBrewery.Longitude">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Longitude: </label>
+            <input type="text" v-model="currentBrewery.Longitude" class="form-input">
         </div>
-        <div>
-            <label for="">Latitude: </label>
-            <input type="text" v-model="currentBrewery.Latitude">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Latitude: </label>
+            <input type="text" v-model="currentBrewery.Latitude" class="form-input">
         </div>
-        <div>
-            <label for="">History: </label>
-            <input type="text" v-model="currentBrewery.History">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">History: </label>
+            <input type="text" v-model="currentBrewery.History" class="form-input">
         </div>
-        <div>
-            <label for="">Brewery Image: </label>
-            <input type="text" v-model="currentBrewery.Image">
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Brewery Image: </label>
+            <input type="text" v-model="currentBrewery.Image" class="form-input">
         </div>
-        <div>
-            <label for="">Gluten Free Beer: </label>
+        <div class="flex-wrapper">
+            <label for="" class="form-label">Gluten Free Beer: </label>
             <input type="checkbox" v-model="currentBrewery.GlutenFreeBeer">
-        </div>
-        <div>
-            <label for="">Gluten Free Food: </label>
+            <label for="" class="form-label">Gluten Free Food: </label>
             <input type="checkbox" v-model="currentBrewery.GlutenFreeFood">
         </div>
-        <button type="submit"></button>
-        <button type="submit"></button>
+        <div class="flex-wrapper">
+            <button type="submit" id="cancel">Cancel</button>
+            <button type="submit" id="submit">Submit</button>
+        </div>
+        
     </form>
 </template>
 
@@ -80,5 +81,32 @@ export default {
 
 
 <style scoped>
+    .flex-wrapper {
+        width: 460px;
+        display: flex;
+        margin: 10px;
+        justify-content: space-between;
+    }
+    .flex-wrapper:nth-last-child(1) {
+        justify-content: space-around;
+    }
+    .form-input {
+        display: flex;
+        flex-grow: 1;
+        background: lightgray;
+    }
+    .form-label {
+        width: 120px;
+    }
+    #brewery-form {
+        background: white;
+        width: 500px;
+        margin: 10px;
+        border: 1px solid;
+        border-radius: 15px;
+    }
+    button {
+        margin: 5px;
+    }
 
 </style>
