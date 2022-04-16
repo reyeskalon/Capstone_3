@@ -100,7 +100,7 @@ CREATE TABLE beeruserfav (
 --populate default data
 INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user', 0);
 INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin', 0);
-
+INSERT INTO users (username, password_hash, salt, user_role, request_brewer) VALUES ('test','eKcFbIc7zUEceEIQ5cUNsbKPh6Y=', 'ZIbSPIEFUBg=','brewer', 0);
 
 --populate breweries
 INSERT INTO brewerys (name, hours, phone_number, website, address, latitude, longitude, history, image, GF_beer, GF_food, is_open)
@@ -116,7 +116,7 @@ Sunday: 12:00PM - 9:00PM',
 '1958 Varley St, Pittsburgh, PA 15212',
 40.460721,
 -79.9224016,
- 'Our founders James Watt and Martin Dickie decide they are fed up of the stuffy UK beer market… so, aged just 24, do something about it. Thanks to some very scary bank loans, the guys start making their own hardcore craft beers in Fraserburgh, a town in northeast Scotland. They brew tiny batches, fill bottles by hand, sell their first beers at local markets out of a beaten-up old van… and BrewDog is born.',
+ 'Our founders James Watt and Martin Dickie decide they are fed up of the stuffy UK beer marketï¿½ so, aged just 24, do something about it. Thanks to some very scary bank loans, the guys start making their own hardcore craft beers in Fraserburgh, a town in northeast Scotland. They brew tiny batches, fill bottles by hand, sell their first beers at local markets out of a beaten-up old vanï¿½ and BrewDog is born.',
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Gg6sx36gtcEjO9RwoLR1QtlXjEvIM4H-JTp2h03BTrU7ZHDlkHz3zVUYl643vlgI-O0&usqp=CAU', 1, 1, 1);
 
 
@@ -148,12 +148,12 @@ Thursday: 4:00PM - 10:00PM,
 Friday: 4:00PM - 10:00PM,
 Saturday: 12:00AM - 10:00PM,
 Sunday: 12:00AM - 4:00PM', 
-'4126349638',
+'0',
 'https://necromancer.beer/',
 '2257 Babcock Blvd, Pittsburgh, PA 15237',
 40.5129919,
 -79.9994701,
-'In 2021, Ben Butler and Aaron Easler plan to raise the dead. They opened  Necromancer Brewing Co. at 2257 Babcock Blvd. in Ross Township to resurrect forgotten beer styles. They won’t be summoning spirits, just historical knowledge and brewing know-how. When the 14,400-square-foot space, a former USA Baby and Spirit Halloween store with 36 parking spaces, debuts on March 1, it will be a pickup site for 16-ounce cans in four-packs and cases. Necromancer also will handle retail accounts for local bars and restaurants and will deliver beer to doorsteps within a 25-mile radius. There will be several core offerings, including a New England IPA, a Belgian witbier and a grisette, plus 15 other specialty beers in rotation. They’ve already released Square Dancing, a collaboration beer with Sharpsburg’s Dancing Gnome.',
+'In 2021, Ben Butler and Aaron Easler plan to raise the dead. They opened  Necromancer Brewing Co. at 2257 Babcock Blvd. in Ross Township to resurrect forgotten beer styles. They wonï¿½t be summoning spirits, just historical knowledge and brewing know-how. When the 14,400-square-foot space, a former USA Baby and Spirit Halloween store with 36 parking spaces, debuts on March 1, it will be a pickup site for 16-ounce cans in four-packs and cases. Necromancer also will handle retail accounts for local bars and restaurants and will deliver beer to doorsteps within a 25-mile radius. There will be several core offerings, including a New England IPA, a Belgian witbier and a grisette, plus 15 other specialty beers in rotation. Theyï¿½ve already released Square Dancing, a collaboration beer with Sharpsburgï¿½s Dancing Gnome.',
 'https://pittsburghbreweries.com/wp-content/uploads/2021/06/necromancer-full-black-1024x408.png',
 1, 0, 1);
 
@@ -212,8 +212,8 @@ Sunday: 8:00am - 8:00pm',
 '4312 Main St, Pittsburgh, PA 15224',
 40.4640902,
 -79.9533368,
-'“Every piece of wood or drip of paint tells a story,” says Dave Kushner, co-founder of Trace Brewing. “There’s even a set list written on the wall. They made industrial products here and later it served as a community space. We’re combining those two elements.” Guests will not only be able to see and smell the 10-barrel brewing system, they can chat with Head Brewer Brandon McCarthy while he works to churn out more beer.
-“We’re more like a small-batch brewery,” McCarthy says. “If you like beer at all there will be at least one thing that is on your wavelength.”',
+'ï¿½Every piece of wood or drip of paint tells a story,ï¿½ says Dave Kushner, co-founder of Trace Brewing. ï¿½Thereï¿½s even a set list written on the wall. They made industrial products here and later it served as a community space. Weï¿½re combining those two elements.ï¿½ Guests will not only be able to see and smell the 10-barrel brewing system, they can chat with Head Brewer Brandon McCarthy while he works to churn out more beer.
+ï¿½Weï¿½re more like a small-batch brewery,ï¿½ McCarthy says. ï¿½If you like beer at all there will be at least one thing that is on your wavelength.ï¿½',
 'https://images.squarespace-cdn.com/content/v1/5c6ad9dde666694eb6ec5c69/1598982388974-H615XYMJABAXEUIQND9R/Trace%2BLogo%2B2-10-20.jpeg',
 1, 1, 1);
 
@@ -233,7 +233,7 @@ Sunday: 12:30pm - 9:00pm',
 '3525 Liberty Ave, Pittsburgh, PA 15201',
 40.4620676,
 -79.9640833,
-'In the days before industry invaded its boundaries or paved roads curled through its neighborhoods, when Pittsburgh was in its youth, there was a farm called “Good Liquor” outside of the city. Owned by Alexander Hill, part of the farm was located within the existing Lawrenceville border. Later on, in 1814, William B. Foster purchased a 133-acre tract of land outside of Pittsburgh along the Allegheny River. In that same year, he would sell 30 acres of that property to the Federal Government. While Allegheny Arsenal was being built to provide supplies to the warring Union Troops during the civil war, Foster was starting to establish a community called Lawrenceville. The picturesque area was named for Captain James Lawrence who gained fame in the war with Britain. He was captain of the Chesapeake and his famous saying “Don’t give up the ship!” was incorporated in the borough seal of Lawrenceville.',
+'In the days before industry invaded its boundaries or paved roads curled through its neighborhoods, when Pittsburgh was in its youth, there was a farm called ï¿½Good Liquorï¿½ outside of the city. Owned by Alexander Hill, part of the farm was located within the existing Lawrenceville border. Later on, in 1814, William B. Foster purchased a 133-acre tract of land outside of Pittsburgh along the Allegheny River. In that same year, he would sell 30 acres of that property to the Federal Government. While Allegheny Arsenal was being built to provide supplies to the warring Union Troops during the civil war, Foster was starting to establish a community called Lawrenceville. The picturesque area was named for Captain James Lawrence who gained fame in the war with Britain. He was captain of the Chesapeake and his famous saying ï¿½Donï¿½t give up the ship!ï¿½ was incorporated in the borough seal of Lawrenceville.',
 'https://churchbrew.com/wp-content/themes/yeast/img/logo.png',
 0, 1, 1);
 
@@ -307,7 +307,7 @@ Sunday: 1:00PM - 7:00PM',
 '3711 Charlotte Street Pittsburgh, PA, 15201',
 -79.9654959,
 40.467035,
-' opened in September of 2017 in the Lawrenceville neighborhood of Pittsburgh. Located in an old gas grill/gas light showroom, they operate a 20bbl brewhouse producing a wide variety of beer. From lagers to IPA’s, stouts, and sours, there is something for everyone. Owners Keana and Matt McMahon also work hard to integrate the community as well as many local charity events.',
+' opened in September of 2017 in the Lawrenceville neighborhood of Pittsburgh. Located in an old gas grill/gas light showroom, they operate a 20bbl brewhouse producing a wide variety of beer. From lagers to IPAï¿½s, stouts, and sours, there is something for everyone. Owners Keana and Matt McMahon also work hard to integrate the community as well as many local charity events.',
 'https://images.squarespace-cdn.com/content/v1/581b7f8f5016e11e7853bdb8/1621882414394-09CSLC50LHDWXFGVDMK0/DSC_0748.jpg?format=1500w',
 0,1,1);
 
@@ -367,7 +367,7 @@ Sunday: closed',
 '501 E Ohio St, Pittsburgh, PA 15209',
 -79.9683263,
 40.4787114,
-'Strange Roots Experimental Ales is the evolution of Draai Laag Brewing Company, which was dedicated solely to spontaneously fermented sour and wild beer. The name change reflects the brewery’s diversification and creative expansion into a wider range of beer styles, while remaining committed to locally foraged and sourced ingredients and unique brews created from scratch. Their focus on terroir yields unique vintages in many of their beers, tied to a specific time, place, and the passionate people who bring their mission to life.',
+'Strange Roots Experimental Ales is the evolution of Draai Laag Brewing Company, which was dedicated solely to spontaneously fermented sour and wild beer. The name change reflects the breweryï¿½s diversification and creative expansion into a wider range of beer styles, while remaining committed to locally foraged and sourced ingredients and unique brews created from scratch. Their focus on terroir yields unique vintages in many of their beers, tied to a specific time, place, and the passionate people who bring their mission to life.',
 'http://www.strangerootsbeer.com/wp-content/themes/strangeroots/assets/images/logo.png',
 1,1,1);
 
@@ -458,7 +458,7 @@ Sunday: closed',
 '512 Braddock Ave, Braddock, PA 15104',
 -79.870300,
 40.404110,
-'Run by a small team with a devoted attention to detail, Brew Gentlemen is recognized as a leading brewery both locally and nationally. Founded by two college friends who dropped everything to carve their own path in the beer industry, Brew Gentlemen has developed their reputation within the Pittsburgh brewing scene for making soft, balanced beers - best exemplified by their flagship IPA, General Braddock’s. Based in the historic steel town of Braddock, twenty minutes east of downtown Pittsburgh, along the Monongahela River. Located in a renovated electrical supply storefront and warehouse in the shadow of the still-operating Edgar Thomson Works, the first Bessemer steel plant built by Andrew Carnegie.',
+'Run by a small team with a devoted attention to detail, Brew Gentlemen is recognized as a leading brewery both locally and nationally. Founded by two college friends who dropped everything to carve their own path in the beer industry, Brew Gentlemen has developed their reputation within the Pittsburgh brewing scene for making soft, balanced beers - best exemplified by their flagship IPA, General Braddockï¿½s. Based in the historic steel town of Braddock, twenty minutes east of downtown Pittsburgh, along the Monongahela River. Located in a renovated electrical supply storefront and warehouse in the shadow of the still-operating Edgar Thomson Works, the first Bessemer steel plant built by Andrew Carnegie.',
 'https://cdn.shopify.com/s/files/1/0306/2467/8023/files/img_2095_1950x.jpg?v=1616531747',
 0,0,1);
 INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open)
@@ -475,7 +475,7 @@ Sunday: 11:00AM - 10:00PM',
 '2705 S Water St, Pittsburgh, PA 15203',
 -79.964500,
 40.428780,
-'Hofbräuhaus was built on the love of beer. What started as a demand for better brew has turned into a 400-year tradition of pure flavor. We’ve taken four natural ingredients barley, yeast, hops and water from Munich, Germany to across the world in what has become a true bier revolution. You can carry on the tradition by bringing another Hofbräuhaus location to beer lovers everywhere.',
+'Hofbrï¿½uhaus was built on the love of beer. What started as a demand for better brew has turned into a 400-year tradition of pure flavor. Weï¿½ve taken four natural ingredients barley, yeast, hops and water from Munich, Germany to across the world in what has become a true bier revolution. You can carry on the tradition by bringing another Hofbrï¿½uhaus location to beer lovers everywhere.',
 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Hb_muenchen_4c_pos_hoch.svg/1200px-Hb_muenchen_4c_pos_hoch.svg.png',
 0,0,1);
 GO
@@ -818,7 +818,7 @@ VALUES('French Toast Revolution',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Gristly Bear Brown',
-'This ale’s chestnut hue is punctuated with a fluffy white head. Nutty, malty, full bodied, and silky smooth with hints of caramel and coffee.',
+'This aleï¿½s chestnut hue is punctuated with a fluffy white head. Nutty, malty, full bodied, and silky smooth with hints of caramel and coffee.',
 'https://untappd.akamaized.net/photos/2022_04_02/56ae2db75b160336f003ebf3d9162d69_640x640.jpg',
 1,
 5.3,
@@ -1069,7 +1069,7 @@ VALUES('Wrecreational Wheat',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('SAHR PAHR SERIES: GOMANGO',
-'Delicious Mango flavors with a slightly tart finish. Sure to be a summer favorite… GO-MANGO!',
+'Delicious Mango flavors with a slightly tart finish. Sure to be a summer favoriteï¿½ GO-MANGO!',
 'https://untappd.akamaized.net/photos/2022_02_04/1687b1df2fafc880f6cde7410b61ecd9_640x640.jpg',
 1,
 6.2,
@@ -1100,7 +1100,7 @@ VALUES('NEON TURTLES',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('BERRY BUSH WHEAT',
-'Fruited with Açaí and blackberries make this beer light and fruity.',
+'Fruited with Aï¿½aï¿½ and blackberries make this beer light and fruity.',
 'https://untappd.akamaized.net/photos/2021_07_24/2166fd8654570ceeccc06a7f1dadaa59_640x640.jpg',
 1,
 5,
@@ -1110,7 +1110,7 @@ VALUES('BERRY BUSH WHEAT',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('KING LUMI',
-'Mosaic and Strata hops form a smooth and tropical mouthfeel along with hints of mango and ripe pineapple. “Everything the light touches is Lumi’s…”',
+'Mosaic and Strata hops form a smooth and tropical mouthfeel along with hints of mango and ripe pineapple. ï¿½Everything the light touches is Lumiï¿½sï¿½ï¿½',
 'https://untappd.akamaized.net/photos/2021_12_27/653e735373df20e6216f133694366b3c_640x640.jpg',
 1,
 6,
@@ -1131,7 +1131,7 @@ Light to medium mouthfeel',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('GOAT FACE KILLA',
-'Maibock – A strong malty German-style lager beer traditionally associated with the month of May. Crisp bittering maintains drinkability despite increased malt character.',
+'Maibock ï¿½ A strong malty German-style lager beer traditionally associated with the month of May. Crisp bittering maintains drinkability despite increased malt character.',
 'https://untappd.akamaized.net/photos/2022_02_23/780c21a2df8c03b716d9be8d29417a33_640x640.jpg',
 1,
 7,
@@ -1151,7 +1151,7 @@ VALUES('PITTSBURGH PALE ALE',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('FIELD RATION',
-'Belgian-style Farmhouse Ale – Combination of Belgian and French Farmhouse yeast provides complex flavors of crushed flowers, stone fruit, and hints of lemon. Finishes dry and delicate.',
+'Belgian-style Farmhouse Ale ï¿½ Combination of Belgian and French Farmhouse yeast provides complex flavors of crushed flowers, stone fruit, and hints of lemon. Finishes dry and delicate.',
 'https://untappd.akamaized.net/photos/2021_07_31/faad430e1e5322934b2228c70b8b117a_640x640.jpg',
 1,
 5.2,
@@ -1254,7 +1254,7 @@ VALUES('IPA',
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Phin & Matts Extraordinary Ale',
 '*Formerly PMX* - To label a beer as extraordinary is to have complete trust in its ingredients. Crystal filtered artesian water, whole hops, and the choicest malted barley create this American-style pale ale. The character of American pale ales varies from region to region and is dependent upon the ingredients used. In Phin
-& Matt’s, one can expect harmony between malt and hops without dominating tastes of sweet
+& Mattï¿½s, one can expect harmony between malt and hops without dominating tastes of sweet
 or bitter.',
 'https://untappd.akamaized.net/photos/2022_04_09/da98e771fdc880172f52dff6325e715e_640x640.jpg',
 1,
@@ -1265,8 +1265,8 @@ or bitter.',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Thick Mint',
-'Inspired by the legendary cookie, Thick Mint joins our world-class rated Blackwater Series of dessert beers alongside Creme Brûlée, Choklat Oranj, Salted Caramel & Choklat in 2017. This imperial stout is a mouthful of perfectly
-balanced mint & chocolate. Roasty malts coalesce with notes of Belgian dark chocolate, sweet mint & just a touch of sweet caramel. So decadently delicious, you’ll wish you’d bought another box... er, bottle.',
+'Inspired by the legendary cookie, Thick Mint joins our world-class rated Blackwater Series of dessert beers alongside Creme Brï¿½lï¿½e, Choklat Oranj, Salted Caramel & Choklat in 2017. This imperial stout is a mouthful of perfectly
+balanced mint & chocolate. Roasty malts coalesce with notes of Belgian dark chocolate, sweet mint & just a touch of sweet caramel. So decadently delicious, youï¿½ll wish youï¿½d bought another box... er, bottle.',
 'https://untappd.akamaized.net/photos/2022_04_12/f237da46f085a856622db74999a53159_640x640.jpg',
 1,
 10,
@@ -1368,7 +1368,7 @@ VALUES('RIVERSCAPE',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('NOT ALWAYS PRESENT',
-'A traditional German Kolsch-style ale. It’s a crusher with sweet fruit character from the German Pilsner malt and variety of German Noble hops, and a perfect crackery, bready finish. A true all day drinker.',
+'A traditional German Kolsch-style ale. Itï¿½s a crusher with sweet fruit character from the German Pilsner malt and variety of German Noble hops, and a perfect crackery, bready finish. A true all day drinker.',
 'https://untappd.akamaized.net/photos/2022_04_09/a5c529653decfb2ecf17de81ca3d6e44_640x640.jpg',
 1,
 4.8,
@@ -1440,7 +1440,7 @@ VALUES('2FB Pale Ale',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Burning Lips',
-'Benefits the first women owned & operated brewery in rwanda! A crispy lager that’s a bit different. Clean drinking with Herbal notes from the hibiscus additions. Made with PA-sourced ingredients.',
+'Benefits the first women owned & operated brewery in rwanda! A crispy lager thatï¿½s a bit different. Clean drinking with Herbal notes from the hibiscus additions. Made with PA-sourced ingredients.',
 'https://untappd.akamaized.net/photos/2022_03_31/cdbfbe9fc9710a217743f10daff89b09_640x640.jpg',
 1,
 5.6,
@@ -1499,7 +1499,7 @@ VALUES('Its Always Sunny With A Beer',
 9);
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('Jen’s',
+VALUES('Jenï¿½s',
 'This light-bodied, slightly roasty, easy drinking porter is available year round, as dictated by its namesake.',
 'https://untappd.akamaized.net/photos/2022_03_25/039abb01bc2108851de61eb73d611704_640x640.jpg',
 1,
@@ -1774,7 +1774,7 @@ VALUES('BLACKBERRY QUAD',
 7);
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('THUNDER HAZE •',
+VALUES('THUNDER HAZE ï¿½',
 'this New England style ipa is loaded with lots of tropical and ripe fruit. Brewed with oats and wheat that give this brew a soft juicy mouthfeel with peach and citrus in the nose and pineapple and blueberry in the flavor. Enjoy!!',
 'https://untappd.akamaized.net/photos/2022_04_10/e5715eadde9f5666d1201023ba3f12e4_640x640.jpg',
 1,
@@ -1836,7 +1836,7 @@ VALUES('MOVING CASTLE IV',
 6);
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('SURE, YOU’RE RIGHT',
+VALUES('SURE, YOUï¿½RE RIGHT',
 'IPA brewed with Citra and Idaho 7 hops. Notes of Pineapple, Overripe Stone Fruit and Spicy Honey. Dedicated to the best MC with no chain you ever heard.',
 'https://untappd.akamaized.net/photos/2022_04_14/0b6a5197cd245e436638bdfafd63d092_640x640.jpg',
 1,
@@ -2051,7 +2051,7 @@ VALUES('WHITE MAGICK OF THE SUN',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('WYNONAS BIG BROWN ALE',
-'Wynona’s Big Brown Ale is our big American Brown Ale. Generous amounts of Brown Malt coupled with our house ale yeast result in a robust and smooth ale with just enough bitterness to balance it out with a malty-rich backbone with notes of coffee, chocolate, and toffee.',
+'Wynonaï¿½s Big Brown Ale is our big American Brown Ale. Generous amounts of Brown Malt coupled with our house ale yeast result in a robust and smooth ale with just enough bitterness to balance it out with a malty-rich backbone with notes of coffee, chocolate, and toffee.',
 'https://untappd.akamaized.net/photos/2022_04_09/57c10c559c3e3e2bfb5bb4183c6eb35c_640x640.jpg',
 1,
 7.5,
@@ -2111,7 +2111,7 @@ VALUES('CALVES LIKES DIAMONDS',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('COWBELL',
-'Our double chocolate oatmeal imperial milk stout delivers rich flavors of chocolate and roasty malt. With a big body and velvety chocolate goodness this beer will fulfill your prescription for “more cowbell”',
+'Our double chocolate oatmeal imperial milk stout delivers rich flavors of chocolate and roasty malt. With a big body and velvety chocolate goodness this beer will fulfill your prescription for ï¿½more cowbellï¿½',
 'https://untappd.akamaized.net/photos/2022_04_13/c816a442ece90b692b3afd9caf3d18ae_640x640.jpg',
 1,
 8.5,
@@ -2131,7 +2131,7 @@ VALUES('EMPTY CALORIES',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('FASHION KILLA',
-'NEIPA dry hopped at over 5lb/bbl with YCH’s proprietary Cryo POP blend, Sultana and our hand-selected Mosaic',
+'NEIPA dry hopped at over 5lb/bbl with YCHï¿½s proprietary Cryo POP blend, Sultana and our hand-selected Mosaic',
 'https://untappd.akamaized.net/photos/2022_04_07/3e363f00f39379b93aa18277683329b6_640x640.jpg',
 1,
 7.2,
@@ -2174,7 +2174,7 @@ VALUES('Kill Switch',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Capsized',
-'This collaboration with New Jersey’s Ship Bottom Brewery begins with our crushable, lemony Grisette and ends with a pile of hibiscus flowers walking the plan into the tank. The addition provides subtle tartness with notes of berry, a tea-like herbal quality, and a brilliant color that’ll shiver all of your timbers. Whatever that means.',
+'This collaboration with New Jerseyï¿½s Ship Bottom Brewery begins with our crushable, lemony Grisette and ends with a pile of hibiscus flowers walking the plan into the tank. The addition provides subtle tartness with notes of berry, a tea-like herbal quality, and a brilliant color thatï¿½ll shiver all of your timbers. Whatever that means.',
 'https://necromancer.beer/wp-content/uploads/2022/04/caspizedweb.png',
 1,
 4.5,
@@ -2194,7 +2194,7 @@ VALUES('Rag and Bone',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Valkyrie',
-'A roasty, malty foundation, rich in notes of chocolate, burnt caramel, and smooth sweetness, meets robust locally-roasted coffee from our friends at Press House. It’s the perfect companion to whatever is fresh-made today.',
+'A roasty, malty foundation, rich in notes of chocolate, burnt caramel, and smooth sweetness, meets robust locally-roasted coffee from our friends at Press House. Itï¿½s the perfect companion to whatever is fresh-made today.',
 'https://untappd.akamaized.net/photos/2022_04_09/be57aa635f5220d0f2eb239b7fb31cb8_640x640.jpg',
 1,
 8.4,
@@ -2204,7 +2204,7 @@ VALUES('Valkyrie',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Keres',
-'We brewed this one with Valkyrie’s beloved and delicious strawberry doughnuts in mind, but don’t be bashful with discovering your own favorite pairing. A quick dip into the underworld is a small price to pay to find the perfect match.',
+'We brewed this one with Valkyrieï¿½s beloved and delicious strawberry doughnuts in mind, but donï¿½t be bashful with discovering your own favorite pairing. A quick dip into the underworld is a small price to pay to find the perfect match.',
 'https://untappd.akamaized.net/photos/2022_04_08/0e17ed84ae6420708feec28a27ab3ff0_640x640.jpg',
 1,
 5.8,
@@ -2214,7 +2214,7 @@ VALUES('Keres',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Pacific Gravity',
-'Get amped up for some gnarly waves of hoppy goodness, as we paddle out to IPA’s other coast. The haze reigns these days, but this foam leads to a groundswell of complex balance that can only be found by boldly riding the bitter side of hops.',
+'Get amped up for some gnarly waves of hoppy goodness, as we paddle out to IPAï¿½s other coast. The haze reigns these days, but this foam leads to a groundswell of complex balance that can only be found by boldly riding the bitter side of hops.',
 'https://untappd.akamaized.net/photos/2022_04_09/1124d37d0352a798206daf386ea2b8bb_640x640.jpg',
 1,
 6.8,
@@ -2338,7 +2338,7 @@ VALUES('New Mexico Pale Ale',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('False Start',
-'Hazy IPA with huge notes of pineapple and crazy hops from start to finish. Floral nose with a resinous bite, this is one brew you don’t want to miss',
+'Hazy IPA with huge notes of pineapple and crazy hops from start to finish. Floral nose with a resinous bite, this is one brew you donï¿½t want to miss',
 'https://untappd.akamaized.net/photos/2022_04_10/e6f1ba3ad752c4be75e712a018c40839_640x640.jpg',
 1,
 6,
@@ -2418,7 +2418,7 @@ VALUES('Scruffator',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('Punk IPA ',
-'Punk IPA is the beer that kick-started it. This light, golden classic has been subverted with new world hops to create an explosion of flavour. Bursts of caramel and tropical fruit with an all-out riot of grapefruit, pineapple and lychee, precede a spiky bitter finish. This is the beer that started it all - and it’s not done yet...',
+'Punk IPA is the beer that kick-started it. This light, golden classic has been subverted with new world hops to create an explosion of flavour. Bursts of caramel and tropical fruit with an all-out riot of grapefruit, pineapple and lychee, precede a spiky bitter finish. This is the beer that started it all - and itï¿½s not done yet...',
 'https://untappd.akamaized.net/photos/2022_04_14/89f2d8245a7eac51e6085bff6cac3f6b_640x640.jpg',
 1,
 5.2,
@@ -2450,7 +2450,7 @@ VALUES('GENERAL BRADDOCKS',
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
 VALUES('DEEP BREAKFAST',
-'Made with lactose sugar and Deeper Roots Losantiville Blend coffee. Reminds of us fudge brownies, espresso shots, and walking into class with “coffee” in your mug.',
+'Made with lactose sugar and Deeper Roots Losantiville Blend coffee. Reminds of us fudge brownies, espresso shots, and walking into class with ï¿½coffeeï¿½ in your mug.',
 'https://untappd.akamaized.net/photos/2022_04_09/c5ca69d1beaf7e829480337beb8cfcea_640x640.jpg',
 1,
 4.2,
@@ -2581,8 +2581,8 @@ VALUES('Prototype 11',
 --hofbrauhaus
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('Hofbräu Original',
-'Hofbräuhaus is a symbol of Munich’s hospitality and the Bavarian gift for creating a snug and cosy atmosphere. Beer-lovers from all over the world come here to enjoy its famous beers. More than any other, Hofbräu Original embodies the special atmosphere of the beer-making capital of Munich, and exports it to the four corners of the globe. Its refreshing, bitter flavour and alcoholic content of around 5.1% volume have made it famous worldwide. A Munich beer with character.',
+VALUES('Hofbrï¿½u Original',
+'Hofbrï¿½uhaus is a symbol of Munichï¿½s hospitality and the Bavarian gift for creating a snug and cosy atmosphere. Beer-lovers from all over the world come here to enjoy its famous beers. More than any other, Hofbrï¿½u Original embodies the special atmosphere of the beer-making capital of Munich, and exports it to the four corners of the globe. Its refreshing, bitter flavour and alcoholic content of around 5.1% volume have made it famous worldwide. A Munich beer with character.',
 'https://untappd.akamaized.net/photos/2022_04_14/8261323007ab525089a120e7bc454515_640x640.jpg',
 1,
 5.1,
@@ -2591,8 +2591,8 @@ VALUES('Hofbräu Original',
 20);
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('Hofbräu Dunkel / Dunkel Gold',
-'Dark beer existed in Bavaria long before light beer. This was the first type of beer to be brewed at Hofbräuhaus when it was founded. Today, when beer-lovers all over the world talk about dark beer, they usually mean a Munich style beer. Today, Hofbräu Dunkel - the archetypal Bavarian beer - is still as popular as ever. With its alcoholic content of around 5.5% volume and its spicy taste, it’s a refreshing beer that suits all kinds of occasions. A beer in the traditional Munich style!',
+VALUES('Hofbrï¿½u Dunkel / Dunkel Gold',
+'Dark beer existed in Bavaria long before light beer. This was the first type of beer to be brewed at Hofbrï¿½uhaus when it was founded. Today, when beer-lovers all over the world talk about dark beer, they usually mean a Munich style beer. Today, Hofbrï¿½u Dunkel - the archetypal Bavarian beer - is still as popular as ever. With its alcoholic content of around 5.5% volume and its spicy taste, itï¿½s a refreshing beer that suits all kinds of occasions. A beer in the traditional Munich style!',
 'https://untappd.akamaized.net/photos/2022_04_14/ba2a86c00a861ee60688b08203a96be8_640x640.jpg',
 1,
 5.5,
@@ -2601,8 +2601,8 @@ VALUES('Hofbräu Dunkel / Dunkel Gold',
 20);
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('Münchner Weisse',
-'Once upon a time, Weissbier could only be brewed by ducal privilege. Hofbräuhaus enjoyed this exclusive right for nearly 200 years, thus holding a monopoly on Weissbier in Bavaria. But even without a monopoly, Münchner Weisse is a really special kind of beer. What could be more pleasurable than quenching your thirst with a deliciously yeasty Weissbier, and savouring the tingling, fizzy sensation in your mouth? With an alcoholic content of around 5,1% volume, its pure, refreshing enjoyment.',
+VALUES('Mï¿½nchner Weisse',
+'Once upon a time, Weissbier could only be brewed by ducal privilege. Hofbrï¿½uhaus enjoyed this exclusive right for nearly 200 years, thus holding a monopoly on Weissbier in Bavaria. But even without a monopoly, Mï¿½nchner Weisse is a really special kind of beer. What could be more pleasurable than quenching your thirst with a deliciously yeasty Weissbier, and savouring the tingling, fizzy sensation in your mouth? With an alcoholic content of around 5,1% volume, its pure, refreshing enjoyment.',
 'https://untappd.akamaized.net/photos/2022_04_13/1204ba6a6c5b7bd25b022ddf203c7b95_640x640.jpg',
 1,
 5.1,
@@ -2611,7 +2611,7 @@ VALUES('Münchner Weisse',
 20);
 
 INSERT INTO beers (name, description, image, is_avaliable, abv, category, GF, brewery_id)
-VALUES('Hofbräu Hopfen Spezial',
+VALUES('Hofbrï¿½u Hopfen Spezial',
 'An Amber Pale Lager with a slightly higher alcohol level and a rich amount of hops.',
 'https://untappd.akamaized.net/photos/2022_04_12/f464cbb969d0cf0b1ad784a0af3efac3_640x640.jpg',
 1,

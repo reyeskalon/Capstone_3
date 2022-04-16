@@ -22,6 +22,16 @@ namespace Capstone.Controllers
         {
             return UserDao.GetUsers();
         }
+        [HttpPut("/approvebrewer/{username}")]
+        public ReturnUser MakeBrewer(string username)
+        {
+            return UserDao.ApproveBrewer(username);
+        }
+        [HttpPut("/denybrewer/{username}")]
+        public ReturnUser DenyBrew(string username)
+        {
+            return UserDao.DenyBrewer(username);
+        }
     }
 
 }
