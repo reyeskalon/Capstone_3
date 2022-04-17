@@ -13,5 +13,6 @@ namespace Capstone.DAO
         List<Brewery> GetAllBreweries();
         Brewery UpdateBrewery(Brewery brewery);
         Brewery ToggleActivation(Brewery brewery);
+        Brewery AddBrewery(Brewery brewery);
     }
 }

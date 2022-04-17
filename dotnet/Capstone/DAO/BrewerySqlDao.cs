@@ -147,6 +147,40 @@ namespace Capstone.DAO
             }
             return brewery;
         }
+        public Brewery AddBrewery(Brewery brewery)
+        {
+            
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open) " +
+                                                    "VALUES(@name, 'hours', @phone_number, 'website', @address, @longitude, @latitude, 'history', 'image', @GF_food, @GF_beer, 1); ", conn);
+                    cmd.Parameters.AddWithValue("@name", brewery.Name);
+                    /* cmd.Parameters.AddWithValue("@hours", brewery.HoursOfOperation);
+                    cmd.Parameters.AddWithValue("@history", brewery.History);
+                    cmd.Parameters.AddWithValue("@website", brewery.WebsiteURL);
+                    cmd.Parameters.AddWithValue("@image", brewery.ImgURL);*/
+                    cmd.Parameters.AddWithValue("@phone_number", brewery.PhoneNumber);
+                    cmd.Parameters.AddWithValue("@address", brewery.Address);
+                    cmd.Parameters.AddWithValue("@longitude", brewery.Longitude);
+                    cmd.Parameters.AddWithValue("@latitude", brewery.Latitude);
+                    cmd.Parameters.AddWithValue("@GF_food", brewery.HasGlutenFreeFood);
+                    cmd.Parameters.AddWithValue("@GF_beer", brewery.HasGlutenFreeBeer);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+            return brewery;
+        }
         public Brewery CreateBreweryFromReader(SqlDataReader reader)
         {
             Brewery brewery = new Brewery();
@@ -156,8 +190,8 @@ namespace Capstone.DAO
             brewery.PhoneNumber = Convert.ToString(reader["phone_number"]);
             brewery.WebsiteURL = Convert.ToString(reader["website"]);
             brewery.Address = Convert.ToString(reader["address"]);
-            brewery.Longitude = Convert.ToDouble(reader["longitude"]);
-            brewery.Latitude = Convert.ToDouble(reader["latitude"]);
+            brewery.Longitude = Convert.ToInt32(reader["longitude"]);
+            brewery.Latitude = Convert.ToInt32(reader["latitude"]);
             brewery.History = Convert.ToString(reader["history"]);
             brewery.ImgURL = Convert.ToString(reader["image"]);
             brewery.HasGlutenFreeFood = Convert.ToBoolean(reader["GF_food"]);

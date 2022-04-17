@@ -2,39 +2,39 @@
     <form action="" id="brewery-form">
         <div class="flex-wrapper">
             <label for="brewery-name" class="form-label">Name: </label>
-            <input type="text" id="brewery-name" v-model="currentBrewery.Name" class="form-input">
+            <input placeholder="Name" type="text" id="brewery-name" v-model="currentBrewery.Name" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Hours: </label>
-            <input type="text" v-model="currentBrewery.Hours" class="form-input">
+            <input placeholder="Hours" type="text" id="hours" v-bind="currentBrewery.Hours" v-model="currentBrewery.Hours" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Phone Number: </label>
-            <input type="text" v-model="currentBrewery.PhoneNumber" class="form-input">
+            <input placeholder="Phone Number" type="text" id="phone-number" v-model="currentBrewery.PhoneNumber" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Website: </label>
-            <input type="text" v-model="currentBrewery.Website" class="form-input">
+            <input placeholder="Website" type="text" id="Website" v-model="currentBrewery.Website" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Address: </label>
-            <input type="text" v-model="currentBrewery.Address" class="form-input">
+            <input placeholder="Address" type="text" v-model="currentBrewery.Address" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Longitude: </label>
-            <input type="text" v-model="currentBrewery.Longitude" class="form-input">
+            <input placeholder="Longitude" type="text" v-model="currentBrewery.Longitude" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Latitude: </label>
-            <input type="text" v-model="currentBrewery.Latitude" class="form-input">
+            <input placeholder="Latitude" type="text" v-model="currentBrewery.Latitude" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">History: </label>
-            <input type="text" v-model="currentBrewery.History" class="form-input">
+            <input placeholder="History" type="text" v-model="currentBrewery.History" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Brewery Image: </label>
-            <input type="text" v-model="currentBrewery.Image" class="form-input">
+            <input placeholder="Please link an image" type="text" v-model="currentBrewery.Image" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Gluten Free Beer: </label>
@@ -44,35 +44,58 @@
         </div>
         <div class="flex-wrapper">
             <button type="submit" id="cancel">Cancel</button>
-            <button type="submit" id="submit">Submit</button>
+            <button type="submit" id="submit" v-on:click.prevent="AddBrewboi">Submit</button>
         </div>
         
     </form>
 </template>
 
 <script>
+import BreweryService from '../services/BreweryService.js';
 export default {
     data(){
         return {
             currentBrewery: {
-                Id: null,
                 Name: "",
                 Hours: "",
                 PhoneNumber: "",
                 Website: "",
                 Address: "",
-                Longitude: null,
-                Latitude: null,
+                Longitude: 1,
+                Latitude: 1,
                 History: "",
                 Image: "",
                 GlutenFreeFood: false,
                 GlutenFreeBeer: false,
                 IsOpen: true
-            }
-        }
+            },
+            addBreweryErrors: false,
+            addBreweryErrorMessage: 'There were problems adding this brewer'
+        };
     },
     methods:{
-
+        AddBrewboi() {
+            BreweryService
+            .AddBrewery(this.currentBrewery)
+            .then((response) => {
+                if(response.status == 201) {
+                    this.$router.push({
+                        path: '/admin',
+                    });
+                }
+            })
+            .catch((error) => {
+                const response = error.response;
+                this.addBreweryErrors = true;
+                if (response.status === 400){
+                    this.addBreweryErrorMessage = 'Validation Error'
+                }
+            });
+        },
+        clearErrors() {
+            this.addBreweryErrors = false;
+            this.addBreweryErrorMessage = 'There were problems registering this brewer.';
+    }
     },
     props: ['Brewery']
 }
