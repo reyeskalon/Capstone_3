@@ -13,8 +13,8 @@ namespace Capstone.Models
         public string PhoneNumber { get; set; }
         public string WebsiteURL { get; set; }
         public string Address { get; set; }
-        public double Longitude { get; set; }
-        public double Latitude { get; set; }
+        public int Longitude { get; set; }
+        public int Latitude { get; set; }
         public string History { get; set; }
         public string ImgURL { get; set; }
         public bool HasGlutenFreeFood { get; set; }

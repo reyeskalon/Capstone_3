@@ -41,5 +41,10 @@ namespace Capstone.Controllers
         {
             return BreweryDao.ToggleActivation(brewery);
         }
+        [HttpPost ("/newbrewery")]
+        public Brewery AddBrewery(Brewery brewery)
+        {
+            return BreweryDao.AddBrewery(brewery);
+        }
     }
 }
