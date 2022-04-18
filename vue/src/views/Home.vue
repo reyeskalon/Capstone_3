@@ -1,15 +1,16 @@
 <template>
   <main>
-    <h1>Drop-A-Pint</h1>
-    <GoogleMap></GoogleMap>
+    <GmapMap></GmapMap>
   </main>
 </template>
 
 <script>
-import GoogleMap from '../components/GoogleMap.vue'
+import GmapMap from '../components/GoogleMap.vue'
 
 export default {
+  name: 'google-map',
   components: {
-    GoogleMap
+    GmapMap
   }
 }
+</script>
