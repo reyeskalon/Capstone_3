@@ -10,5 +10,8 @@ namespace Capstone.Models
         public int ReviewId { get; set; }
         public double Rating { get; set; }
         public string ReviewText { get; set; }
+        public int BeerId { get; set; }
+        public int UserId { get; set; }
+        
     }
 }

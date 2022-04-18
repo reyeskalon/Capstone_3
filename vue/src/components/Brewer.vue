@@ -1,6 +1,6 @@
 <template>
     <div id="brewerCard">
-        <h>{{brewer.username}}</h>
+        <h1>{{brewer.username}}</h1>
     </div>
 </template>
 

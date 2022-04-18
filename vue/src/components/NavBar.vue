@@ -30,7 +30,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url("https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
 }
 
 #logo {
@@ -44,7 +43,7 @@ export default {
 
 .link-container {
     height: 15px;
-    border: white 2px solid;
+    border: black 2px solid;
     border-radius: 15px;
     margin: 15px;
     padding: 15px;
@@ -58,7 +57,7 @@ export default {
 
 .link {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 #logo-container {

@@ -207,12 +207,40 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("SELECT reviews.review_id, rating, review_body " +
-                                                    "FROM reviews " +
-                                                    "JOIN reviewbeer " +
-                                                    "ON reviews.review_id = reviewbeer.review_id " +
+                    SqlCommand cmd = new SqlCommand("SELECT * " +
+                                                    "FROM beer_reviews " +
                                                     "WHERE beer_id = @beer_id; ", conn);
                     cmd.Parameters.AddWithValue("@beer_id", beerId);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Review review = GetReviewFromReader(reader);
+                        reviews.Add(review);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return reviews;
+        }
+        public List<Review> GetUsersBeerReviews(int userId)
+        {
+            List<Review> reviews = new List<Review>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT review_id, rating, review_body, beer_id, user_id " +
+                                                    "FROM beer_reviews " +
+                                                    "WHERE user_id = @user_id; ", conn);
+                    cmd.Parameters.AddWithValue("@user_id", userId);
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
@@ -251,8 +279,38 @@ namespace Capstone.DAO
             {
                 ReviewId = Convert.ToInt32(reader["review_id"]),
                 Rating = Convert.ToInt32(reader["rating"]),
-                ReviewText = Convert.ToString(reader["review_body"])
+                ReviewText = Convert.ToString(reader["review_body"]),
+                BeerId = Convert.ToInt32(reader["beer_id"]),
+                UserId = Convert.ToInt32(reader["user_id"])
             };
+
+            return review;
+        }
+       public  Review SubmitNewReview(Review review)
+       {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO beer_reviews (rating, review_body, beer_id, user_id) " +
+                        "OUTPUT INSERTED.review_id " +
+                        "VALUES(@rating, @review_text, @beer_id, @user_id);", conn);
+                    cmd.Parameters.AddWithValue("@rating", review.Rating);
+                    cmd.Parameters.AddWithValue("@review_text", review.ReviewText);
+                    cmd.Parameters.AddWithValue("@beer_id", review.BeerId);
+                    cmd.Parameters.AddWithValue("@user_id", review.UserId);
+
+                    review.ReviewId = Convert.ToInt32(cmd.ExecuteScalar());
+
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
 
             return review;
         }
