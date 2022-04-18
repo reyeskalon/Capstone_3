@@ -1,7 +1,7 @@
 <template>
   <div>
       <section class="section-featured">
-        <div class="container">
+        <div class="container-featured">
             <h2 class="heading-featured-in">As featured In</h2>
             <div class="logos">
                 <img src="../assets/pngs/fast_company_logo.png" alt="fast_company_logo">
@@ -30,12 +30,13 @@ export default {
 }
 
 .heading-featured-in {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 0.75px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 2.4rem;
+    display: block;
 }
 
 .logos {
@@ -44,7 +45,7 @@ export default {
 }
 
 .logos img {
-    height: 3.2rem;
+    height: 4rem;
     filter: brightness(0);
 }
 
