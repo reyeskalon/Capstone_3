@@ -10,6 +10,7 @@ import BrewerPage from '../views/BrewerPage.vue'
 import BeerLoverPage from '../views/BeerLoverPage.vue'
 import ReviewForm from '../components/ReviewForm.vue'
 
+import BeerPage from '../views/BeerPage.vue'
 Vue.use(Router)
 
 /**
@@ -82,9 +83,15 @@ const router = new Router({
       }
     },
     {
+<<<<<<< HEAD
       path: "/reviews",
       name: "revies",
       component: ReviewForm,
+=======
+      path: "/beerpage",
+      name: "beerpage",
+      component: BeerPage,
+>>>>>>> 1852caee31a977b2bd78b62957b359dd9285910e
       meta: {
         requiresAuth: false
       }

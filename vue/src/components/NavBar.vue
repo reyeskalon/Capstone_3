@@ -30,6 +30,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: rgb(148,35,224);
+    background: linear-gradient(25deg, rgba(148,35,224,1) 5%, rgba(255,14,250,1) 52%, rgba(252,176,69,1) 100%);
 }
 
 #logo {

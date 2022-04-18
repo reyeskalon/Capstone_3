@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
-    <features />
-    <featured-in />
-  </div>
+  <main>
+    <GmapMap></GmapMap>
+  </main>
 </template>
 
 <script>
-import FeaturedIn from '../components/FeaturedIn.vue';
-import Features from '../components/Features.vue';
+import GmapMap from '../components/GoogleMap.vue'
 
 export default {
-  components: { Features, FeaturedIn },
-  name: "home",
-};
+  name: 'google-map',
+  components: {
+    GmapMap
+  }
+}
 </script>
