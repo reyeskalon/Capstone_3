@@ -1,9 +1,9 @@
 <template>
     <GmapMap
-        :center="{lat:40.440624, lng:-79.995888}"
-        :zoom="15"
+        :center="{lat:40.442829, lng:-79.995888}"
+        :zoom="12"
         map-type-id="terrain"
-        style="height: 100vh"
+        style="width: 100%; height: 500px"
     >
         <GmapMarker
             :key="index"
@@ -19,6 +19,5 @@
 
 <script>
 export default {
-    name: "home"
 }
 </script>
