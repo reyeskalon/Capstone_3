@@ -10,6 +10,9 @@ export default {
     },
     GetBeerDescription(beerDescription){
         return axios.get('/beer/' + beerDescription)
+    },
+    GetAllBeers() {
+        return axios.get('/beers')
     }
 }
 

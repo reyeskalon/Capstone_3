@@ -17,5 +17,6 @@ namespace Capstone.DAO
         List<Review> GetReviewsForBeer(int beerId);
         Review SubmitNewReview(Review review);
         List<Review> GetUsersBeerReviews(int userId);
+        List<Beer> GetAllBeers();
     }
 }
