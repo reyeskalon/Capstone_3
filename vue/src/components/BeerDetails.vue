@@ -1,3 +1,4 @@
+
 <template>
     <div id="beer-card">
         <div id="beer-image" class="prop-wrapper">
@@ -27,7 +28,6 @@ export default {
 
 }
 </script>
-
 
 <style scoped>
 #beer.name{
