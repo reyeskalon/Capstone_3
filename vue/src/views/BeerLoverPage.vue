@@ -1,11 +1,13 @@
 <template>
-    <div>
+    <div id="beerlover">
         <div id="favs">
             <h1>Favorite Beers</h1>
             <beer v-for="beer in LikedBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
-            
         </div>
-        <beer v-for="beer in AllBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
+        <div id="allBrew">
+            <h1>All Beers</h1>
+            <beer v-for="beer in AllBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
+        </div>
     </div>
 </template>
 
@@ -45,4 +47,11 @@ export default {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         
     }
+    #allBrew {
+        background-color: #be7118;
+        border: black solid 2px;
+        border-radius: 15px;
+        margin: 5px;
+    }
+    
 </style>

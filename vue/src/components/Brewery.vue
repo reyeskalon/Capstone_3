@@ -17,7 +17,7 @@
         <div id="gluten-free-food" v-if="hasGlutenFreeFood == true" class="prop-wrapper">
             <img src="..\assets\pngs\gfFood-removebg-preview.png" alt="" id="gf-food" class="items">
         </div>
-        <button v-on:click.prevent="methodToCallTheThing">Update Brewery</button>
+        <button id="update-button" v-on:click.prevent="methodToCallTheThing"></button>
     </div>
 </template>
 
@@ -50,8 +50,16 @@ export default {
 }
 </script>
 <style scoped>
+#update-button {
+    background-image: url('../assets/pngs/edit.png');
+    height: 24px;
+    width: 26px;
+    background-color: #7875AC;
+    border: 0px;
+}
 #temp{
     background-color: #FFD12B;
+
 }
 #brewery-card {
     display: flex;

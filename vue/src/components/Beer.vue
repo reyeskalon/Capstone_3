@@ -1,7 +1,6 @@
 <template>
     <div id="beer-card">
         <div id="beer-image" class="prop-wrapper">
-           
             <img :src="beer.imgURL" alt="" id="beer-img"/>
         </div>
         <div id="beerType" class="beerType">
@@ -24,6 +23,11 @@
 <script>
 export default {
     props: ['beer'],
+    methods: {
+        changeStoreValueForSelectedBeer(){
+            this.$store.state.selectedBeer = this.beer.beerId;
+        }
+    }
 
 }
 </script>
