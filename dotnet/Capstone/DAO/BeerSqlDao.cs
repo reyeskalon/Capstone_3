@@ -257,6 +257,34 @@ namespace Capstone.DAO
 
             return reviews;
         }
+        public List<Beer> GetAllBeers()
+        {
+            List<Beer> returnBeers = new List<Beer>();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM beers", conn);
+                 
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Beer beer = GetBeerFromReader(reader);
+                        returnBeers.Add(beer);
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+            return returnBeers;
+        }
         public Beer GetBeerFromReader(SqlDataReader reader)
         {
             Beer beer = new Beer()
@@ -273,6 +301,7 @@ namespace Capstone.DAO
 
             return beer;
         }
+        
         public Review GetReviewFromReader(SqlDataReader reader)
         {
             Review review = new Review()
