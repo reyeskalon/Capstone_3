@@ -16,7 +16,7 @@ namespace Capstone.Controllers
             BreweryDao = breweryDao;
         }
 
-        [HttpGet("{breweryId}")]
+        [HttpGet("/brewery/{breweryId}")]
         public Brewery GetBreweryById(int breweryId)
         {
             return BreweryDao.GetBreweryById(breweryId);

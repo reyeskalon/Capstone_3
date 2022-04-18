@@ -1,5 +1,6 @@
 <template id="temp">
     <div id="brewery-card">
+        
         <div id="logo-name" class="prop-wrapper">
             <img :src="b.imgURL" alt="" id="brewery-img" :href="b.websiteURL"/>
             <strong id="name">{{b.name}}</strong>
@@ -16,10 +17,12 @@
         <div id="gluten-free-food" v-if="hasGlutenFreeFood == true" class="prop-wrapper">
             <img src="..\assets\pngs\gfFood-removebg-preview.png" alt="" id="gf-food" class="items">
         </div>
+        <button v-on:click.prevent="methodToCallTheThing">Update Brewery</button>
     </div>
 </template>
 
 <script>
+import BreweryService from '../services/BreweryService';
 export default {
     props: ['b'],
     computed: {
@@ -34,6 +37,14 @@ export default {
                 return true;
             }
             return false;
+        }
+    },
+    methods: {
+        methodToCallTheThing(){
+            BreweryService.GetBreweryByBreweryId(this.b.id)
+            .then(response => {
+                this.$store.commit("SET_BREWERY", response.data)
+            })
         }
     }
 }
