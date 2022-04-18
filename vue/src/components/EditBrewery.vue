@@ -6,7 +6,7 @@
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Hours: </label>
-            <input placeholder="Hours" type="text" id="hours" v-bind="currentBrewery.Hours" v-model="currentBrewery.Hours" class="form-input">
+            <input placeholder="Hours" type="text" id="hours" v-model="currentBrewery.HoursOfOperation" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Phone Number: </label>
@@ -14,7 +14,7 @@
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Website: </label>
-            <input placeholder="Website" type="text" id="Website" v-model="currentBrewery.Website" class="form-input">
+            <input placeholder="Website" type="text" id="Website" v-model="currentBrewery.WebsiteURL" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Address: </label>
@@ -22,11 +22,11 @@
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Longitude: </label>
-            <input placeholder="Longitude" type="text" v-model="currentBrewery.Longitude" class="form-input">
+            <input placeholder="Longitude" type="text" v-model.number="currentBrewery.Longitude" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Latitude: </label>
-            <input placeholder="Latitude" type="text" v-model="currentBrewery.Latitude" class="form-input">
+            <input placeholder="Latitude" type="text" v-model.number="currentBrewery.Latitude" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">History: </label>
@@ -34,13 +34,13 @@
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Brewery Image: </label>
-            <input placeholder="Please link an image" type="text" v-model="currentBrewery.Image" class="form-input">
+            <input placeholder="Please link an image" type="text" v-model="currentBrewery.ImgURL" class="form-input">
         </div>
         <div class="flex-wrapper">
             <label for="" class="form-label">Gluten Free Beer: </label>
-            <input type="checkbox" v-model="currentBrewery.GlutenFreeBeer">
+            <input type="checkbox" v-model="currentBrewery.HasGlutenFreeBeer">
             <label for="" class="form-label">Gluten Free Food: </label>
-            <input type="checkbox" v-model="currentBrewery.GlutenFreeFood">
+            <input type="checkbox" v-model="currentBrewery.HasGlutenFreeFood">
         </div>
         <div class="flex-wrapper">
             <button type="submit" id="cancel">Cancel</button>
@@ -57,16 +57,16 @@ export default {
         return {
             currentBrewery: {
                 Name: "",
-                Hours: "",
+                HoursOfOperation: "",
                 PhoneNumber: "",
-                Website: "",
+                WebsiteURL: "",
                 Address: "",
-                Longitude: 1,
-                Latitude: 1,
+                Longitude: 0.0,
+                Latitude: 0.0,
                 History: "",
-                Image: "",
-                GlutenFreeFood: false,
-                GlutenFreeBeer: false,
+                ImgURL: "",
+                HasGlutenFreeFood: false,
+                HasGlutenFreeBeer: false,
                 IsOpen: true
             },
             addBreweryErrors: false,

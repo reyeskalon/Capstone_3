@@ -158,12 +158,12 @@ namespace Capstone.DAO
 
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("INSERT INTO brewerys (name, hours, phone_number, website, address, longitude, latitude, history, image, GF_food, GF_beer, is_open) " +
-                                                    "VALUES(@name, 'hours', @phone_number, 'website', @address, @longitude, @latitude, 'history', 'image', @GF_food, @GF_beer, 1); ", conn);
+                                                    "VALUES(@name, @hours, @phone_number, @website, @address, @longitude, @latitude, 'history', @image, @GF_food, @GF_beer, 1); ", conn);
                     cmd.Parameters.AddWithValue("@name", brewery.Name);
-                    /* cmd.Parameters.AddWithValue("@hours", brewery.HoursOfOperation);
+                    cmd.Parameters.AddWithValue("@hours", brewery.HoursOfOperation);
                     cmd.Parameters.AddWithValue("@history", brewery.History);
                     cmd.Parameters.AddWithValue("@website", brewery.WebsiteURL);
-                    cmd.Parameters.AddWithValue("@image", brewery.ImgURL);*/
+                    cmd.Parameters.AddWithValue("@image", brewery.ImgURL);
                     cmd.Parameters.AddWithValue("@phone_number", brewery.PhoneNumber);
                     cmd.Parameters.AddWithValue("@address", brewery.Address);
                     cmd.Parameters.AddWithValue("@longitude", brewery.Longitude);
@@ -190,8 +190,8 @@ namespace Capstone.DAO
             brewery.PhoneNumber = Convert.ToString(reader["phone_number"]);
             brewery.WebsiteURL = Convert.ToString(reader["website"]);
             brewery.Address = Convert.ToString(reader["address"]);
-            brewery.Longitude = Convert.ToInt32(reader["longitude"]);
-            brewery.Latitude = Convert.ToInt32(reader["latitude"]);
+            brewery.Longitude = Convert.ToDouble(reader["longitude"]);
+            brewery.Latitude = Convert.ToDouble(reader["latitude"]);
             brewery.History = Convert.ToString(reader["history"]);
             brewery.ImgURL = Convert.ToString(reader["image"]);
             brewery.HasGlutenFreeFood = Convert.ToBoolean(reader["GF_food"]);
