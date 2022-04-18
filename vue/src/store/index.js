@@ -23,6 +23,9 @@ export default new Vuex.Store({
     breweries: [1,2,3,4] || [],
     users: [] || [],
     beers: [],
+    beer: {
+      beerId: 3
+    }
     brewery: {} || {}
   },
   mutations: {

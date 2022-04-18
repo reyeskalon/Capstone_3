@@ -50,6 +50,15 @@ namespace Capstone.Controllers
         {
             return BeerDao.GetReviewsForBeer(beerId);
         }
-
+        [HttpGet ("/userreviews/{userId}")]
+        public List<Review> GetUsersBeerReviews(int userId)
+        {
+            return BeerDao.GetUsersBeerReviews(userId);
+        }
+        [HttpPost("/reviews")]
+        public Review SubmitNewReview(Review review)
+        {
+            return BeerDao.SubmitNewReview(review);
+        }
     }
 }
