@@ -8,7 +8,7 @@
             </div>
 
             <div class="grid-container directions_text">
-                <div class="grid-item">
+                <div class="grid-item text-item">
                     <h1 class="grid-heading">Find yourself</h1>
                     <div class="text-block">Whether it's your first time visiting or you're a regular, make the most of
                         all we have to offer from the nation's leading brewery finder app on the market. Browse by
@@ -17,7 +17,7 @@
             </div>
 
             <div class="grid-container vegan-text">
-                <div class="grid-item">
+                <div class="grid-item text-item">
                     <h1 class="grid-heading">Find your you</h1>
                     <div class="text-block">New to an area but love a certain beer? Check out our menu and we'll find
                         you the closest retailer, restaurant, or pub instantly. Need directions? We'll get you there
@@ -39,7 +39,7 @@
             </div>
 
             <div class="grid-container social-text">
-                <div class="grid-item">
+                <div class="grid-item text-item">
                     <h1 class="grid-heading">Make memories</h1>
                     <div class="text-block">Create an account to save locations, create your own library of favorite
                         beers and breweries, or rate and review locations. Once you're a user, you can also choose to
@@ -63,6 +63,7 @@ body {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    background-color: rgba(12, 12, 17, 0.027);
 }
 
 .container {
@@ -135,5 +136,14 @@ body {
     line-height: 30px;
     text-align: center;
     letter-spacing: 0.5px;
+    justify-content: center;
+}
+
+.text-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(137, 43, 226, 0.089);
 }
 </style>
