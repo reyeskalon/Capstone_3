@@ -1,38 +1,16 @@
 <template>
-  <div id="login" class="text-center">
-    <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-      <div
-        class="alert alert-danger"
-        role="alert"
-        v-if="invalidCredentials"
-      >Invalid username and password!</div>
-      <div
-        class="alert alert-success"
-        role="alert"
-        v-if="this.$route.query.registration"
-      >Thank you for registering, please sign in.</div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
-      <button v-on:click.prevent="login" type="submit">Sign in</button>
+  <div id="login">
+    <form @submit.prevent="login">
+      <h1 class="items">Please Sign In</h1>
+      <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
+        Invalid username and password!
+      </div>
+      <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">
+        Thank you for registering, please sign in.
+      </div>
+      <input type="text" id="username" class="items" placeholder="Username" v-model="user.username" required autofocus />
+      <input type="password" id="password" class="items" placeholder="Password" v-model="user.password" required />
+      <button v-on:click.prevent="login" type="submit" class="items">Sign in</button>
     </form>
   </div>
 </template>
@@ -75,39 +53,29 @@ export default {
 };
 </script>
 
-<style>
-.grid-container {
-  display: inline-grid;
-  grid-template-columns: 50% 50%;
-  grid-template-areas: 
-        "login hero";
-}
-.grid-container-left{
-  grid-area: login;
-}
-.grid-container-right{
-  grid-area: hero;
-}
-
-
-.grid-container-left{
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-}
-h1 {
-  grid-row: 1;
-}
-form > label {
-  grid-row: 2;
-}
-#userSignUp{
-  grid-row: 3;
-}
-#userSub{
-  grid-row: 4;
-}
-img{
-  height: 100%;
-  width: 100%;
-}
+<style scoped>
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background: lightgray;
+    border: black solid 2px;
+    border-radius: 15px;
+    margin: 50px;
+    margin-left: 150px;
+  }
+  .items {
+    margin: 5px;
+  }
+  #login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url('../assets/images/signup_resized.jpeg');
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: black;
+    height: 90vh;
+  }
 </style>
