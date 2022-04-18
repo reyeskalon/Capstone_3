@@ -1,5 +1,7 @@
 <template>
-    <form action="" id="brewery-form">
+<div>
+    <button v-on:click.prevent="toggleShowForm">Add A Brewer</button>
+    <form v-show="showForm" action="" id="brewery-form">
         <div class="flex-wrapper">
             <label for="brewery-name" class="form-label">Name: </label>
             <input placeholder="Name" type="text" id="brewery-name" v-model="currentBrewery.Name" class="form-input">
@@ -43,11 +45,12 @@
             <input type="checkbox" v-model="currentBrewery.HasGlutenFreeFood">
         </div>
         <div class="flex-wrapper">
-            <button type="submit" id="cancel">Cancel</button>
+            <button type="submit" id="cancel" v-on:click.prevent="toggleShowForm">Cancel</button>
             <button type="submit" id="submit" v-on:click.prevent="AddBrewboi">Submit</button>
         </div>
         
     </form>
+</div>
 </template>
 
 <script>
@@ -55,14 +58,15 @@ import BreweryService from '../services/BreweryService.js';
 export default {
     data(){
         return {
+            
             currentBrewery: {
                 Name: "",
                 HoursOfOperation: "",
                 PhoneNumber: "",
                 WebsiteURL: "",
                 Address: "",
-                Longitude: 0.0,
-                Latitude: 0.0,
+                Longitude: null,
+                Latitude: null,
                 History: "",
                 ImgURL: "",
                 HasGlutenFreeFood: false,
@@ -70,10 +74,19 @@ export default {
                 IsOpen: true
             },
             addBreweryErrors: false,
-            addBreweryErrorMessage: 'There were problems adding this brewer'
+            addBreweryErrorMessage: 'There were problems adding this brewer',
+            showForm: false,
         };
     },
     methods:{
+        toggleShowForm(){
+            if(this.showForm == true){
+                this.showForm = false
+            }
+            else if(this.showForm == false){
+                this.showForm = true;
+            }
+        },
         AddBrewboi() {
             BreweryService
             .AddBrewery(this.currentBrewery)
