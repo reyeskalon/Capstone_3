@@ -10,6 +10,8 @@ Vue.use(VueGoogleMaps, {
     key: 'AIzaSyAFvxjkFmpMry87XMtoIS54kWPHqkrAyxg'
   }
 })
+import GmapCluster from 'vue2-google-maps/src/components/cluster'
+Vue.component('GmapCluster', GmapCluster)
 
 Vue.config.productionTip = false
 
