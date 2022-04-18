@@ -67,27 +67,24 @@ CREATE TABLE userbrewery (
 	
 );
 
-CREATE TABLE reviews (
+CREATE TABLE beer_reviews (
 	review_id int IDENTITY(1,1) NOT NULL,
 	rating decimal NOT NULL,
-	review_body varchar(250)
-	CONSTRAINT PK_review PRIMARY KEY (review_id)
-);
-
-CREATE TABLE reviewbeer (
-	review_id int NOT NULL,
+	review_body varchar(250),
 	beer_id int NOT NULL,
-	CONSTRAINT FK_review FOREIGN KEY (review_id) REFERENCES reviews (review_id),
-	CONSTRAINT FK_beers FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
-	CONSTRAINT PK_reviewbeer PRIMARY KEY (review_id, beer_id)
+	user_id int NOT NULL,
+	CONSTRAINT FK_beer FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
+	CONSTRAINT FK_user FOREIGN KEY (user_id) REFERENCES users (user_id),
 );
 
-CREATE TABLE reviewuser (
-	review_id int NOT NULL,
+CREATE TABLE brewery_reviews (
+	review_id int IDENTITY(1,1) NOT NULL,
+	rating decimal NOT NULL,
+	review_body varchar(250),
+	brewery_id int NOT NULL,
 	user_id int NOT NULL,
-	CONSTRAINT FK_reviews FOREIGN KEY (review_id) REFERENCES reviews (review_id),
-	CONSTRAINT FK_userss FOREIGN KEY (user_id) REFERENCES users (user_id),
-	CONSTRAINT PK_reviewuser PRIMARY KEY (review_id, user_id)
+	CONSTRAINT FK_beer FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
+	CONSTRAINT FK_user FOREIGN KEY (user_id) REFERENCES users (user_id),
 );
 
 CREATE TABLE beeruserfav (

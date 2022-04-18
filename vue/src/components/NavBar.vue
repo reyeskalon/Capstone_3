@@ -45,7 +45,7 @@ export default {
 
 .link-container {
     height: 15px;
-    border: white 2px solid;
+    border: black 2px solid;
     border-radius: 15px;
     margin: 15px;
     padding: 15px;
@@ -59,7 +59,7 @@ export default {
 
 .link {
     text-decoration: none;
-    color: white;
+    color: black;
 }
 
 #logo-container {
