@@ -52,10 +52,10 @@ export default {
 <style scoped>
 #update-button {
     background-image: url('../assets/pngs/edit.png');
-    height: 24px;
-    width: 26px;
-    background-color: #7875AC;
-    border: 0px;
+    height: 28px;
+    width: 30px;
+    background-color: #8886ad;
+    
 }
 #temp{
     background-color: #FFD12B;
