@@ -28,7 +28,7 @@ export default {
   components: { EditBrewery, Brewery, RequestBrewer, Brewer},
   data() {
       return {
-
+          showBreweryForm: false,
       }
   },
   created() {
