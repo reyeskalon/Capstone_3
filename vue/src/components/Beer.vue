@@ -1,7 +1,7 @@
 <template>
     <div id="beer-card">
         <div id="beer-image" class="prop-wrapper">
-           
+
             <img :src="beer.imgURL" alt="" id="beer-img"/>
         </div>
         <div id="beerType" class="beerType">
@@ -17,6 +17,10 @@
         <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
             <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
         </div>
+        
+        <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+            <button v-on:click.prevent="changeStoreValueForSelectedBeer">Select</button>
+        </router-link>
     </div>
     
 </template>
@@ -24,6 +28,11 @@
 <script>
 export default {
     props: ['beer'],
+    methods: {
+        changeStoreValueForSelectedBeer(){
+            this.$store.state.selectedBeer = this.beer;
+        }
+    }
 
 }
 </script>
