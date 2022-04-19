@@ -59,12 +59,9 @@ export default new Vuex.Store({
     },
     SET_BEER(state, data){
       state.beer = data;
-<<<<<<< HEAD
-=======
     },
     SET_ALL_BEERS(state, data){
       state.allBeers = data;
->>>>>>> 9b68d1f2ab0e61de61b3ebcc7cbd4a91474fd823
     }
   }
 })
