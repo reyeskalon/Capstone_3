@@ -9,13 +9,9 @@
             :zoomOnClick="true"
         >
             <GmapMarker
-                ref="Marker1"
+                ref="Marker"
                 :position="google && new google.maps.LatLng(40.446786,-80.015761)"
-            />
-            
-            <GmapMarker
-                ref="Marker2"
-                :position="google && new google.maps.LatLng(40.439445,-79.989891)"
+                icon: 
             />
         </GmapCluster>
     </GmapMap>
@@ -29,6 +25,5 @@ export default {
   computed: {
     google: gmapApi
   },
-
 }
 </script>
