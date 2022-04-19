@@ -25,6 +25,7 @@
             <button v-on:click="changeStoreValueForSelectedBeer">Select</button>
         </router-link>
         <button v-on:click="FavoriteBeer">Favorite Beer</button>
+        <button id="update-button" v-on:click.prevent="methodToUpdateBeer"></button>
     </div>
     
 </template>
@@ -51,6 +52,12 @@ export default {
         },
         FavoriteBeer(){
             FavoriteService.AddFavBeer(this.newFav)
+        },
+        methodToUpdateBeer(){
+            BeerService.GetBeerById(this.beer.beerId)
+            .then(response => {
+                this.$store.commit("SET_BEER", response.data)
+            })
         }
     },
     data() {
@@ -67,6 +74,14 @@ export default {
 
 
 <style scoped>
+#update-button {
+    background-image: url('../assets/pngs/edit.png');
+    height: 28px;
+    width: 30px;
+    background-color: #8886ad;
+    border-radius: 7px;
+    
+}
 #beer.name{
     height:50px;
     margin: none;

@@ -5,7 +5,7 @@ export default {
     SetLikedBeers(brewerId){
         return axios.get('/favoritebeers/' + brewerId)
     },
-     GetBeerById(beerId){
+    GetBeerById(beerId){
         return axios.get('/beer/' + beerId)
     },
     GetBeerDescription(beerDescription){
@@ -19,6 +19,9 @@ export default {
     },
     UpdateBeer(beer){
         return axios.put('/beer/update', beer)
+    },
+    GetBeersByBreweryId(breweryId){
+        return axios.get('/beers/' + breweryId)
     }
 }
 

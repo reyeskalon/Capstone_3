@@ -1,7 +1,7 @@
 <template>
     <div>
         <button v-on:click="toggleShowForm()">Add A Beer</button>
-        <button v-on:click="toggleShowForm()">Update Beer</button>
+        <button v-on:click="toggleShowForm(); updateBeer();">Update Beer</button>
         <form v-show="showForm" action="" id="beer-form">
             <div  class="flex-wrapper">
                 <label for="beer-name" class="form-label">Name: </label>
@@ -52,7 +52,7 @@ export default {
                 isAvaliable: true,
                 isGlutenFree: false,
                 imgURL: '',
-                breweryId: this.$store.state.user.userId
+                breweryId: null
             },
             showForm: false
         }
@@ -103,8 +103,21 @@ export default {
                 isAvaliable: true,
                 isGlutenFree: false,
                 imgURL: '',
-                breweryId: this.$store.state.user.userId
+                breweryId: null,
+                beerId: null
             }
+        },
+        updateBeer(){
+            this.currentBeer.name = this.$store.state.beer.name;
+            this.currentBeer.abv = this.$store.state.beer.abv;
+            this.currentBeer.beerType = this.$store.state.beer.beerType;
+            this.currentBeer.description = this.$store.state.beer.description;
+            this.currentBeer.isAvaliable = this.$store.state.beer.isAvaliable;
+            this.currentBeer.isGlutenFree = this.$store.state.beer.isGlutenFree;
+            this.currentBeer.imgURL = this.$store.state.beer.imgURL;
+            this.currentBeer.breweryId = this.$store.state.beer.breweryId;
+            this.currentBeer.beerId = this.$store.state.beer.beerId;
+
         }
     }
 }
