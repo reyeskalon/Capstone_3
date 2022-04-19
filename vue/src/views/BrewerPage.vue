@@ -1,6 +1,8 @@
 <template>
     <div id="wholethang">
+        <div>
         <brewery v-for="brewery in AllBreweries" v-bind:key="brewery.id" v-bind:b="brewery"/>
+        </div>
         <edit-brewery />
         <beer v-for="beer in AllBeersByBrewery" v-bind:key="beer.id" v-bind:beer="beer"/>
     </div>

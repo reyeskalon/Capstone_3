@@ -5,18 +5,8 @@
         map-type-id="terrain"
         style="width: 100%; height: 600px"
     >
-        <GmapCluster
-            :zoomOnClick="true"
-        >
-            <GmapMarker
-                ref="Marker1"
-                :position="google && new google.maps.LatLng(40.446786,-80.015761)"
-            />
-            
-            <GmapMarker
-                ref="Marker2"
-                :position="google && new google.maps.LatLng(40.439445,-79.989891)"
-            />
+        <GmapCluster :zoomOnClick="true">
+            <GmapMarker v-for="marker in BreweryMarkers" :key="marker.id" :position="marker.position"/>
         </GmapCluster>
     </GmapMap>
 </template>
@@ -27,7 +17,21 @@ import {gmapApi} from 'vue2-google-maps'
  
 export default {
   computed: {
-    google: gmapApi
+    google: gmapApi,
+    BreweryMarkers(){
+          let breweryInfo = [];
+          let allBreweries = this.$store.state.breweries;
+          allBreweries.forEach(element => {
+              let newObj = {};
+              let position = {};
+              position.lat = element.latitude;
+              position.lng = element.longitude;
+              newObj.id = element.id;
+              newObj.position = position;
+              breweryInfo.push(newObj);
+          });
+          return breweryInfo;
+      }
   },
 
 }
