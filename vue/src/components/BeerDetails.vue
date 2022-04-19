@@ -25,26 +25,28 @@ export default {
 <style scoped>
 h1 {
     font-size: 50px;
-    background-color: rgb(224, 25, 231);
+    background-color: rgb(0, 0, 0);
     font-family: 'Duru Sans', sans-serif;
     margin: 0px 0px;
-    border-top: solid;
+    border-top: #7875AC solid;
     border-bottom: solid;
     padding: 10px;
+    color: white;
 }
 #description {
     width: 300px;
     padding: 15px;
     margin: 15px;
-    background-color: rgb(206, 86, 236);
+    background-color: rgb(0, 0, 0);
     font-family: 'Duru Sans', sans-serif;
     border: black solid 1px;
     border-radius: 15px;
+    color: white;
 }
 #beerpic {
     widows: 350px;
     height: 450px;
-    border: black solid 5px;
+    border: white (148, 140, 140) solid 5px;
     border-radius: 15px;
     margin: 15px;
 }
@@ -56,11 +58,12 @@ h1 {
     width: 300px;
     padding: 15px;
     margin: 15px;
-    background-color: rgb(206, 86, 236);
+    background-color: rgb(0, 0, 0);
     border: black solid 1px;
     border-radius: 15px;
     font-family: 'Duru Sans', sans-serif;
     display: grid;
+    color: white;
 }
 #allinfo {
     display: flex;
@@ -68,5 +71,6 @@ h1 {
 #gfbeer {
     height: 40px;
 }
+
 
 </style>

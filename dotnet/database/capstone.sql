@@ -95,8 +95,8 @@ CREATE TABLE brewery_reviews (
 CREATE TABLE beeruserfav (
 	beer_id int NOT NULL,
 	user_id int NOT NULL,
-	CONSTRAINT FK_beer4 FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
-	CONSTRAINT FK_user3 FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_beer5 FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
+	CONSTRAINT FK_user5 FOREIGN KEY (user_id) REFERENCES users (user_id),
 	CONSTRAINT PK_beeruser PRIMARY KEY (beer_id, user_id)
 );
 --populate default data
