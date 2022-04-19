@@ -37,10 +37,11 @@ export default {
 
 <style scoped>
     #favs{
-        background-color: #24C744;
+        background-color: #fafafa;
         border: black solid 2px;
         border-radius: 15px;
         margin: 5px;
+        background-color: #FFD12B;
     }
     h1{
         padding: 10px;

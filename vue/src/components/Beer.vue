@@ -3,6 +3,11 @@
         <div id="beer-image" class="prop-wrapper">
             <img :src="beer.imgURL" alt="" id="beer-img"/>
         </div>
+        <div id="select-button">
+            <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+                <p id="button-text" v-on:click="changeStoreValueForSelectedBeer">View Detail</p>
+            </router-link>
+        </div>
         <div id="beerType" class="beerType">
             <p>{{beer.beerType}}</p>
             <p>{{beer.name}}</p>
@@ -16,15 +21,14 @@
         <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
             <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
         </div>
-        <div>
-            <button @click="ToggleForm(); SetBeer();" >Review</button>
-        </div>
-        <review-form v-show="showForm"/>
-        
         <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-            <button v-on:click="changeStoreValueForSelectedBeer">Select</button>
+                <p id="button-text" @click.prevent="ToggleForm(); SetBeer();">Review</p>
         </router-link>
-        <button v-on:click="FavoriteBeer">Favorite Beer</button>
+        <review-form v-show="showForm"/>
+        <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+                <p id="button-text" v-on:click.prevent="FavoriteBeer">Favorite</p>
+        </router-link>
+
         <button id="update-button" v-on:click.prevent="methodToUpdateBeer"></button>
     </div>
     
@@ -66,7 +70,7 @@ export default {
             newFav: {
                 userId: this.$store.state.user.userId,
                 beerId: this.beer.beerId
-    },
+            },
         }
     }
 }
@@ -74,6 +78,9 @@ export default {
 
 
 <style scoped>
+#button-text{
+    font-size: 9px;
+}
 #update-button {
     background-image: url('../assets/pngs/edit.png');
     height: 28px;
@@ -81,6 +88,9 @@ export default {
     background-color: #8886ad;
     border-radius: 7px;
     
+}
+#select-button {
+    margin: 10px;
 }
 #beer.name{
     height:50px;
@@ -96,7 +106,7 @@ export default {
     height: 100px;
     padding: 10px;
     margin:10px;
-    background: #7875AC;
+    background: rgb(95, 37, 10);
     border: black 1px solid;
     flex-direction: row;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
@@ -107,7 +117,7 @@ export default {
 #beer-img {
     height: 80px;
     width: 80px;
-    
+
 }
 #beer-image{
     display: flex;
@@ -141,5 +151,7 @@ width: 80px;
 display: flex;
 flex-direction: column;
 align-items: center;
+color: rgb(121, 121, 121);
 }
+
 </style>
