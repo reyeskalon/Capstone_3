@@ -5,7 +5,7 @@
         </div>
         <div id="select-button">
             <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-                <p id="button-text" v-on:click="changeStoreValueForSelectedBeer">View Detail</p>
+                <tr id="button-text" v-on:click="changeStoreValueForSelectedBeer">View Detail</tr>
             </router-link>
         </div>
         <div id="beerType" class="beerType">
@@ -80,17 +80,20 @@ export default {
 <style scoped>
 #button-text{
     font-size: 9px;
+    color: rgb(0, 0, 0); 
 }
 #update-button {
     background-image: url('../assets/pngs/edit.png');
     height: 28px;
     width: 30px;
-    background-color: #8886ad;
+    background-color: rgb(226, 190, 90);
     border-radius: 7px;
     
 }
 #select-button {
     margin: 10px;
+    color: black;
+  
 }
 #beer.name{
     height:50px;
@@ -106,7 +109,7 @@ export default {
     height: 100px;
     padding: 10px;
     margin:10px;
-    background: rgb(95, 37, 10);
+    background: #b3921e;
     border: black 1px solid;
     flex-direction: row;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
@@ -151,7 +154,11 @@ width: 80px;
 display: flex;
 flex-direction: column;
 align-items: center;
-color: rgb(121, 121, 121);
+color: rgb(0, 0, 0);
 }
-
+#beerpage {
+    color: black;
+    background-color:rgb(226, 190, 90);
+    border-color: black;
+}
 </style>

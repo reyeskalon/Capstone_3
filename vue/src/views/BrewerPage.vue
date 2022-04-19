@@ -39,10 +39,12 @@ export default {
 
 <style scoped>
     #wholethang {
-        background-color: rgb(21, 14, 116);
+        background-color: rgb(0, 0, 0);
         padding: 10px;
     }
     #forms {
         display: flex;
+        flex-wrap: wrap;
+
     }
 </style>
