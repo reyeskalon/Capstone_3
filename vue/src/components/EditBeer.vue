@@ -1,7 +1,7 @@
 <template>
     <div>
         <button v-on:click="toggleShowForm()">Add A Beer</button>
-        <button>Update Brewery</button>
+        <button v-on:click="toggleShowForm()">Update Beer</button>
         <form v-show="showForm" action="" id="beer-form">
             <div  class="flex-wrapper">
                 <label for="beer-name" class="form-label">Name: </label>
@@ -30,9 +30,9 @@
                 <input type="checkbox" v-model="currentBeer.isAvaliable">
             </div>
             <div class="flex-wrapper">
-                <button type="submit" id="cancel">Cancel</button>
-                <button type="submit" id="submit">Add New Beer</button>
-                <button type="submit" id="update">Update Beer</button>
+                <button type="submit" id="cancel" v-on:click.prevent="toggleShowForm(); ClearForm();">Cancel</button>
+                <button type="submit" id="submit" v-on:click.prevent="AddBeerboi">Add New Beer</button>
+                <button type="submit" id="update" v-on:click.prevent="UpdateBeerboi">Update Beer</button>
             </div>
             
         </form>
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import BeerService from '../services/BeerService'
 export default {
     data(){
         return{
@@ -48,9 +49,10 @@ export default {
                 abv: null,
                 beerType: '',
                 description: '',
-                isAvaliable: false,
+                isAvaliable: true,
                 isGlutenFree: false,
-                imgURL: ''
+                imgURL: '',
+                breweryId: this.$store.state.user.userId
             },
             showForm: false
         }
@@ -64,6 +66,46 @@ export default {
                 this.showForm = true;
             }
         },
+        AddBeerboi() {
+            BeerService
+            .AddABeer(this.currentBeer)
+            .then((response) => {
+                if(response.status == 201) {
+                    this.$router.push({
+                        path: '/admin',
+                    });
+                }
+            })
+            .catch((error) => {
+                const response = error.response;
+                this.addBreweryErrors = true;
+                if (response.status === 400){
+                    this.addBeerErrorMessage = 'Validation Error'
+                }
+            });
+        },
+        UpdateBeerboi(){
+            BeerService.UpdateBeer(this.currentBeer)
+            .then((response) => {
+                if(response.status == 201) {
+                    this.$router.push({
+                        path: '/admin',
+                    });
+                }
+            })
+        },
+        ClearForm(){
+            this.currentBeer = {
+                name: '',
+                abv: null,
+                beerType: '',
+                description: '',
+                isAvaliable: true,
+                isGlutenFree: false,
+                imgURL: '',
+                breweryId: this.$store.state.user.userId
+            }
+        }
     }
 }
 </script>
