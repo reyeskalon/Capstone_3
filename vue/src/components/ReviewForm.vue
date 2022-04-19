@@ -1,14 +1,11 @@
 <template>
     <div id="main">
         <div id="form-container">
-            <div id="review-container" class="container">
-                <textarea name="review" id="review" cols="50" rows="10" v-model="reviewObject.reviewText"></textarea>
-            </div>
+            <textarea placeholder="write your review here" name="review" id="review" cols="50" rows="10" v-model="reviewObject.reviewText"></textarea>
             <div id="rating-container" class="container">
                 <img class="beer-icon" v-for="n in reviewObject.rating" v-bind:key="'beer' + n" @click="OverrideRating(n)" src="../assets/pngs/BeerRatingIcon.png" alt="">
                 <img class="beer-icon" id="empty-beer" v-for="n in emptyBeers" v-bind:key="'empty' + n" @click="AddToRating(n)" src="../assets/pngs/BeerRatingIconEmpty.png" alt="">
             </div>
-            
         </div>
         <div>
             <button id="submit-button" @click="SubmitReview">Submit</button>
@@ -32,6 +29,7 @@ export default {
     },
     methods: {
         SubmitReview() {
+            this.reviewObject.beerId = this.$store.state.beer.beerId;
             ReviewService.SubmitReview(this.reviewObject)
             this.reviewObject = {
                 rating: 1,
@@ -61,6 +59,7 @@ export default {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        z-index: 9;
     }
     #form-container{
         display: flex;
@@ -68,8 +67,8 @@ export default {
         justify-content: center;
         align-items: center;
 
-        background: lightgray;
-        border: 2px solid black;
+        background:black;
+        border: 2px solid white;
         border-radius: 15px;
         margin: 15px;
     }
@@ -82,13 +81,16 @@ export default {
         border: 1px solid black;
         border-radius: 15px;
     }
-    #review-container{
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
+    #review{
+        background: white;
+        width: 94%;
+        margin-top: 5px;
+        opacity: 1;
     }
     #rating-container{
-        margin: 10px;
+        width: 92%;
+        margin: 5px;
+        opacity: 1.0;
     }
     .beer-icon{
         height: 40px;

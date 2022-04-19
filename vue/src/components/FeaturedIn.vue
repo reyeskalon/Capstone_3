@@ -23,10 +23,9 @@ export default {
 
 <style>
 .section-featured {
-    padding: 2.4rem 4rem 3.2rem 4rem;
-    background-color: blueviolet;
+    padding: 10px;
+    background-color:  #7875AC;
     font-family: Arial, Helvetica, sans-serif;
-    
 }
 
 .heading-featured-in {

@@ -83,15 +83,17 @@ const router = new Router({
       }
     },
     {
-<<<<<<< HEAD
       path: "/reviews",
-      name: "revies",
+      name: "reviews",
       component: ReviewForm,
-=======
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
       path: "/beerpage",
       name: "beerpage",
       component: BeerPage,
->>>>>>> 1852caee31a977b2bd78b62957b359dd9285910e
       meta: {
         requiresAuth: false
       }

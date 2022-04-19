@@ -1,7 +1,6 @@
 <template>
     <div id="beer-card">
         <div id="beer-image" class="prop-wrapper">
-           
             <img :src="beer.imgURL" alt="" id="beer-img"/>
         </div>
         <div id="beerType" class="beerType">
@@ -17,14 +16,36 @@
         <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
             <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
         </div>
+        <div>
+            <button @click="ToggleForm(); SetBeer();" >Review</button>
+        </div>
+        <review-form v-show="showForm"/>
     </div>
     
 </template>
 
 <script>
+import ReviewForm from './ReviewForm.vue'
+import BeerService from '../services/BeerService'
 export default {
+  components: { ReviewForm },
     props: ['beer'],
-
+    methods: {
+        ToggleForm(){
+            this.showForm = !this.showForm
+        },
+        SetBeer(){
+            BeerService.GetBeerById(this.beer.beerId)
+            .then(response => {
+                this.$store.commit("SET_BEER", response.data)
+            })
+        }
+    },
+    data() {
+        return {
+            showForm: false
+        }
+    }
 }
 </script>
 
