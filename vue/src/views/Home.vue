@@ -1,6 +1,6 @@
 <template>
   <main id="main">
-    <GmapMap></GmapMap>
+    <Map />
     <features id="features"/>
     <featured-in />
   </main>
@@ -9,21 +9,15 @@
 <script>
 import FeaturedIn from '../components/FeaturedIn.vue'
 import Features from '../components/Features.vue'
-import GmapMap from '../components/GoogleMap.vue'
-import BreweryService from '../services/BreweryService'
+import Map from '../components/GoogleMap.vue'
 
 export default {
   name: 'google-map',
   components: {
-    GmapMap,
+    Map,
     Features,
     FeaturedIn
   },
-  created(){
-    BreweryService.GetBreweries().then(response => {
-            this.$store.commit("SET_BREWERIES", response.data);
-    });
-  }
 }
 </script>
 
