@@ -5,8 +5,9 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <label for="username" class="sr-only"></label>
       <input
+
         type="text"
         id="username"
         class="form-control"
@@ -15,7 +16,7 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only">Password</label>
+      <label for="password" class="sr-only"></label>
       <input
         type="password"
         id="password"
@@ -90,4 +91,51 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+ #register {
+    
+    background-image: url('../assets/images/register_image.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    height: 89vh;
+    border-top: white 2px solid;
+    display: flex;
+    flex-direction: row ;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .items{
+    padding: 50%;
+  }
+  form {
+    font-family: 'Duru Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    background: lightgrey;
+    border: black solid 2px;
+    border-radius: 15px;
+    margin: 125px;
+    margin-left: 150px;
+  }
+  #username{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #password{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #confirmPassword{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+</style>
