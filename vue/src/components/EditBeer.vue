@@ -1,7 +1,13 @@
 <template>
     <div>
-        <button v-on:click="toggleShowForm()">Add A Beer</button>
-        <button v-on:click="toggleShowForm(); updateBeer();">Update Beer</button>
+        <div id="forms">
+            <router-link v-bind:to="{ name: 'brewer' }" id="AddBrewery" class="link">
+                    <p id="button-text" v-on:click.prevent="toggleShowForm()">Add A Beer</p>
+            </router-link>
+            <router-link v-bind:to="{ name: 'brewer' }" id="AddBrewery" class="link">
+                    <p id="button-text" v-on:click.prevent="toggleShowForm(); updateBeer();">Update Brewery</p>
+            </router-link>
+        </div>
         <form v-show="showForm" action="" id="beer-form">
             <div  class="flex-wrapper">
                 <label for="beer-name" class="form-label">Name: </label>
@@ -124,6 +130,14 @@ export default {
 </script>
 
 <style scoped>
+#button-text{
+    font-size: 12px;
+    height: 1px;
+}
+#forms{
+    display: flex;
+    
+}
 .flex-wrapper {
         width: 460px;
         display: flex;
@@ -147,6 +161,7 @@ export default {
         margin: 10px;
         border: 1px solid;
         border-radius: 15px;
+        font-size: 24px;
     }
     button {
         margin: 5px;
