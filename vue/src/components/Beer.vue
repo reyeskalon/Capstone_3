@@ -22,8 +22,9 @@
         <review-form v-show="showForm"/>
         
         <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-            <button v-on:click.prevent="changeStoreValueForSelectedBeer">Select</button>
+            <button v-on:click="changeStoreValueForSelectedBeer">Select</button>
         </router-link>
+        <button v-on:click="FavoriteBeer">Favorite Beer</button>
     </div>
     
 </template>
@@ -31,6 +32,7 @@
 <script>
 import ReviewForm from './ReviewForm.vue'
 import BeerService from '../services/BeerService'
+import FavoriteService from '../services/FavoriteService'
 export default {
   components: { ReviewForm },
     props: ['beer'],
@@ -46,11 +48,18 @@ export default {
         },
         changeStoreValueForSelectedBeer(){
             this.$store.state.selectedBeer = this.beer;
+        },
+        FavoriteBeer(){
+            FavoriteService.AddFavBeer(this.newFav)
         }
     },
     data() {
         return {
-            showForm: false
+            showForm: false,
+            newFav: {
+                userId: this.$store.state.user.userId,
+                beerId: this.beer.beerId
+    },
         }
     }
 }

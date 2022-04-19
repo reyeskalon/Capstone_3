@@ -13,6 +13,12 @@ export default {
     },
     GetAllBeers() {
         return axios.get('/beers')
+    },
+    AddABeer(beer){
+        return axios.post('/beer/add', beer)
+    },
+    UpdateBeer(beer){
+        return axios.put('/beer/update', beer)
     }
 }
 
