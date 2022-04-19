@@ -83,15 +83,15 @@ CREATE TABLE brewery_reviews (
 	review_body varchar(250),
 	brewery_id int NOT NULL,
 	user_id int NOT NULL,
-	CONSTRAINT FK_beer FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
-	CONSTRAINT FK_user FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_beer3 FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
+	CONSTRAINT FK_user2 FOREIGN KEY (user_id) REFERENCES users (user_id),
 );
 
 CREATE TABLE beeruserfav (
 	beer_id int NOT NULL,
 	user_id int NOT NULL,
-	CONSTRAINT FK_beer FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
-	CONSTRAINT FK_user FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_beer4 FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
+	CONSTRAINT FK_user3 FOREIGN KEY (user_id) REFERENCES users (user_id),
 	CONSTRAINT PK_beeruser PRIMARY KEY (beer_id, user_id)
 );
 --populate default data

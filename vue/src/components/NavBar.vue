@@ -9,6 +9,7 @@
             <router-link id="test" v-if="$store.state.token != ''" v-bind:to="{ name: 'logout' }" class="link">Sign out</router-link>
             <router-link  v-if="$store.state.token == ''" v-bind:to="{ name: 'login' }" id="login" class="link">Log in</router-link>
             <router-link v-if="$store.state.token == ''" v-bind:to="{ name: 'register' }" id="register" class="link">Register</router-link>
+            <router-link id="profile" v-if="$store.state.token != ''" v-bind:to="{ name: 'beerlover' }"><img id="profile_icon" src="../assets/images/profile_icon_removebg_white.png" alt=""></router-link>
         </div>
     </div>
 </template>
@@ -85,5 +86,8 @@ export default {
 .link:hover {
     background: white;
     color: black;
+}
+#profile_icon {
+    height: 90px;
 }
 </style>
