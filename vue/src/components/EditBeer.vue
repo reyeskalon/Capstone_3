@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button>Add A Beer</button>
+        <button v-on:click="toggleShowForm()">Add A Beer</button>
         <button>Update Brewery</button>
         <form v-show="showForm" action="" id="beer-form">
             <div  class="flex-wrapper">
@@ -51,7 +51,8 @@ export default {
                 isAvaliable: false,
                 isGlutenFree: false,
                 imgURL: ''
-            }
+            },
+            showForm: false
         }
     },
     methods:{
