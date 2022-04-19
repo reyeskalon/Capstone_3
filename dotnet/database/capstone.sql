@@ -83,13 +83,13 @@ CREATE TABLE brewery_reviews (
 	review_body varchar(250),
 	brewery_id int NOT NULL,
 	user_id int NOT NULL,
-<<<<<<< HEAD
+
 	CONSTRAINT FK3_beer FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
 	CONSTRAINT FK3_user FOREIGN KEY (user_id) REFERENCES users (user_id),
-=======
+
 	CONSTRAINT FK_beer3 FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
 	CONSTRAINT FK_user2 FOREIGN KEY (user_id) REFERENCES users (user_id),
->>>>>>> 0da22d540b27df0bf9db785b26db2d232b28a583
+
 );
 
 CREATE TABLE beeruserfav (
