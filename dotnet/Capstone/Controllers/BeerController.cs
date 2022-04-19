@@ -65,5 +65,6 @@ namespace Capstone.Controllers
         {
             return BeerDao.GetAllBeers();
         }
+
     }
 }

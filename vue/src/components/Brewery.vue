@@ -55,6 +55,7 @@ export default {
     height: 28px;
     width: 30px;
     background-color: #8886ad;
+    border-radius: 7px;
     
 }
 #temp{

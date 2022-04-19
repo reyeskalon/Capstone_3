@@ -15,7 +15,7 @@ export default {
         }
     },
   created(){
-      BeerService.GetBeerById(this.$store.state.selectedBeer).then(response => {
+      BeerService.GetBeerById(this.$store.state.selectedBeer.beerId).then(response => {
             this.$store.commit("SET_BEER", response.data);
         });
 

@@ -26,7 +26,7 @@ export default {
 h1 {
     font-size: 50px;
     background-color: rgb(224, 25, 231);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Duru Sans', sans-serif;
     margin: 0px 0px;
     border-top: solid;
     border-bottom: solid;
@@ -37,7 +37,7 @@ h1 {
     padding: 15px;
     margin: 15px;
     background-color: rgb(206, 86, 236);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Duru Sans', sans-serif;
     border: black solid 1px;
     border-radius: 15px;
 }
@@ -59,7 +59,7 @@ h1 {
     background-color: rgb(206, 86, 236);
     border: black solid 1px;
     border-radius: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Duru Sans', sans-serif;
     display: grid;
 }
 #allinfo {

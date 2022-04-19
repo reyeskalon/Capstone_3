@@ -26,7 +26,7 @@ export default new Vuex.Store({
     brewery: {} || {},
     beer: {},
     allBeers: [],
-    selectedBeer: 0
+    selectedBeer: {} || {}
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
