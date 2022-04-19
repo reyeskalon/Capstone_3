@@ -1,9 +1,10 @@
 <template>
     <div id="wholethang">
-        <div>
         <brewery v-for="brewery in AllBreweries" v-bind:key="brewery.id" v-bind:b="brewery"/>
+        <div id="forms">
+            <edit-brewery />
+            <edit-beer />
         </div>
-        <edit-brewery />
         <beer v-for="beer in AllBeersByBrewery" v-bind:key="beer.id" v-bind:beer="beer"/>
     </div>
 </template>
@@ -14,8 +15,9 @@ import EditBrewery from '../components/EditBrewery.vue';
 import BreweryService from '../services/BreweryService';
 import BeerService from '../services/BeerService';
 import Beer from '../components/Beer.vue'
+import EditBeer from '../components/EditBeer.vue'
 export default {
-  components: { Brewery, EditBrewery, Beer },
+  components: { Brewery, EditBrewery, Beer, EditBeer },
   computed: {
         AllBreweries() {
             return this.$store.state.breweries;
@@ -39,5 +41,8 @@ export default {
     #wholethang {
         background-color: rgb(21, 14, 116);
         padding: 10px;
+    }
+    #forms {
+        display: flex;
     }
 </style>

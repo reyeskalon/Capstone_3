@@ -52,7 +52,7 @@ namespace Capstone.DAO
                 {
                     conn.Open();
 
-                    SqlCommand cmd = new SqlCommand("UPDATE beers SET name = @name, description = @description, image = @image, abv = @abv, category = @category, GF = @GF, brewery_id = @brewery_id is_avaliable = @is_avaliable WHERE beer_id = @beer_id; ", conn);
+                    SqlCommand cmd = new SqlCommand("UPDATE beers SET name = @name, description = @description, image = @image, abv = @abv, category = @category, GF = @GF, brewery_id = @brewery_id, is_avaliable = @is_avaliable WHERE beer_id = @beer_id; ", conn);
                     cmd.Parameters.AddWithValue("@name", beer.Name);
                     cmd.Parameters.AddWithValue("@description", beer.Description);
                     cmd.Parameters.AddWithValue("@image", beer.ImgURL);
