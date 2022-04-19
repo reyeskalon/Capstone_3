@@ -1,23 +1,24 @@
 <template>
     <div>
-        <beer v-for="beer in Beers" v-bind:key="beer.id" v-bind:beer="beer"/>
+        <beer-details v-bind:beerDetails="Beer"/>
     </div>
 </template>
 
 <script>
-import Beer from '../components/Beer.vue'
 import BeerService from '../services/BeerService.js'
+import BeerDetails from '../components/BeerDetails.vue'
 export default {
-  components: { Beer },
+  components: { BeerDetails },
   computed: {
-        Beers() {
-            return this.$store.state.beers;
+        Beer() {
+            return this.$store.state.beer;
         }
     },
   created(){
-      BeerService.SetLikedBeers(this.$store.state.user.userId).then(response => {
-            this.$store.commit("SET_BEERS", response.data);
+      BeerService.GetBeerById(this.$store.state.selectedBeer.beerId).then(response => {
+            this.$store.commit("SET_BEER", response.data);
         });
+
   }
 }
 </script>

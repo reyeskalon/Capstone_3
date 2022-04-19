@@ -84,7 +84,7 @@ export default {
     methods:{
         toggleShowForm(){
             if(this.showForm == true){
-                this.showForm = false
+                this.showForm = false;
             }
             else if(this.showForm == false){
                 this.showForm = true;

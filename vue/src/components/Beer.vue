@@ -20,6 +20,10 @@
             <button @click="ToggleForm(); SetBeer();" >Review</button>
         </div>
         <review-form v-show="showForm"/>
+        
+        <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+            <button v-on:click.prevent="changeStoreValueForSelectedBeer">Select</button>
+        </router-link>
     </div>
     
 </template>
@@ -39,6 +43,9 @@ export default {
             .then(response => {
                 this.$store.commit("SET_BEER", response.data)
             })
+        },
+        changeStoreValueForSelectedBeer(){
+            this.$store.state.selectedBeer = this.beer;
         }
     },
     data() {
