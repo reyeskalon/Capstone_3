@@ -72,24 +72,24 @@ export default {
 <style scoped>
 #main {
     padding: 10px;
-    background-image: url("https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-color: black;
 }
 #breweries {
     border: 1px solid;
     margin: 10px;
-    background: white;
+    background: grey;
     border-radius: 15px;
 }
 #brewers {
     display: flex;
     flex-wrap: wrap;
-    background-color:whitesmoke;
+    background-color:rgb(0, 0, 0);
     border: 1px solid;
     border-radius: 15px;
-    opacity: 85%;
+    
 }
 #title-for-brewer {
-    background-color:#7875AC;
+    background-color:#b3921e;
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
@@ -98,7 +98,7 @@ export default {
 }
 #submit-forms {
     display: flex;
-    background-color: #7875AC;
+    background-color: #b3921e;
     border:black 1px solid;
     border-radius: 15px;
     margin: 10px;

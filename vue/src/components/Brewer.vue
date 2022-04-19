@@ -13,7 +13,7 @@ export default {
 <style scoped>
     #brewerCard {
         display: flex;
-        background-color:#7875AC;
+        background-color:#b3921e;
         border: black 1px solid;
         border-radius: 10px;
         padding: 10px;
