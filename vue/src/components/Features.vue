@@ -59,24 +59,26 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap');
 body {
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     background-color: rgba(12, 12, 17, 0.027);
 }
 
 .container {
+    font-family: 'Duru Sans', sans-serif;
+
     display: grid;
     grid-auto-flow: row;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-columns: 3fr 3fr;
     grid-template-rows: auto auto auto;
     grid-template-areas: 
-        ". directions directions-text ."
-        ". vegan-text vegan ."
-        ". social social-text .";
+        "directions directions-text"
+        "vegan-text vegan"
+        "social social-text";
 }
 
 .grid-item {
@@ -133,10 +135,11 @@ body {
     padding-right: 40px;
     padding-left: 40px;
     padding-bottom: 40px;
-    line-height: 30px;
+    line-height: 1.5;
     text-align: center;
     letter-spacing: 0.5px;
     justify-content: center;
+    font-size: 30px;
 }
 
 .text-item {
@@ -144,6 +147,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(137, 43, 226, 0.089);
+    background-color: white;
+}
+
+h1 {
+    font-size: 50px;
 }
 </style>

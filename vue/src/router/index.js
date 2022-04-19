@@ -84,7 +84,7 @@ const router = new Router({
     },
     {
       path: "/reviews",
-      name: "revies",
+      name: "reviews",
       component: ReviewForm,
       meta: {
         requiresAuth: false

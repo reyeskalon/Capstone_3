@@ -1,7 +1,6 @@
 <template>
   <div id="login">
     <form @submit.prevent="login">
-      <h1 class="items">Please Sign In</h1>
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
       </div>
@@ -55,17 +54,24 @@ export default {
 
 <style scoped>
   form {
+    font-family: 'Duru Sans', sans-serif;
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    background: lightgray;
+    align-items: center;
+    padding: 20px;
+    background: white;
     border: black solid 2px;
     border-radius: 15px;
     margin: 50px;
     margin-left: 150px;
   }
   .items {
-    margin: 5px;
+    margin-top: 5px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-left: 15px;
+    width: 100%;
+    height:30px;
   }
   #login {
     display: flex;
@@ -76,6 +82,16 @@ export default {
     background-repeat: no-repeat;
     background-position: right;
     background-color: black;
-    height: 90vh;
+    height: 89vh;
+    border-top: white 2px solid;
+  }
+  button {
+    margin-bottom: 15px;
+    background: #7875AC;
+    transition: background .5s;
+  }
+
+  button:hover {
+    background: #54527c;
   }
 </style>
