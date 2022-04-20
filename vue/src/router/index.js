@@ -10,6 +10,7 @@ import BrewerPage from '../views/BrewerPage.vue'
 import BeerLoverPage from '../views/BeerLoverPage.vue'
 import ReviewForm from '../components/ReviewForm.vue'
 import BreweryPage from '../views/BreweryPage.vue'
+import AllBeers from '../views/AllBeers.vue'
 
 import BeerPage from '../views/BeerPage.vue'
 Vue.use(Router)
@@ -103,6 +104,14 @@ const router = new Router({
       path: '/brewerypage',
       name: 'brewerypage',
       component: BreweryPage,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/beers',
+      name: 'allbeers',
+      component: AllBeers,
       meta: {
         requiresAuth: false
       }

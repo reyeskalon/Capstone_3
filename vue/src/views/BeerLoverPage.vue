@@ -5,34 +5,23 @@
             <h1>Favorite Beers</h1>
             <beer v-for="beer in LikedBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
         </div>
-        <div id="allBrew">
-            <h1>All Beers</h1>
-            <beer v-for="beer in AllBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
-        </div>
     </div>
 </template>
 
 <script>
-import Beer from '../components/Beer.vue'
 import UserProfile from '../components/UserProfile.vue';
 import BeerService from '../services/BeerService.js'
 export default {
-  components: { Beer, UserProfile },
+  components: { UserProfile },
   computed: {
         LikedBeers() {
             return this.$store.state.beers;
         },
-        AllBeers() {
-            return this.$store.state.allBeers;
-        }
     },
   created(){
       BeerService.SetLikedBeers(this.$store.state.user.userId).then(response => {
             this.$store.commit("SET_BEERS", response.data);
-        }),
-      BeerService.GetAllBeers().then(response => {
-          this.$store.commit("SET_ALL_BEERS", response.data);
-      });
+        })
   }
 }
 </script>
