@@ -32,7 +32,7 @@ export default {
     background: linear-gradient(25deg, rgba(148,35,224,1) 5%, rgba(255,14,250,1) 52%, rgba(252,176,69,1) 100%); */
     background: black;
 
-    border-bottom: black solid 2px;
+    border-bottom: white solid 2px;
 }
 #logo-link{
     height: 90px;

@@ -1,6 +1,8 @@
 <template>
     <div id="card">
-        <h1>{{currentBrewery.name}}</h1>
+        <router-link id="brewery-link" v-bind:to="{ name: 'brewerypage' }" @click="SetBrewery">
+            <h1>{{currentBrewery.name}}</h1>
+        </router-link>
         <p>{{currentBrewery.history}}</p>
         <div id="contact-info">
             <p>{{currentBrewery.websiteURL}}</p>
@@ -24,6 +26,13 @@ export default {
             currentBrewery: {}
         }
     },
+    methods: {
+        SetBrewery(){
+            BreweryService.GetBreweryByBreweryId(this.currentBrewery.breweryId).then(response => {
+            this.$store.commit("SET_BREWERY", response.data);
+        });
+        }
+    }
 }
 </script>
 
@@ -47,5 +56,8 @@ export default {
         display: flex;
         width: 100%;
         justify-content: space-around;
+    }
+    #brewery-link{
+        color: black;
     }
 </style>

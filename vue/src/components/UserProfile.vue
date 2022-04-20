@@ -16,7 +16,7 @@
       <div class="wrapper">
         <div class="sidebar sidebar-left">
           <div>
-            <div class="user-profile-picture-container"><img class="user-profile-picture" src="./images/UI Faces/customer-6.jpg" alt="" /></div>
+            <div class="user-profile-picture-container"><img class="user-profile-picture" src="../assets/images/UI-faces/customer-6.jpg" alt="" /></div>
             <div class="user-info-container">
               <h3 class="user-name">Nora Tsundoda</h3>
               <h4 class="user-role">Beer Lover</h4>
@@ -120,7 +120,7 @@ body {
       rgb(247, 246, 246) 50%,
       rgba(255, 255, 255, 0.446)
     ),
-    url("./images/PittsburghBackdropMap.jpeg");
+    url("../assets/images/PittsburghBackdropMap.jpg");
   background-size: cover;
   background-position: left;
   height: 160vh;
