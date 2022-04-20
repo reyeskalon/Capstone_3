@@ -46,6 +46,13 @@ export default {
     widows: 80px;
     padding: 5px;
 }
+#logo:hover {
+    transform: scale(1.1);
+}
+#logo:active {
+    transform: scale(1);
+}
+
 #circle {
     height: 90px;
     widows: 90px;
@@ -91,6 +98,11 @@ export default {
     background: white;
     color: black;
 }
+
+.link:active {
+    transform: scale(.95);
+}
+
 #profile_icon {
     height: 90px;
 }
@@ -118,8 +130,15 @@ export default {
 #all-breweries:hover{
     transform: scale(1.1);
 }
+
+#all-breweries:active {
+    transform: scale(1);
+}
 #all-beers:hover{
     transform: scale(1.1);
+}
+#all-beers:active {
+    transform: scale(1);
 }
 #line{
     font-size: 50px;
