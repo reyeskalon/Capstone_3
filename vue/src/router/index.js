@@ -9,6 +9,7 @@ import AdminPage from '../views/AdminPage.vue'
 import BrewerPage from '../views/BrewerPage.vue'
 import BeerLoverPage from '../views/BeerLoverPage.vue'
 import ReviewForm from '../components/ReviewForm.vue'
+import BreweryPage from '../views/BreweryPage.vue'
 
 import BeerPage from '../views/BeerPage.vue'
 Vue.use(Router)
@@ -97,7 +98,15 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
-    }
+    },
+    {
+      path: '/brewerypage',
+      name: 'brewerypage',
+      component: BreweryPage,
+      meta: {
+        requiresAuth: false
+      }
+    },
   ]
 })
 
