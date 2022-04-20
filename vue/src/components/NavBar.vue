@@ -5,6 +5,11 @@
                 <router-link v-bind:to="{ name: 'home' }" id="logo-link"><img src="../assets/icons/DAP-logo.png" alt="" id="logo"></router-link>
             </div>
         </div>
+        <div id="beer-brewery">
+            <router-link v-bind:to="{ name: 'allbeers' }" id="all-beers">Beers</router-link>
+            <p id="line">|</p>
+            <router-link v-bind:to="{ name: 'allbreweries' }" id="all-breweries">Breweries</router-link>
+        </div>
         <div id="links">
             <router-link id="test" v-if="$store.state.token != ''" v-bind:to="{ name: 'logout' }" class="link">Sign out</router-link>
             <router-link  v-if="$store.state.token == ''" v-bind:to="{ name: 'login' }" id="login" class="link">Log in</router-link>
@@ -28,8 +33,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background: rgb(148,35,224);
-    background: linear-gradient(25deg, rgba(148,35,224,1) 5%, rgba(255,14,250,1) 52%, rgba(252,176,69,1) 100%); */
     background: black;
 
     border-bottom: white solid 2px;
@@ -90,5 +93,35 @@ export default {
 }
 #profile_icon {
     height: 90px;
+}
+#beer-brewery{
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+#all-beers{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    padding-right: 40px;
+}
+#all-breweries{
+    color:white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding-left: 40px;
+}
+#all-breweries:hover{
+    transform: scale(1.1);
+}
+#all-beers:hover{
+    transform: scale(1.1);
+}
+#line{
+    font-size: 50px;
 }
 </style>
