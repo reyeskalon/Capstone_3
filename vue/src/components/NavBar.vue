@@ -47,9 +47,12 @@ export default {
     padding: 5px;
 }
 #logo:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 #logo:active {
+    transform: scale(1);
+}
+#logo:hover:after {
     transform: scale(1);
 }
 
