@@ -1,9 +1,11 @@
 <template>
     <div id="card">
-        <router-link id="brewery-link" v-bind:to="{ name: 'brewerypage' }" @click="SetBrewery">
-            <h1>{{currentBrewery.name}}</h1>
-        </router-link>
-        <p>{{currentBrewery.history}}</p>
+        <div @click="SetBrewery">
+            <router-link id="brewery-link" v-bind:to="{ name: 'brewerypage' }">
+                <h1>{{currentBrewery.name}}</h1>
+            </router-link>
+            <p>{{currentBrewery.history}}</p>
+        </div>
         <div id="contact-info">
             <p>{{currentBrewery.websiteURL}}</p>
             <p>{{currentBrewery.phoneNumber}}</p>
@@ -28,9 +30,13 @@ export default {
     },
     methods: {
         SetBrewery(){
-            BreweryService.GetBreweryByBreweryId(this.currentBrewery.breweryId).then(response => {
+            BreweryService.GetBreweryByBreweryId(this.currentBrewery.id).then(response => {
             this.$store.commit("SET_BREWERY", response.data);
+            console.log('this button is working');
         });
+        },
+        TestLog(){
+            console.log('this button is working')
         }
     }
 }
