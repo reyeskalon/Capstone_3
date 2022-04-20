@@ -1,13 +1,10 @@
 <template>
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only"></label>
       <input
-
         type="text"
         id="username"
         class="form-control"
@@ -16,7 +13,6 @@
         required
         autofocus
       />
-      <label for="password" class="sr-only"></label>
       <input
         type="password"
         id="password"
@@ -33,7 +29,6 @@
         v-model="user.confirmPassword"
         required
       />
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" v-on:click.prevent="register" type="submit">
         Create Account
       </button>
@@ -93,7 +88,6 @@ export default {
 
 <style scoped>
  #register {
-    
     background-image: url('../assets/images/register_image.webp');
     background-repeat: no-repeat;
     background-position: center;
@@ -105,37 +99,56 @@ export default {
     justify-content: center;
     align-items: flex-end;
   }
-  .items{
-    padding: 50%;
-  }
   form {
     font-family: 'Duru Sans', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;
-    background: lightgrey;
+    justify-content: space-around;
+    padding: 20px;
+    background: white;
     border: black solid 2px;
-    border-radius: 15px;
+    border-radius: 5px;
     margin: 125px;
     margin-left: 150px;
+    margin-bottom: 220px;
   }
   #username{
-    margin: 5px;
     display: flex;
     flex-direction: column;
     width: 100%;
   }
   #password{
-    margin: 5px;
     display: flex;
     flex-direction: column;
     width: 100%;
   }
   #confirmPassword{
-    margin: 5px;
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+  .form-register{
+    height: 200px;
+    width: 300px;
+  }
+  button{
+    width: 100%;
+    height: 30px;
+    background-color: #7875AC;
+    transition: background .5s;
+  }
+  button:hover {
+    background: #54527c;
+  }
+  .form-control{
+    height: 30px;
+    border: solid 2px #7F7875AC ;
+  }
+  input:hover{
+    background-color: lightgray;
+  }
+  input:focus{
+    background-color: lightgray;
   }
 </style>

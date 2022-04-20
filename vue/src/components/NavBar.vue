@@ -12,7 +12,7 @@
         </div>
         <div id="links">
             <router-link id="test" v-if="$store.state.token != ''" v-bind:to="{ name: 'logout' }" class="link">Sign out</router-link>
-            <router-link  v-if="$store.state.token == ''" v-bind:to="{ name: 'login' }" id="login" class="link">Log in</router-link>
+            <router-link  v-if="ShowLogin" v-bind:to="{ name: 'login' }" id="login" class="link">Log in</router-link>
             <router-link v-if="$store.state.token == ''" v-bind:to="{ name: 'register' }" id="register" class="link">Register</router-link>
             <router-link id="profile" v-if="$store.state.token != ''" v-bind:to="{ name: 'beerlover' }"><img id="profile_icon" src="../assets/images/profile_icon_removebg_white.png" alt=""></router-link>
         </div>
@@ -21,6 +21,17 @@
 
 <script>
 export default {
+    computed: {
+        ShowLogin(){
+            return (this.$store.state.token == '')
+        },
+        ShowRegister(){
+            return true
+        },
+        ShowProfile(){
+            return true;
+        }
+    }
 
 }
 </script>
