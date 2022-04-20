@@ -93,7 +93,6 @@ export default {
 #select-button {
     margin: 10px;
     color: black;
-  
 }
 #beer.name{
     height:50px;

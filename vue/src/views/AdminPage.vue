@@ -7,7 +7,7 @@
             </div>
             
         </div>
-                    <div id="submit-forms">
+        <div id="submit-forms">
                 <edit-brewery />
                 <edit-beer />
             </div> 
