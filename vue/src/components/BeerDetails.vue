@@ -70,6 +70,4 @@ h1 {
 #gfbeer {
     height: 40px;
 }
-
-
 </style>
