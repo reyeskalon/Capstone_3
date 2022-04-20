@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
       <section class="section-featured">
         <div class="container-featured">
             <h2 class="heading-featured-in">As featured In</h2>
@@ -23,8 +23,8 @@ export default {
 
 <style>
 .section-featured {
-    padding: 10px;
-    background-color:  #7875AC;
+    padding-top: 10px;
+    background-color:  #6a3ab8;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -34,8 +34,9 @@ export default {
     letter-spacing: 0.75px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2.4rem;
+    margin-bottom: 2rem;
     display: block;
+    color: #000;
 }
 
 .logos {

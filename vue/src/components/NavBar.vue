@@ -2,7 +2,7 @@
     <div id="nav-bar">
         <div id="logo-container">
             <div id="circle">
-                <router-link v-bind:to="{ name: 'home' }" id="logo-link"><img src="../assets/pngs/drop_a_pint_logo_transparent.png" alt="" id="logo"></router-link>
+                <router-link v-bind:to="{ name: 'home' }" id="logo-link"><img src="../assets/icons/DAP-logo.png" alt="" id="logo"></router-link>
             </div>
         </div>
         <div id="links">
@@ -32,7 +32,7 @@ export default {
     background: linear-gradient(25deg, rgba(148,35,224,1) 5%, rgba(255,14,250,1) 52%, rgba(252,176,69,1) 100%); */
     background: black;
 
-    border-bottom: black solid 2px;
+    border-bottom: white solid 2px;
 }
 #logo-link{
     height: 90px;
@@ -48,7 +48,8 @@ export default {
     widows: 90px;
     border-radius: 50%;
     border: 5px solid black;
-    background: white;
+    background-color: white;
+    background-image: linear-gradient(135deg, rgb(255, 255, 255), rgb(68, 228, 240), blueviolet, pink);
     display: flex;
     align-items: center;
     justify-content: center;

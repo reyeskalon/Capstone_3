@@ -1,8 +1,8 @@
 <template>
     <div id="brewster">
          <p id="username">{{user.username}} has requested Brewer privilege</p>
-        <button v-on:click="CallApproval(user); ReloadPage();" id="approve">Approve</button>
-        <button v-on:click="CallDenial(user); ReloadPage();" id="deny">Deny</button>
+        <button v-on:click.prevent="CallApproval(user); ReloadPage();" id="approve">Approve</button>
+        <button v-on:click.prevent="CallDenial(user); ReloadPage();" id="deny">Deny</button>
     </div>
 </template>
 
@@ -40,7 +40,7 @@ export default {
     #brewster{
         display:flex;
         justify-content: space-between 10px;
-        background-color: #7875AC;
+        background-color: #b3921e;
         border:black solid 1px;
         border-radius: 5px;
         padding: 5px;

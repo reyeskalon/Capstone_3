@@ -54,7 +54,7 @@ export default {
     background-image: url('../assets/pngs/edit.png');
     height: 28px;
     width: 30px;
-    background-color: #8886ad;
+    background-color: #d6bb59;
     border-radius: 7px;
     
 }
@@ -68,7 +68,7 @@ export default {
     height: 100px;
     padding: 10px;
     margin:10px;
-    background: #7875AC;
+    background: #b3921e;
     border: black 1px solid;
     flex-direction: row;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
