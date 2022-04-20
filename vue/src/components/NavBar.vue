@@ -49,7 +49,7 @@ export default {
     border-radius: 50%;
     border: 5px solid black;
     background-color: white;
-    background-image: linear-gradient(135deg, orange, rgb(68, 228, 240), blueviolet, pink);
+    background-image: linear-gradient(135deg, rgb(255, 255, 255), rgb(68, 228, 240), blueviolet, pink);
     display: flex;
     align-items: center;
     justify-content: center;
