@@ -86,9 +86,9 @@ export default {
     background-image: url('../assets/pngs/edit.png');
     height: 28px;
     width: 30px;
-    background-color: rgb(226, 190, 90);
+    background-color: white;
     border-radius: 7px;
-    
+    border: solid 1px white;
 }
 #select-button {
     margin: 10px;
@@ -99,7 +99,7 @@ export default {
     margin: none;
 }
 #beer.beerType{
-    height:px;
+    height: 20px;
     margin: none;
 }
 #beer-card {
@@ -108,8 +108,9 @@ export default {
     height: 100px;
     padding: 10px;
     margin:10px;
-    background: #b3921e;
-    border: black 1px solid;
+    background-color: white;
+    background-image: linear-gradient(to right,rgba(226, 190, 90, 0.801), rgba(97, 29, 185, 0.794) );
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
     flex-direction: row;
     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
     column-gap: 20px;

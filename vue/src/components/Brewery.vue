@@ -68,7 +68,8 @@ export default {
     height: 100px;
     padding: 10px;
     margin:10px;
-    background: #b3921e;
+    background-color: white;
+    background-image: linear-gradient(135deg, lightblue, rgba(97, 29, 185, 0.794));
     border: black 1px solid;
     flex-direction: row;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
