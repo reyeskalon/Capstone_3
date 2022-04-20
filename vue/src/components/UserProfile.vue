@@ -121,7 +121,7 @@ export default {
     url("../assets/images/PittsburghBackdropMap.jpg");
   background-size: cover;
   background-position: left;
-  height: 250vh;
+  height: 200vh;
   width: 100vw;
   z-index: 1;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div >
       <section class="section-featured">
         <div class="container-featured">
             <h2 class="heading-featured-in">As featured In</h2>
@@ -42,7 +42,6 @@ export default {
 .logos {
     display: flex;
     justify-content: space-around;
-    padding-bottom: 2rem;
 }
 
 .logos img {
