@@ -21,7 +21,7 @@
         <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
             <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
         </div>
-        <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+        <router-link v-bind:to="{ name: null }" id="beerpage" class="link">
                 <p id="button-text" @click.prevent="ToggleForm(); SetBeer();">Review</p>
         </router-link>
         <review-form v-show="showForm"/>

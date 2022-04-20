@@ -42,6 +42,7 @@ h1 {
     border: black solid 1px;
     border-radius: 15px;
     color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.473);
 }
 #beerpic {
     widows: 350px;
@@ -49,10 +50,10 @@ h1 {
     border: white (148, 140, 140) solid 5px;
     border-radius: 15px;
     margin: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.473);
 }
 #wholething {
     display: grid;
-    
 }
 #info {
     width: 300px;
@@ -64,6 +65,7 @@ h1 {
     font-family: 'Duru Sans', sans-serif;
     display: grid;
     color: white;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.473);
 }
 #allinfo {
     display: flex;
