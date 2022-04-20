@@ -27,7 +27,8 @@ export default new Vuex.Store({
     beer: {},
     allBeers: [],
     selectedBeer: {} || {},
-    beersByBrewer: []
+    beersByBrewer: [],
+    reviewsByBeer:[]
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -38,6 +39,9 @@ export default new Vuex.Store({
     SET_USER(state, user) {
       state.user = user;
       localStorage.setItem('user',JSON.stringify(user));
+    },
+    SET_REVIEWS_BY_BEERID(state, data){
+      state.reviewsByBeer = data;
     },
     LOGOUT(state) {
       localStorage.removeItem('token');
