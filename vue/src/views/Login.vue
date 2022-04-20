@@ -58,12 +58,14 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     padding: 20px;
     background: white;
     border: black solid 2px;
-    border-radius: 15px;
-    margin: 50px;
-    margin-left: 150px;
+    border-radius: 5px;
+    margin: 220px;
+    width: 300px;
+    height: 200px;
   }
   .items {
     margin-top: 5px;
@@ -76,9 +78,9 @@ export default {
   #login {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url('../assets/images/signup_resized.jpeg');
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url('../assets/images/bottles_resized.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-color: black;
@@ -94,5 +96,14 @@ export default {
   button:hover {
     background: #54527c;
   }
-  
+  input{
+    background-color:white;
+    border: solid 2px #7F7875AC ;
+  }
+  input:hover{
+    background-color: lightgray;
+  }
+  input:focus{
+    background-color: lightgray;
+  }
 </style>
