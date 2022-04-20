@@ -18,7 +18,7 @@
                 <div id="contact-info">
                     <p>{{CurrentBrewery.address}}</p>
                     <p>{{CurrentBrewery.phoneNumber}}</p>
-                    <a :href="CurrentBrewery.websiteURL"><img id="website-icon" src="..\assets\pngs\website_icon.png" alt=""></a>
+                    <a :href="CurrentBrewery.websiteURL"><img id="website-icon" src="..\assets\pngs\website_icon_purple.png" alt=""></a>
                 </div>
                 <p id="hours">{{CurrentBrewery.hoursOfOperation}}</p>
             </div>

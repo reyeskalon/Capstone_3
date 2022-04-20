@@ -1,8 +1,7 @@
 <template>
     <div id="beerlover">
-        <user-profile />
+        <user-profile id="profile"/>
         <div id="favs">
-            <h1>Favorite Beers</h1>
             <beer v-for="beer in LikedBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
         </div>
     </div>
@@ -11,8 +10,9 @@
 <script>
 import UserProfile from '../components/UserProfile.vue';
 import BeerService from '../services/BeerService.js'
+import Beer from '../components/Beer.vue'
 export default {
-  components: { UserProfile },
+  components: { UserProfile, Beer },
   computed: {
         LikedBeers() {
             return this.$store.state.beers;
@@ -45,5 +45,11 @@ export default {
         border-radius: 15px;
         margin: 5px;
     }
-    
+    #beer-lover{
+        display: flex;
+        flex-direction: column;
+    }
+    #profile{
+        height: 200vh;
+    }
 </style>
