@@ -5,6 +5,10 @@
                 <router-link v-bind:to="{ name: 'home' }" id="logo-link"><img src="../assets/pngs/drop_a_pint_logo_transparent.png" alt="" id="logo"></router-link>
             </div>
         </div>
+        <div id="beer-brewery">
+            <router-link v-bind:to="{ name: 'breweries' }" id="all-breweries" class="link">Breweries</router-link>
+            <router-link v-bind:to="{ name: 'beers' }" id="all-beers" class="link">Beers</router-link>
+        </div>
         <div id="links">
             <router-link id="test" v-if="$store.state.token != ''" v-bind:to="{ name: 'logout' }" class="link">Sign out</router-link>
             <router-link  v-if="$store.state.token == ''" v-bind:to="{ name: 'login' }" id="login" class="link">Log in</router-link>
@@ -28,8 +32,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* background: rgb(148,35,224);
-    background: linear-gradient(25deg, rgba(148,35,224,1) 5%, rgba(255,14,250,1) 52%, rgba(252,176,69,1) 100%); */
     background: black;
 
     border-bottom: white solid 2px;
@@ -89,5 +91,17 @@ export default {
 }
 #profile_icon {
     height: 90px;
+}
+#beer-brewery{
+    display: flex;
+}
+#all-beers{
+    width: 130px;
+    display: flex;
+    justify-content: center;
+}
+#all-breweries{
+    width: 130px;
+    
 }
 </style>
