@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="body">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style>
-body {
+.body {
  box-sizing: border-box;
   margin: 0;
   padding: 0;
