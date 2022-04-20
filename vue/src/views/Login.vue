@@ -63,8 +63,7 @@ export default {
     background: white;
     border: black solid 2px;
     border-radius: 5px;
-    margin: 50px;
-    margin-left: 150px;
+    margin: 220px;
     width: 300px;
     height: 200px;
   }
@@ -79,9 +78,9 @@ export default {
   #login {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-image: url('../assets/images/signup_resized.jpeg');
+    justify-content: flex-end;
+    align-items: center;
+    background-image: url('../assets/images/bottles_resized.jpg');
     background-repeat: no-repeat;
     background-position: right;
     background-color: black;

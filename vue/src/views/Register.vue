@@ -95,9 +95,9 @@ export default {
     height: 89vh;
     border-top: white 2px solid;
     display: flex;
-    flex-direction: row ;
-    justify-content: center;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
   }
   form {
     font-family: 'Duru Sans', sans-serif;
@@ -109,9 +109,10 @@ export default {
     background: white;
     border: black solid 2px;
     border-radius: 5px;
-    margin: 125px;
-    margin-left: 150px;
+    margin: 220px;
     margin-bottom: 220px;
+    width: 300px;
+    height: 200px;
   }
   #username{
     display: flex;
