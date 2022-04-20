@@ -1,37 +1,40 @@
 <template>
-    <div id="beer-card">
-        <div id="beer-image" class="prop-wrapper">
-            <img :src="beer.imgURL" alt="" id="beer-img"/>
-        </div>
-        <div id="select-button">
-            <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-                <tr id="button-text" v-on:click="changeStoreValueForSelectedBeer">View Detail</tr>
+    <div id="main">
+        <div id="beer-card">
+            <div id="beer-image" class="prop-wrapper">
+                <img :src="beer.imgURL" alt="" id="beer-img"/>
+            </div>
+            <div id="select-button">
+                <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+                    <tr id="button-text" v-on:click="changeStoreValueForSelectedBeer">View Detail</tr>
+                </router-link>
+            </div>
+            <div id="beerType" class="beerType">
+                <p>{{beer.beerType}}</p>
+                <p>{{beer.name}}</p>
+            </div>
+            <div id="abv" class="beerAbv">
+                <p>{{beer.abv}}%</p>
+            </div>
+            <div id="beerDescription" class="beer-description">
+                <p>{{beer.description}}</p>
+            </div>
+            <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
+                <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
+            </div>
+            <router-link v-bind:to="{ name: null }" id="beerpage" class="link">
+                    <p id="button-text" @click.prevent="ToggleForm(); SetBeer();">Review</p>
             </router-link>
-        </div>
-        <div id="beerType" class="beerType">
-            <p>{{beer.beerType}}</p>
-            <p>{{beer.name}}</p>
-        </div>
-        <div id="abv" class="beerAbv">
-            <p>{{beer.abv}}%</p>
-        </div>
-        <div id="beerDescription" class="beer-description">
-            <p>{{beer.description}}</p>
-        </div>
-        <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
-            <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
-        </div>
-        <router-link v-bind:to="{ name: null }" id="beerpage" class="link">
-                <p id="button-text" @click.prevent="ToggleForm(); SetBeer();">Review</p>
-        </router-link>
-        <review-form v-show="showForm"/>
-        <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-                <p id="button-text" v-on:click.prevent="FavoriteBeer">Favorite</p>
-        </router-link>
+            <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
+                    <p id="button-text" v-on:click.prevent="FavoriteBeer">Favorite</p>
+            </router-link>
 
-        <button id="update-button" v-on:click.prevent="methodToUpdateBeer"></button>
+            <button id="update-button" v-on:click.prevent="methodToUpdateBeer"></button> 
+        </div>
+        <div id="review-container">
+            <review-form id="review" v-show="showForm"/>
+        </div>
     </div>
-    
 </template>
 
 <script>
@@ -159,5 +162,26 @@ color: rgb(0, 0, 0);
     color: black;
     background-color:rgb(226, 190, 90);
     border-color: black;
+}
+#review{
+    width: 99%;
+    height: 250px;
+    z-index: 9;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b3921e;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+#beer-card{
+    position: relative;
+}
+#main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
 }
 </style>
