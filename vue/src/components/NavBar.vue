@@ -6,9 +6,9 @@
             </div>
         </div>
         <div id="beer-brewery">
-            <router-link v-bind:to="{ name: 'allbeers' }" id="all-beers">Beers</router-link>
+            <router-link v-bind:to="{ name: 'allbeers' }" id="all-beers-link">Beers</router-link>
             <p id="line">|</p>
-            <router-link v-bind:to="{ name: 'allbreweries' }" id="all-breweries">Breweries</router-link>
+            <router-link v-bind:to="{ name: 'allbreweries' }" id="all-breweries-link">Breweries</router-link>
         </div>
         <div id="links">
             <router-link id="test" v-if="$store.state.token != ''" v-bind:to="{ name: 'logout' }" class="link">Sign out</router-link>
@@ -127,31 +127,31 @@ export default {
     align-items: center;
     font-size: 35px;
 }
-#all-beers{
+#all-beers-link{
     display: flex;
     justify-content: center;
     text-decoration: none;
     color: white;
     padding-right: 40px;
 }
-#all-breweries{
+#all-breweries-link{
     color:white;
     display: flex;
     justify-content: center;
     text-decoration: none;
     padding-left: 40px;
 }
-#all-breweries:hover{
+#all-breweries-link:hover{
     transform: scale(1.1);
 }
 
-#all-breweries:active {
+#all-breweries-link:active {
     transform: scale(1.05);
 }
-#all-beers:hover{
+#all-beers-link:hover{
     transform: scale(1.1);
 }
-#all-beers:active {
+#all-beers-link:active {
     transform: scale(1.05);
 }
 #line{
