@@ -1,10 +1,10 @@
 <template>
 <div>
     <div id="forms">
-    <router-link v-bind:to="{ name: 'brewer' }" id="AddBrewery" class="link">
+    <router-link v-bind:to="{ name: null }" id="AddBrewery" class="link">
             <p id="button-text" v-on:click.prevent="toggleShowForm">Add A Brewery</p>
     </router-link>
-    <router-link v-bind:to="{ name: 'brewer' }" id="AddBrewery" class="link">
+    <router-link v-bind:to="{ name: null }" id="AddBrewery" class="link">
             <p id="button-text" v-on:click.prevent=" updateBrewer(); toggleShowForm(); ">Update Brewery</p>
     </router-link>
     </div>
