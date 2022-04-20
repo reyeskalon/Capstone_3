@@ -135,13 +135,13 @@ export default {
 }
 
 #all-breweries:active {
-    transform: scale(1);
+    transform: scale(1.05);
 }
 #all-beers:hover{
     transform: scale(1.1);
 }
 #all-beers:active {
-    transform: scale(1);
+    transform: scale(1.05);
 }
 #line{
     font-size: 50px;
