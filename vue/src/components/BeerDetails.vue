@@ -51,10 +51,7 @@ h1 {
     margin: 15px;
 }
 #wholething {
-    display: grid;
-    background-color: white;
-    background-image: linear-gradient(135deg, lightblue, blue);
-    
+    display: grid;   
 }
 #info {
     width: 300px;
