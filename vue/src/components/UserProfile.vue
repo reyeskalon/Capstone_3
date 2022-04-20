@@ -36,9 +36,6 @@
           </div>
         </div>
         <div class="main">
-          <div class="profile-logo-container">
-            <img class="logo-image" src="../assets/icons/DAP-logo.png" alt="">
-          </div>
           <div class="main-features-container">
             <div class="main-features">
               <ul class="main-feature-fav-list">
@@ -50,7 +47,8 @@
             </div>
             <div class="friends-container">
               <div class="main-features-friends">
-                  <h1 class="main-features-title friends-title">Recently added friends</h1>
+                  <h1 class="main-features-title friends-title">Recently added friends <img class="friends-title_icon" src="../assets/icons/cheers.png" alt="">
+                    </h1>
                 <ul class="friends-list">
                   <li><img class="friends-img" src="../assets/images/UI-faces/customer-2.jpg" alt=""><div>Joe A.</div></li>
                   <li><img class="friends-img" src="../assets/images/UI-faces/customer-1.jpg" alt=""><div>Katie U.</div></li>
@@ -65,9 +63,9 @@
             <div class="recent-locations-container">
               <div class="recent-locations">
                 <ul class="recent-locations_list">
-                  <h1 class="recent-locations-title">Recent Locations</h1>
-                  <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/burghers.png">>Burgh'ers Brewing</li>
-                  <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/hop-farm.png">>Hop Farm Brewing Company</li>
+                  <h1 class="recent-locations-title">Recent Locations  <img class="recent-locations-title_icon" src="../assets/icons/beer-location.png" alt=""></h1>
+                  <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/burghers.png">Burgh'ers Brewing</li>
+                  <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/hop-farm.png">Hop Farm Brewing Company</li>
                   <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/southern-tier.png">Southern Tier Brewing Co.</li>
                   <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/412-brewery.png">412 Brewery</li>
                   <li class="main-feature-fav-list_item"><img class="recent-locations-img" src="../assets/images/brewery-logos/2-frays.png">2 Frays Brewery</li>
@@ -123,7 +121,7 @@ body {
     url("../assets/images/PittsburghBackdropMap.jpg");
   background-size: cover;
   background-position: left;
-  height: 160vh;
+  height: 250vh;
   width: 100vw;
   z-index: 1;
 }
@@ -169,7 +167,7 @@ body {
   justify-content: center;
 }
 .user-profile-picture {
-  margin-top: 150px;
+  margin-top: 20px;
   text-align: center;
   width: 50%;
   border-radius: 50%;
@@ -239,7 +237,7 @@ h3 {
   margin-bottom: 4px;
 }
 .bio-heading {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 .user-biography {
   line-height: 20px;
@@ -281,12 +279,9 @@ h3 {
   margin: 0 auto;
   text-align: center;
 }
-.logo-image {
-  padding-top: 20px;
-  height: 100px;
-  margin-bottom: 31px;
-}
+
 .main-features-container {
+  margin-top: 10px;
   border-radius: 5px;
   height: 310px;
   padding-top: 1px;
@@ -297,6 +292,7 @@ h3 {
   color: rgba(0, 0, 0, 0.537);
   letter-spacing: 1px;
   font-weight: 500;
+  font-size: 1.3rem;
   padding: 5px;
   display: flex;
   align-items: center;
@@ -337,12 +333,20 @@ h3 {
   color: rgba(0, 0, 0, 0.537);
   letter-spacing: 1px;
   font-weight: 500;
+  font-size: 1.3rem;
   padding: 5px;
   display: block;
   margin: 0;
   padding-left: 25px;
   margin-left: 20px;
   margin-bottom: 20px;
+}
+
+.friends-title_icon {
+  width: 30px;
+  align-self: center;
+  padding-left: 5px;
+  transform: translateY(10px);
 }
 .friends-list {
   padding: 0;
@@ -361,7 +365,7 @@ h3 {
 }
 .recent-locations-container {
   border-radius: 5px;
-  height: 800px;
+  height: 750px;
   margin-top: 30px;
   background-color: white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.136);
@@ -375,8 +379,16 @@ h3 {
   color: rgba(0, 0, 0, 0.537);
   letter-spacing: 1px;
   font-weight: 500;
+  font-size: 1.3rem;
   padding: 5px;
 }
+.recent-locations-title_icon {
+  width: 30px;
+  align-self: center;
+  padding-left: 5px;
+  transform: translateY(5px);
+}
+
 .recent-locations_list li {
   background-color: rgba(83, 83, 83, 0.072);
   padding: 10px;
