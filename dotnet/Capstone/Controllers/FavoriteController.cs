@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Capstone.Controllers
 {
-    [Route("[contorller]")]
+    [Route("[controller]")]
     [ApiController]
     public class FavoriteController : ControllerBase
     {
@@ -24,6 +24,11 @@ namespace Capstone.Controllers
         public Favorite SetFavBeer(Favorite favorite)
         {
             return FavoriteDao.SetFavBeer(favorite);
+        }
+        [HttpGet("{userId}")]
+        public List<Favorite> UsersFavBeers(int userId)
+        {
+            return FavoriteDao.UsersFavBeers(userId);
         }
     }
 }

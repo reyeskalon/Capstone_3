@@ -12,6 +12,5 @@ namespace Capstone.Models
         public string ReviewText { get; set; }
         public int BeerId { get; set; }
         public int UserId { get; set; }
-        
     }
 }
