@@ -18,11 +18,12 @@
                         </router-link>
                     </div>
                     <div class="clickable-divs">
-                        <p  id="review" class="clickable" @click.prevent="ToggleForm(); SetBeer();">Review</p>
-                    </div>
-                    <div class="clickable-divs">
                         <img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">
                     </div>
+                    <div class="clickable-divs">
+                        <p  id="review" class="clickable" @click.prevent="ToggleForm(); SetBeer();">Review</p>
+                    </div>
+                    
                 </div>
                 <!-- <button id="update-button" class="clickable" v-on:click.prevent="methodToUpdateBeer">Update</button> -->
             </div>
@@ -82,11 +83,12 @@ export default {
     font-weight: bold;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    text-align: center;
 
     height: 450px;
-    width: 350px;
+    width: 255px;
     background: white;
     border-radius: 5px;
 
@@ -97,12 +99,13 @@ export default {
 #beer-image{
     height: 200px;
     width: 200px;
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.603);
 }
 #beer-name{
     width: 100%;
     display: flex;
     justify-content: center;
-
+    padding-top: 50px;
     margin: 5px;
     font-size: 20px;
 }
@@ -117,6 +120,15 @@ export default {
     height: 20px;
     width: 20px;
 }
+
+#favorite-icon:hover {
+    cursor: pointer;
+}
+
+#review:hover {
+    cursor: pointer;
+}
+
 #view-details{
     text-decoration: none;
     color: black;
@@ -137,8 +149,12 @@ export default {
     margin-right: 10px;
 }
 #beer-image{
+    object-fit: fill;
+    position: center;
+    height: 100%;
     width: 100%;
-    z-index: 999;
+    overflow: hidden;
+
 }
 #name-gf-icon{
     display: flex;
@@ -147,14 +163,17 @@ export default {
     display: flex;
     width: 100%;
     justify-content: space-around;
+    align-content: center;
     border-top: 1px solid rgba(0, 0, 0, 0.103);
-    padding-top: 30px;
-    
+    margin-top: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 5px 0px 10px 0px rgba(0, 0, 0, 0.137);
 }
 #bottom{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
 }

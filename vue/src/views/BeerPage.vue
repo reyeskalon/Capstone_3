@@ -1,5 +1,5 @@
 <template>
-    <div id="main">
+    <div class="beer-page">
         <beer-details v-bind:beerDetails="Beer"/>
         <beer-review v-for="review in Reviews" v-bind:key="review.userId" v-bind:review="review"/>
     </div>
@@ -33,10 +33,8 @@ export default {
 </script>
 
 <style scoped>
-    #main {
-        background-color: #ffffff83;
-        background-image: linear-gradient(135deg, #db740db7, #100ddbb7);
-        height: 100%;
-        padding-bottom: 10px;
-    }
+.beer-page {
+    background-color: white;
+    background-image: linear-gradient(135deg, rgba(128, 222, 253, 0.76), rgba(137, 43, 226, 0.753));
+}
 </style>

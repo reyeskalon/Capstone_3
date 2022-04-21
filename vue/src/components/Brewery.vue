@@ -8,12 +8,13 @@
         <div id="num" class="prop-wrapper">
             <p id="number" class="items">{{b.phoneNumber}}</p>
         </div>
-       
-        <div id="gluten-free-beer" v-if="hasGlutenFreeBeer == true" class="prop-wrapper">
-            <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
-        </div>
-        <div id="gluten-free-food" v-if="hasGlutenFreeFood == true" class="prop-wrapper">
-            <img src="..\assets\pngs\gfFood-removebg-preview.png" alt="" id="gf-food" class="items">
+       <div id="gf-things">
+            <div id="gluten-free-beer" v-if="hasGlutenFreeBeer == true" class="prop-wrapper">
+                <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
+            </div>
+            <div id="gluten-free-food" v-if="hasGlutenFreeFood == true" class="prop-wrapper">
+                <img src="..\assets\pngs\gfFood-removebg-preview.png" alt="" id="gf-food" class="items">
+            </div>
         </div>
         <button id="update-button" v-on:click.prevent="methodToCallTheThing">Edit</button>
     </div>
@@ -64,7 +65,13 @@ export default {
     position: relative;
     box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.152);
     overflow: hidden;
-    margin: 10px;
+    padding: 10px;
+    margin:10px;
+   
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#gf-things{
+    display: flex;
 }
 .items {
     display: flex;
