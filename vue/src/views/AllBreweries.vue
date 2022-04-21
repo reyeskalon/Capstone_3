@@ -29,9 +29,23 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        background-color: white;
-        background-image: linear-gradient(to right,pink, cornflowerblue);
+        /* background-image: linear-gradient(to right,pink, cornflowerblue); */
         padding: 20px;
+
+        background: linear-gradient(90deg, pink, cornflowerblue, #6a3ab8);
+        background-size: 400% 400%;
+        animation: gradient 10s ease infinite;
     }
+      @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
 </style>
