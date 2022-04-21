@@ -22,9 +22,12 @@ export default {
 </script>
 
 <style scoped>
+  
   #main {
     font-family: 'Duru Sans', sans-serif;
+    
   }
+
   #features {
     border-top: black 2px solid;
     border-bottom: black 2px solid;
