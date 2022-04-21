@@ -61,10 +61,17 @@ export default {
     width: 350px;
     background: white;
     border-radius: 5px;
-    position: relative;
-    box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.152);
-    overflow: hidden;
-    margin: 10px;
+    height: 100px;
+    padding: 10px;
+    margin:10px;
+    background-color: white;
+    background-image: linear-gradient(135deg, lightblue, rgba(97, 29, 185, 0.794));
+    border: black 1px solid;
+    flex-direction: row;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    column-gap: 20px;
+    align-content: space-between;
+    align-items: flex-end;
 }
 .items {
     display: flex;

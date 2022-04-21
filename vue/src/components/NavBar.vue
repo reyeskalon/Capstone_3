@@ -1,5 +1,10 @@
 <template>
     <div id="nav-bar">
+<!-- FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<!--       -->
         <div id="logo-container">
             <div id="circle">
                 <router-link v-bind:to="{ name: 'home' }" id="logo-link"><img src="../assets/icons/DAP-logo.png" alt="" id="logo"></router-link>
@@ -38,14 +43,15 @@ export default {
 
 <style>
 #nav-bar {
-    font-family: 'Duru Sans', sans-serif;
+    font-family: Roboto;/*'Duru Sans', sans-serif;*/
     height: 100px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: black;
-
+    text-transform: uppercase;
+    letter-spacing: 1px;
     border-bottom: white solid 2px;
 }
 #logo-link{
@@ -93,13 +99,15 @@ export default {
 .link {
     display: flex;
     align-items: center;
-
+    
+    font-weight: 500;
     margin: 18px;
     padding: 10px;
 
+    text-transform: uppercase;  
     text-decoration: none;
     color: white;
-    font-size: 25px;
+    font-size: 1rem;
 
     border: solid 3px white;
     border-radius: 15px;
@@ -111,10 +119,12 @@ export default {
 .link:hover {
     background: white;
     color: black;
+    font-weight: 900;
 }
 
 .link:active {
     transform: scale(.95);
+    font-weight: 700;
 }
 
 #profile_icon {
