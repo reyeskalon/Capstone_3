@@ -1,37 +1,36 @@
 <template>
-    <div id="beer-card">
-        <div id="beer-image" class="prop-wrapper">
-            <img :src="beer.imgURL" alt="" id="beer-img"/>
+    <div id="main">
+        <div id="beer-card">
+            <img id="beer-image" :src="beer.imgURL" alt="">
+            <div id="bottom">
+                <div id="name-gf-icon">
+                    <p id="beer-name" class="beer-props">{{beer.name}}</p>
+                    <img id="gf-beer-icon" src="..\assets\pngs\GFBEER.png" alt="" v-show="beer.isGlutenFree">
+                </div>
+                <div id="type-abv">
+                    <p id="beer-type" class="beer-props">{{beer.beerType}}</p>
+                    <p id="beer-abv" class="beer-props">{{beer.abv}}%</p>
+                </div>
+                <div id="clickable-items">
+                    <div class="clickable-divs">
+                        <router-link id="view-details" v-bind:to="{ name: 'beerpage' }" v-on:click="changeStoreValueForSelectedBeer">
+                            <p  class="clickable">Details</p>
+                        </router-link>
+                    </div>
+                    <div class="clickable-divs">
+                        <p  id="review" class="clickable" @click.prevent="ToggleForm(); SetBeer();">Review</p>
+                    </div>
+                    <div class="clickable-divs">
+                        <img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">
+                    </div>
+                </div>
+                <!-- <button id="update-button" class="clickable" v-on:click.prevent="methodToUpdateBeer">Update</button> -->
+            </div>
         </div>
-        <div id="select-button">
-            <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-                <tr id="button-text" v-on:click="changeStoreValueForSelectedBeer">View Detail</tr>
-            </router-link>
+        <div id="review-container">
+            <review-form id="review" v-show="showForm"/>
         </div>
-        <div id="beerType" class="beerType">
-            <p>{{beer.beerType}}</p>
-            <p>{{beer.name}}</p>
-        </div>
-        <div id="abv" class="beerAbv">
-            <p>{{beer.abv}}%</p>
-        </div>
-        <div id="beerDescription" class="beer-description">
-            <p>{{beer.description}}</p>
-        </div>
-        <div id="gluten-free-beer" v-show="beer.isGlutenFree" class="prop-wrapper">
-            <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
-        </div>
-        <router-link v-bind:to="{ name: null }" id="beerpage" class="link">
-                <p id="button-text" @click.prevent="ToggleForm(); SetBeer();">Review</p>
-        </router-link>
-        <review-form v-show="showForm"/>
-        <router-link v-bind:to="{ name: 'beerpage' }" id="beerpage" class="link">
-                <p id="button-text" v-on:click.prevent="FavoriteBeer">Favorite</p>
-        </router-link>
-
-        <button id="update-button" v-on:click.prevent="methodToUpdateBeer"></button>
     </div>
-    
 </template>
 
 <script>
@@ -78,87 +77,88 @@ export default {
 
 
 <style scoped>
-#button-text{
-    font-size: 9px;
-    color: rgb(0, 0, 0); 
-}
-#update-button {
-    background-image: url('../assets/pngs/edit.png');
-    height: 28px;
-    width: 30px;
-    background-color: white;
-    border-radius: 7px;
-    border: solid 1px white;
-}
-#select-button {
-    margin: 10px;
-    color: black;
-}
-#beer.name{
-    height:50px;
-    margin: none;
-}
-#beer.beerType{
-    height: 20px;
-    margin: none;
-}
 #beer-card {
-    display: flex;
-    border-radius: 5px;
-    height: 100px;
-    padding: 10px;
-    margin:10px;
-    background-color: white;
-    background-image: linear-gradient(to right,rgba(226, 190, 90, 0.801), rgba(97, 29, 185, 0.794) );
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
-    flex-direction: row;
-    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-    column-gap: 20px;
-    align-content: space-between;
-    align-items: flex-end;
-}
-#beer-img {
-    height: 80px;
-    width: 80px;
-
-}
-#beer-image{
+    font-family: 'Duru Sans', sans-serif;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 450px;
+    width: 350px;
+    background: white;
+    border-radius: 5px;
+
+    position: relative;
+    box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.152);
+    overflow: hidden;
 }
-.items {
+#beer-image{
+    height: 200px;
+    width: 200px;
+}
+#beer-name{
+    width: 100%;
     display: flex;
-    align-items: flex-end;
-    margin: 0;
+    justify-content: center;
+
+    margin: 5px;
+    font-size: 20px;
 }
-.prop-wrapper {
-    display: flex;
-    align-items: flex-end;
+#gf-beer-icon{
+    height: 40px;
+    width: 40px;
 }
-.prop-wrapper:nth-child(1){
-    align-items: flex-start;
+.beer-props{
+    margin: 0%;
 }
-#gf-img {
-    height: 35px;
-    display: flex;
-    align-items: flex-end;
+#favorite-icon{
+    height: 20px;
+    width: 20px;
 }
-#abv {
-display: flex;
-flex-direction: column;
-align-items: center;
-height: 80px;
-width: 80px;
-}
-#beerDescription {
-display: flex;
-flex-direction: column;
-align-items: center;
-color: rgb(0, 0, 0);
-}
-#beerpage {
+#view-details{
+    text-decoration: none;
     color: black;
-    background-color:rgb(226, 190, 90);
-    border-color: black;
+}
+.clickable{
+    margin: 0px;
+}
+#type-abv{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+#beer-abv{
+    margin-left: 10px;
+}
+#beer-type{
+    margin-right: 10px;
+}
+#beer-image{
+    width: 100%;
+    z-index: 999;
+}
+#name-gf-icon{
+    display: flex;
+}
+#clickable-items{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border-top: 1px solid rgba(0, 0, 0, 0.103);
+    padding-top: 30px;
+    
+}
+#bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+#clickable-divs{
+    
 }
 </style>

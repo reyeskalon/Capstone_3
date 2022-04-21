@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div id="allBrew">
-            <beer v-for="beer in AllBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
+        <div id="all-beers">
+            <beer id="beer-cards" v-for="beer in AllBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
         </div>
     </div>
 </template>
@@ -25,5 +25,14 @@ export default {
 </script>
 
 <style scoped>
-
+    #all-beers{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: white;
+        background-image: linear-gradient(to right,pink, cornflowerblue);
+    }
+    #beer-cards{
+        margin: 20px;
+    }
 </style>
