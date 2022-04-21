@@ -67,7 +67,7 @@ export default {
             .then(response => {
                 this.$store.commit("SET_BEER", response.data)
             })
-        },
+        }
     },
     data() {
         return {
@@ -78,8 +78,15 @@ export default {
             },
             empty: true,
         }
+    },
+    created(){
+            FavoriteService.ListOfFavs(this.$store.state.user.userId)
+            .then(response => {
+                this.$store.commit("SET_FAVS_BY_USER", response.data)
+            })
+        }
     }
-}
+
 </script>
 
 
