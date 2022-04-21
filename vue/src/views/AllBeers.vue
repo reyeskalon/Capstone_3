@@ -39,9 +39,21 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        background-color: white;
-        background-image: linear-gradient(to right,pink, cornflowerblue);
+        background: linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
     }
+    @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
     #beer-cards{
         margin: 20px;
     }

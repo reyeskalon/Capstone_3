@@ -90,7 +90,7 @@ body {
 .grid-item .image {
     width: 100%;
     height: 100%;
-    border-top: solid 4px black;
+    border-top: solid 2px black;
 }
 
 .grid-item .image img {
@@ -148,25 +148,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    text-shadow: 2px 2px rgba(97, 97, 97, 0.61);
    
-    border-top: solid 4px black;
+    text-shadow: 2px 2px 1px rgba(163, 163, 163, 0.733);
    
+    border-top: solid 2px black;
+    background: whitesmoke;
 } 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
 h1 {
     font-size: 50px;

@@ -27,7 +27,7 @@ export default {
     padding-top: 10px;
     background-color:  #6a3ab8;
     font-family: Arial, Helvetica, sans-serif;
-    border-top: solid 6px black;
+    border-top: solid 4px black;
     
 }
 
