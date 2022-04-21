@@ -13,3 +13,5 @@ namespace Capstone.DAO
         void RemoveFavBeer(int userId, int beerId);
     } 
 }
+       
+
