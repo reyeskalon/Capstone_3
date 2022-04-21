@@ -53,7 +53,7 @@ CREATE TABLE beers (
 	category varchar(25) NOT NULL,
 	GF bit NOT NULL,
 	brewery_id int NOT NULL,
-	CONSTRAINT FK2_beers FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
+	CONSTRAINT FK_beers FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
 	CONSTRAINT PK_beer PRIMARY KEY (beer_id)
 );
 
@@ -61,8 +61,8 @@ CREATE TABLE beers (
 CREATE TABLE userbrewery (
 	user_id int NOT NULL,
 	brewery_id int NOT NULL,
-	CONSTRAINT FK_brewery FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
-	CONSTRAINT FK_users FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_brewery_users FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
+	CONSTRAINT FK_users_brewery FOREIGN KEY (user_id) REFERENCES users (user_id),
 	CONSTRAINT PK_breweryuser PRIMARY KEY (brewery_id, user_id)
 	
 );
@@ -73,8 +73,8 @@ CREATE TABLE beer_reviews (
 	review_body varchar(250),
 	beer_id int NOT NULL,
 	user_id int NOT NULL,
-	CONSTRAINT FK4_beer FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
-	CONSTRAINT FK4_user FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_beer_user FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
+	CONSTRAINT FK_user_beer FOREIGN KEY (user_id) REFERENCES users (user_id),
 );
 
 CREATE TABLE brewery_reviews (
@@ -83,20 +83,15 @@ CREATE TABLE brewery_reviews (
 	review_body varchar(250),
 	brewery_id int NOT NULL,
 	user_id int NOT NULL,
-
-	CONSTRAINT FK3_beer FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
-	CONSTRAINT FK3_user FOREIGN KEY (user_id) REFERENCES users (user_id),
-
-	CONSTRAINT FK_beer3 FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
-	CONSTRAINT FK_user2 FOREIGN KEY (user_id) REFERENCES users (user_id),
-
+	CONSTRAINT FK_brewery_reviews FOREIGN KEY (brewery_id) REFERENCES brewerys (brewery_id),
+	CONSTRAINT FK_user_brewery FOREIGN KEY (user_id) REFERENCES users (user_id),
 );
 
 CREATE TABLE beeruserfav (
 	beer_id int NOT NULL,
 	user_id int NOT NULL,
-	CONSTRAINT FK_beer5 FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
-	CONSTRAINT FK_user5 FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_beer_user_fav FOREIGN KEY (beer_id) REFERENCES beers (beer_id),
+	CONSTRAINT FK_user_beer_fav FOREIGN KEY (user_id) REFERENCES users (user_id),
 	CONSTRAINT PK_beeruser PRIMARY KEY (beer_id, user_id)
 );
 --populate default data
