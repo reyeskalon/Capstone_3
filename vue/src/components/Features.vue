@@ -18,7 +18,7 @@
 
             <div class="grid-container vegan-text">
                 <div class="grid-item text-item">
-                    <h1 class="grid-heading">Find your you</h1>
+                    <h1 class="grid-heading">Find your community</h1>
                     <div class="text-block">New to an area but love a certain beer? Check out our menu and we'll find
                         you the closest retailer, restaurant, or pub instantly. Need directions? We'll get you there
                         each step or mile of the way. Looking for gluten-free, eco-friendly, or vegan establishments?
@@ -90,6 +90,7 @@ body {
 .grid-item .image {
     width: 100%;
     height: 100%;
+    border-top: solid 4px black;
 }
 
 .grid-item .image img {
@@ -147,7 +148,24 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    text-shadow: 2px 2px rgba(97, 97, 97, 0.61);
+   
+    border-top: solid 4px black;
+   
+} 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 h1 {
