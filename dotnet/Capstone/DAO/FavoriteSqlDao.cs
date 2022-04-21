@@ -68,6 +68,7 @@ namespace Capstone.DAO
 
             }
             return favoriteBeers;
+        }
         public void RemoveFavBeer(int userId, int beerId)
         {
 
