@@ -14,13 +14,11 @@
                 </div>
                 <div id="clickable-items">
                     <div class="clickable-divs">
-                        <router-link id="view-details" v-bind:to="{ name: 'beerpage' }" v-on:click="changeStoreValueForSelectedBeer">
-                            <p  class="clickable">Details</p>
+                        <router-link id="view-details" v-bind:to="{ name: 'beerpage' }">
+                            <p  class="clickable" v-on:click="SetBeer()">Details</p>
                         </router-link>
                     </div>
                     <div class="clickable-divs">
-                        <!-- <img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">
-                        <i v-on:click.prevent="empty = !empty; !empty? FavoriteBeer() : UnfavoriteBeer()" :class="[empty ? 'fa fa-heart-o fa-2x' : 'fa fa-heart fa-2x']"></i> -->
                         <img id="favorite-icon" :class="{ heart: isFavorited }" src="../assets/icons/heart-empty.png" @click="ToggleFavorite" v-show="!isFavorited"/>
                         <img id="favorite-icon" :class="{ heart: isFavorited }" src="../assets/icons/heart-full.png" @click="ToggleFavorite" v-show="isFavorited"/>
                     </div>
@@ -54,9 +52,6 @@ export default {
             .then(response => {
                 this.$store.commit("SET_BEER", response.data)
             })
-        },
-        changeStoreValueForSelectedBeer(){
-            this.$store.state.selectedBeer = this.beer;
         },
         methodToUpdateBeer(){
             BeerService.GetBeerById(this.beer.beerId)
