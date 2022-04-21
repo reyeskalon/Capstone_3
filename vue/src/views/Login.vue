@@ -1,5 +1,10 @@
 <template>
   <div id="login">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!---->
     <form @submit.prevent="login">
       <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
@@ -54,7 +59,7 @@ export default {
 
 <style scoped>
   form {
-    font-family: 'Duru Sans', sans-serif;
+    font-family: Roboto; /*'Duru Sans', sans-serif;*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -88,13 +93,30 @@ export default {
     border-top: white 2px solid;
   }
   button {
+    width: 100%;
     margin-bottom: 15px;
-    background: #7875AC;
-    transition: background .5s;
+    font-family: Roboto;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    background-color: white;
+    background-image: 
+      linear-gradient(to right, 
+      rgb(70, 214, 250),
+      rgba(76, 0, 255, 0.671),
+      rgba(129, 39, 231, 0.686), 
+      rgba(87, 81, 199, 0.686));
+    transition: background .2s;
   }
 
   button:hover {
-    background: #54527c;
+    background-color: white;
+    background-image: 
+      linear-gradient(to right, 
+      rgb(70, 214, 250), 
+      #8d49e6);
+    background: #8d49e6;
   }
   input{
     background-color:white;
