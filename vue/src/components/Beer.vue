@@ -96,10 +96,13 @@ export default {
     box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.152);
     overflow: hidden;
 }
+#beer-card:hover {
+    transform: scale(102%);
+}
+
 #beer-image{
     height: 200px;
     width: 200px;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.603);
 }
 #beer-name{
     width: 100%;
