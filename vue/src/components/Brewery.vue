@@ -8,16 +8,14 @@
         <div id="num" class="prop-wrapper">
             <p id="number" class="items">{{b.phoneNumber}}</p>
         </div>
-        <div class="prop-wrapper">
-            <p id="hours" class="items">{{b.hoursOfOperation}}</p>
-        </div>
+       
         <div id="gluten-free-beer" v-if="hasGlutenFreeBeer == true" class="prop-wrapper">
             <img src="..\assets\pngs\GFBEER.png" alt="" id="gf-img" class="items">
         </div>
         <div id="gluten-free-food" v-if="hasGlutenFreeFood == true" class="prop-wrapper">
             <img src="..\assets\pngs\gfFood-removebg-preview.png" alt="" id="gf-food" class="items">
         </div>
-        <button id="update-button" v-on:click.prevent="methodToCallTheThing"></button>
+        <button id="update-button" v-on:click.prevent="methodToCallTheThing">Edit</button>
     </div>
 </template>
 
@@ -50,31 +48,23 @@ export default {
 }
 </script>
 <style scoped>
-#update-button {
-    background-image: url('../assets/pngs/edit.png');
-    height: 28px;
-    width: 30px;
-    background-color: #8886ad;
-    border-radius: 7px;
-    
-}
-#temp{
-    background-color: #FFD12B;
 
-}
+
 #brewery-card {
+    font-family: 'Duru Sans', sans-serif;
+    font-weight: bold;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 450px;
+    width: 350px;
+    background: white;
     border-radius: 5px;
-    height: 100px;
-    padding: 10px;
-    margin:10px;
-    background: #7875AC;
-    border: black 1px solid;
-    flex-direction: row;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    column-gap: 20px;
-    align-content: space-between;
-    align-items: flex-end;
+    position: relative;
+    box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.152);
+    overflow: hidden;
+    margin: 10px;
 }
 .items {
     display: flex;
@@ -97,12 +87,17 @@ export default {
 
 }
 #brewery-img {
-    height: 80px;
-    width: 80px;
+    height: 200px;
+    width: 200px;
 }
 #name {
-    height: 10px;
-    margin: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin: 5px;
+    font-size: 20px;
+
 }
 #gf-img {
     height: 35px;
@@ -117,6 +112,12 @@ export default {
     font-size: 15px;
     align-items: flex-end;
 }
-
+#bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
 
 </style>
