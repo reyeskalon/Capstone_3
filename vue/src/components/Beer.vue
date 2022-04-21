@@ -67,6 +67,14 @@ export default {
             .then(response => {
                 this.$store.commit("SET_BEER", response.data)
             })
+        },
+        ToggleFavorite(){
+            if(this.empty == false){
+                this.empty = true;
+            }
+            else if(this.empty == true){
+               this.empty = false;
+            }
         }
     },
     data() {
@@ -83,9 +91,16 @@ export default {
             FavoriteService.ListOfFavs(this.$store.state.user.userId)
             .then(response => {
                 this.$store.commit("SET_FAVS_BY_USER", response.data)
+            }),
+            this.$store.state.ListOfFavs.foreach(fav => {
+                if(fav.userId == this.$store.state.user.userId){
+                    this.empty = false;
+                }
             })
+        },
+
         }
-    }
+    
 
 </script>
 
