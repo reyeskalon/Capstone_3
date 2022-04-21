@@ -11,4 +11,6 @@ namespace Capstone.DAO
         Favorite SetFavBeer(Favorite favorite);
         List<Favorite> UsersFavBeers(int user_id);
     }
+        void RemoveFavBeer(int userId, int beerId);
+     } 
 }
