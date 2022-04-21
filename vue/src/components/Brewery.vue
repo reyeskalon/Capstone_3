@@ -187,5 +187,15 @@ export default {
     height: 100%;
     width: 100%;
 }
+#gluten-free-beer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#gluten-free-food{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 </style>
