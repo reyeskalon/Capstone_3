@@ -22,10 +22,13 @@ export default {
 </script>
 
 <style>
+
 .section-featured {
     padding-top: 10px;
     background-color:  #6a3ab8;
     font-family: Arial, Helvetica, sans-serif;
+    border-top: solid 6px black;
+    
 }
 
 .heading-featured-in {
