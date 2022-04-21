@@ -41,6 +41,33 @@ namespace Capstone.DAO
             }
             return favorite;
         }
+        public List<Favorite> UsersFavBeers(int user_id)
+        {
+            List<Favorite> favoriteBeers = new List<Favorite>();
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM beeruserfav WHERE user_id = @user_id;", conn);
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        Favorite favorite = new Favorite();
+                        favorite.BeerId = Convert.ToInt32(reader["beer_id"]);
+                        favorite.UserId = Convert.ToInt32(reader["user_id"]);
+                        favoriteBeers.Add(favorite);
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+            return favoriteBeers;
         public void RemoveFavBeer(int userId, int beerId)
         {
 

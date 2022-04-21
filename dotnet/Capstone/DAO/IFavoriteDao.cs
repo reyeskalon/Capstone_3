@@ -9,6 +9,8 @@ namespace Capstone.DAO
     public interface IFavoriteDao
     {
         Favorite SetFavBeer(Favorite favorite);
+        List<Favorite> UsersFavBeers(int user_id);
+    }
         void RemoveFavBeer(int userId, int beerId);
      } 
 }
