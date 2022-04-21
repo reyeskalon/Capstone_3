@@ -2,7 +2,7 @@
     <div id="beerlover">
         <user-profile id="profile"/>
         <div id="favs">
-            <beer v-for="beer in LikedBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
+            <beer id="favorited-beers" v-for="beer in LikedBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
         </div>
     </div>
 </template>
@@ -28,11 +28,13 @@ export default {
 
 <style scoped>
     #favs{
-        background-color: #fafafa;
         border: black solid 2px;
-        border-radius: 15px;
-        margin: 5px;
-        background-color: #FFD12B;
+        border-radius: 5px;
+        background-image: linear-gradient(135deg, rgba(128, 222, 253, 0.76), rgba(137, 43, 226, 0.753));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
     }
     h1{
         padding: 10px;
