@@ -1,5 +1,6 @@
 <template>
     <div id="main">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <div id="beer-card">
             <img id="beer-image" :src="beer.imgURL" alt="">
             <div id="bottom">
@@ -18,7 +19,8 @@
                         </router-link>
                     </div>
                     <div class="clickable-divs">
-                        <img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">
+                        <!--<img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">-->
+                        <i v-on:click.prevent="empty = !empty; !empty? FavoriteBeer() : UnfavoriteBeer()" :class="[empty ? 'fa fa-heart-o fa-2x' : 'fa fa-heart fa-2x']"></i>
                     </div>
                     <div class="clickable-divs">
                         <p  id="review" class="clickable" @click.prevent="ToggleForm(); SetBeer();">Review</p>
@@ -57,12 +59,15 @@ export default {
         FavoriteBeer(){
             FavoriteService.AddFavBeer(this.newFav)
         },
+        UnfavoriteBeer(){
+            FavoriteService.RemoveFavBeer(this.newFav)
+        },
         methodToUpdateBeer(){
             BeerService.GetBeerById(this.beer.beerId)
             .then(response => {
                 this.$store.commit("SET_BEER", response.data)
             })
-        }
+        },
     },
     data() {
         return {
@@ -71,6 +76,7 @@ export default {
                 userId: this.$store.state.user.userId,
                 beerId: this.beer.beerId
             },
+            empty: true,
         }
     }
 }
@@ -96,10 +102,13 @@ export default {
     box-shadow: 0px 5px 7px 2px rgba(0, 0, 0, 0.152);
     overflow: hidden;
 }
+#beer-card:hover {
+    transform: scale(102%);
+}
+
 #beer-image{
     height: 200px;
     width: 200px;
-    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.603);
 }
 #beer-name{
     width: 100%;
@@ -176,6 +185,14 @@ export default {
     justify-content: space-between;
     height: 100%;
     width: 100%;
+}
+
+.fa {
+    font-size: 1.1rem;
+}
+
+.fa-heart {
+    color: red;
 }
 
 </style>
