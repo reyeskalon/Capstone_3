@@ -6,5 +6,8 @@ export default {
     },
     RemoveFavBeer(favorite){
         return axios.delete('/removefavbeer/' + favorite.userId + '/' + favorite.beerId)
+    },
+    ListOfFavs(userId){
+        return axios.get('/favorite/' + userId)
     }
 }
