@@ -30,6 +30,6 @@ export default {
 
   #features {
     border-top: black 2px solid;
-    border-bottom: black 2px solid;
+    
 }
 </style>
