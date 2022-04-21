@@ -143,6 +143,8 @@ export default {
 #gf-beer-icon{
     height: 40px;
     width: 40px;
+    position: absolute;
+    right: 0px;
 }
 .beer-props{
     margin: 0%;
