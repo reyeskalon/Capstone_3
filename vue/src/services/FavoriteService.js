@@ -5,6 +5,6 @@ export default {
         return axios.post('/addfavbeer', favorite)
     },
     RemoveFavBeer(favorite){
-        return axios.delete('/removefavbeer', favorite)
+        return axios.delete('/removefavbeer/' + favorite.userId + '/' + favorite.beerId)
     }
 }

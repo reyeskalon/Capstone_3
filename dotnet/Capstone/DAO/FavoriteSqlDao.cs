@@ -41,5 +41,32 @@ namespace Capstone.DAO
             }
             return favorite;
         }
+        public void RemoveFavBeer(int userId, int beerId)
+        {
+
+            try
+            {
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("DELETE FROM beeruserfav " +
+                                                    "WHERE beer_id = @beer_id " +
+                                                    "AND user_id = @user_id", conn);
+                    cmd.Parameters.AddWithValue("@user_id", userId);
+                    cmd.Parameters.AddWithValue("@beer_id", beerId);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        
+        }
     }
 }
+
+

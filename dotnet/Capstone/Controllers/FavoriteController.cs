@@ -25,5 +25,10 @@ namespace Capstone.Controllers
         {
             return FavoriteDao.SetFavBeer(favorite);
         }
+        [HttpDelete("/removefavbeer/{userId}/{beerId}")]
+        public void RemoveFavBeer(int userId, int beerId)
+        {
+           FavoriteDao.RemoveFavBeer(userId, beerId);
+        }
     }
 }
