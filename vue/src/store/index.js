@@ -28,9 +28,13 @@ export default new Vuex.Store({
     allBeers: [],
     selectedBeer: {} || {},
     beersByBrewer: [],
-    reviewsByBeer:[]
+    reviewsByBeer:[],
+    favsByUser:[]
   },
   mutations: {
+    SET_FAVS_BY_USER(state, data){
+      state.favsByUser = data;
+    },
     SET_AUTH_TOKEN(state, token) {
       state.token = token;
       localStorage.setItem('token', token);
