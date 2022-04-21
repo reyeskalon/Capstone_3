@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="all-beers">
+        <div id="all-beers" v-if="isReady">
             <beer id="beer-cards" v-for="beer in AllBeers" v-bind:key="beer.id" v-bind:beer="beer"/>
         </div>
     </div>
@@ -9,6 +9,7 @@
 <script>
 import Beer from '../components/Beer.vue'
 import BeerService from '../services/BeerService'
+import FavoriteService from '../services/FavoriteService'
 export default {
     components: { Beer },
     computed: {
@@ -20,6 +21,15 @@ export default {
         BeerService.GetAllBeers().then(response => {
           this.$store.commit("SET_ALL_BEERS", response.data);
         });
+        FavoriteService.ListOfFavs(this.$store.state.user.userId).then(response => {
+            this.$store.commit("SET_FAVS_BY_USER", response.data);
+            this.isReady = true;
+        });
+    },
+    data(){
+        return{
+            isReady: false
+        }
     }
 }
 </script>

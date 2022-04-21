@@ -54,4 +54,7 @@ export default {
     #profile{
         height: 200vh;
     }
+    #favorited-beers{
+        margin: 20px;
+    }
 </style>

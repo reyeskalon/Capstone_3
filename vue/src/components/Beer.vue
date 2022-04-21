@@ -19,8 +19,10 @@
                         </router-link>
                     </div>
                     <div class="clickable-divs">
-                        <!--<img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">-->
-                        <i v-on:click.prevent="empty = !empty; !empty? FavoriteBeer() : UnfavoriteBeer()" :class="[empty ? 'fa fa-heart-o fa-2x' : 'fa fa-heart fa-2x']"></i>
+                        <!-- <img id="favorite-icon" class="clickable" src="../assets/icons/heart-empty.png" alt="" v-on:click.prevent="FavoriteBeer">
+                        <i v-on:click.prevent="empty = !empty; !empty? FavoriteBeer() : UnfavoriteBeer()" :class="[empty ? 'fa fa-heart-o fa-2x' : 'fa fa-heart fa-2x']"></i> -->
+                        <img id="favorite-icon" :class="{ heart: isFavorited }" src="../assets/icons/heart-empty.png" @click="ToggleFavorite" v-show="!isFavorited"/>
+                        <img id="favorite-icon" :class="{ heart: isFavorited }" src="../assets/icons/heart-full.png" @click="ToggleFavorite" v-show="isFavorited"/>
                     </div>
                     <div class="clickable-divs">
                         <p  id="review" class="clickable" @click.prevent="ToggleForm(); SetBeer();">Review</p>
@@ -56,12 +58,6 @@ export default {
         changeStoreValueForSelectedBeer(){
             this.$store.state.selectedBeer = this.beer;
         },
-        FavoriteBeer(){
-            FavoriteService.AddFavBeer(this.newFav)
-        },
-        UnfavoriteBeer(){
-            FavoriteService.RemoveFavBeer(this.newFav)
-        },
         methodToUpdateBeer(){
             BeerService.GetBeerById(this.beer.beerId)
             .then(response => {
@@ -69,11 +65,12 @@ export default {
             })
         },
         ToggleFavorite(){
-            if(this.empty == false){
-                this.empty = true;
+            this.isFavorited = !this.isFavorited;
+            if(this.isFavorited == false){
+                FavoriteService.RemoveFavBeer(this.newFav)
             }
-            else if(this.empty == true){
-               this.empty = false;
+            else{
+                FavoriteService.AddFavBeer(this.newFav)
             }
         }
     },
@@ -84,22 +81,20 @@ export default {
                 userId: this.$store.state.user.userId,
                 beerId: this.beer.beerId
             },
-            empty: true,
+            isFavorited: false,
+            heartImage: '../assets/icons/heart-full.png'
         }
     },
     created(){
-            FavoriteService.ListOfFavs(this.$store.state.user.userId)
-            .then(response => {
-                this.$store.commit("SET_FAVS_BY_USER", response.data)
-            }),
-            this.$store.state.ListOfFavs.foreach(fav => {
-                if(fav.userId == this.$store.state.user.userId){
-                    this.empty = false;
-                }
-            })
-        },
+        let favorites = this.$store.state.favsByUser;
+        favorites.forEach(fav => {
+        if(fav.beerId == this.beer.beerId){
+            this.isFavorited = true;
+            }
+        })
+    },
 
-        }
+}
     
 
 </script>
@@ -215,8 +210,8 @@ export default {
     font-size: 1.1rem;
 }
 
-.fa-heart {
-    color: red;
+.heart {
+    background-image: url('../assets/icons/heart-full.png');
 }
 
 </style>
